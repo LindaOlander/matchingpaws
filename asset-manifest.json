@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/matchingpaws/static/css/main.0e419cff.chunk.css",
-    "main.js": "/matchingpaws/static/js/main.0b84c7a2.chunk.js",
-    "main.js.map": "/matchingpaws/static/js/main.0b84c7a2.chunk.js.map",
+    "main.css": "/matchingpaws/static/css/main.2a057f92.chunk.css",
+    "main.js": "/matchingpaws/static/js/main.1bb032a3.chunk.js",
+    "main.js.map": "/matchingpaws/static/js/main.1bb032a3.chunk.js.map",
     "runtime-main.js": "/matchingpaws/static/js/runtime-main.63f41863.js",
     "runtime-main.js.map": "/matchingpaws/static/js/runtime-main.63f41863.js.map",
     "static/js/2.8466a315.chunk.js": "/matchingpaws/static/js/2.8466a315.chunk.js",
@@ -10,8 +10,9 @@
     "static/js/3.15b1d5f1.chunk.js": "/matchingpaws/static/js/3.15b1d5f1.chunk.js",
     "static/js/3.15b1d5f1.chunk.js.map": "/matchingpaws/static/js/3.15b1d5f1.chunk.js.map",
     "index.html": "/matchingpaws/index.html",
-    "static/css/main.0e419cff.chunk.css.map": "/matchingpaws/static/css/main.0e419cff.chunk.css.map",
+    "static/css/main.2a057f92.chunk.css.map": "/matchingpaws/static/css/main.2a057f92.chunk.css.map",
     "static/js/2.8466a315.chunk.js.LICENSE.txt": "/matchingpaws/static/js/2.8466a315.chunk.js.LICENSE.txt",
+    "static/media/Header.css": "/matchingpaws/static/media/bordercollie.036f60a9.jpg",
     "static/media/golden.jpg": "/matchingpaws/static/media/golden.b94147bc.jpg",
     "static/media/labrador.jpg": "/matchingpaws/static/media/labrador.29d9dc61.jpg",
     "static/media/poodle.jpg": "/matchingpaws/static/media/poodle.27956449.jpg"
@@ -19,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.63f41863.js",
     "static/js/2.8466a315.chunk.js",
-    "static/css/main.0e419cff.chunk.css",
-    "static/js/main.0b84c7a2.chunk.js"
+    "static/css/main.2a057f92.chunk.css",
+    "static/js/main.1bb032a3.chunk.js"
   ]
 }
