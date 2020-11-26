@@ -1,26 +1,23 @@
 {
   "files": {
-    "main.css": "/matchingpaws/static/css/main.d434c86b.chunk.css",
-    "main.js": "/matchingpaws/static/js/main.6c252e8e.chunk.js",
-    "main.js.map": "/matchingpaws/static/js/main.6c252e8e.chunk.js.map",
-    "runtime-main.js": "/matchingpaws/static/js/runtime-main.7fd1a803.js",
-    "runtime-main.js.map": "/matchingpaws/static/js/runtime-main.7fd1a803.js.map",
-    "static/js/2.f4fad36b.chunk.js": "/matchingpaws/static/js/2.f4fad36b.chunk.js",
-    "static/js/2.f4fad36b.chunk.js.map": "/matchingpaws/static/js/2.f4fad36b.chunk.js.map",
-    "static/js/3.0787a0db.chunk.js": "/matchingpaws/static/js/3.0787a0db.chunk.js",
-    "static/js/3.0787a0db.chunk.js.map": "/matchingpaws/static/js/3.0787a0db.chunk.js.map",
+    "main.css": "/matchingpaws/static/css/main.c565196a.chunk.css",
+    "main.js": "/matchingpaws/static/js/main.bdbacbf7.chunk.js",
+    "main.js.map": "/matchingpaws/static/js/main.bdbacbf7.chunk.js.map",
+    "runtime-main.js": "/matchingpaws/static/js/runtime-main.775f60a7.js",
+    "runtime-main.js.map": "/matchingpaws/static/js/runtime-main.775f60a7.js.map",
+    "static/js/2.7152067d.chunk.js": "/matchingpaws/static/js/2.7152067d.chunk.js",
+    "static/js/2.7152067d.chunk.js.map": "/matchingpaws/static/js/2.7152067d.chunk.js.map",
+    "static/js/3.f16f7a3d.chunk.js": "/matchingpaws/static/js/3.f16f7a3d.chunk.js",
+    "static/js/3.f16f7a3d.chunk.js.map": "/matchingpaws/static/js/3.f16f7a3d.chunk.js.map",
     "index.html": "/matchingpaws/index.html",
-    "static/css/main.d434c86b.chunk.css.map": "/matchingpaws/static/css/main.d434c86b.chunk.css.map",
-    "static/js/2.f4fad36b.chunk.js.LICENSE.txt": "/matchingpaws/static/js/2.f4fad36b.chunk.js.LICENSE.txt",
-    "static/media/Header.css": "/matchingpaws/static/media/bordercollie.036f60a9.jpg",
-    "static/media/golden.jpg": "/matchingpaws/static/media/golden.b94147bc.jpg",
-    "static/media/labrador.jpg": "/matchingpaws/static/media/labrador.29d9dc61.jpg",
-    "static/media/poodle.jpg": "/matchingpaws/static/media/poodle.27956449.jpg"
+    "static/css/main.c565196a.chunk.css.map": "/matchingpaws/static/css/main.c565196a.chunk.css.map",
+    "static/js/2.7152067d.chunk.js.LICENSE.txt": "/matchingpaws/static/js/2.7152067d.chunk.js.LICENSE.txt",
+    "static/media/Header.css": "/matchingpaws/static/media/poodle.27956449.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.7fd1a803.js",
-    "static/js/2.f4fad36b.chunk.js",
-    "static/css/main.d434c86b.chunk.css",
-    "static/js/main.6c252e8e.chunk.js"
+    "static/js/runtime-main.775f60a7.js",
+    "static/js/2.7152067d.chunk.js",
+    "static/css/main.c565196a.chunk.css",
+    "static/js/main.bdbacbf7.chunk.js"
   ]
 }
