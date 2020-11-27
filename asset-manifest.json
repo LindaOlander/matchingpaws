@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/matchingpaws/static/css/main.c565196a.chunk.css",
-    "main.js": "/matchingpaws/static/js/main.bdbacbf7.chunk.js",
-    "main.js.map": "/matchingpaws/static/js/main.bdbacbf7.chunk.js.map",
+    "main.css": "/matchingpaws/static/css/main.be731e20.chunk.css",
+    "main.js": "/matchingpaws/static/js/main.ead9b525.chunk.js",
+    "main.js.map": "/matchingpaws/static/js/main.ead9b525.chunk.js.map",
     "runtime-main.js": "/matchingpaws/static/js/runtime-main.775f60a7.js",
     "runtime-main.js.map": "/matchingpaws/static/js/runtime-main.775f60a7.js.map",
     "static/js/2.7152067d.chunk.js": "/matchingpaws/static/js/2.7152067d.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.f16f7a3d.chunk.js": "/matchingpaws/static/js/3.f16f7a3d.chunk.js",
     "static/js/3.f16f7a3d.chunk.js.map": "/matchingpaws/static/js/3.f16f7a3d.chunk.js.map",
     "index.html": "/matchingpaws/index.html",
-    "static/css/main.c565196a.chunk.css.map": "/matchingpaws/static/css/main.c565196a.chunk.css.map",
+    "static/css/main.be731e20.chunk.css.map": "/matchingpaws/static/css/main.be731e20.chunk.css.map",
     "static/js/2.7152067d.chunk.js.LICENSE.txt": "/matchingpaws/static/js/2.7152067d.chunk.js.LICENSE.txt",
     "static/media/Header.css": "/matchingpaws/static/media/poodle.27956449.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.775f60a7.js",
     "static/js/2.7152067d.chunk.js",
-    "static/css/main.c565196a.chunk.css",
-    "static/js/main.bdbacbf7.chunk.js"
+    "static/css/main.be731e20.chunk.css",
+    "static/js/main.ead9b525.chunk.js"
   ]
 }
