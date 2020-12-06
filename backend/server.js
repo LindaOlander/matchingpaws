@@ -25,7 +25,7 @@ const Dog = mongoose.model("Dog", {
     type: String,
     required: true
   },
-  breed: {
+  quote: {
     type: String,
     required: true
   }
@@ -73,7 +73,7 @@ app.get("/dogs", (req, res) => {
       res.json(dog)
     })
   } else {
-    Designer.find().then(dog => {
+    Dog.find().then(dog => {
       res.json(dog)
     })
   }
