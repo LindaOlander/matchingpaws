@@ -73,7 +73,7 @@ app.get("/dogs", (req, res) => {
       res.json(dog)
     })
   } else {
-    Dog.find().then(dog => {
+    Designer.find().then(dog => {
       res.json(dog)
     })
   }
