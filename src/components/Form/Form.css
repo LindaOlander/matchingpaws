@@ -1,0 +1,213 @@
+  .formContainer {
+      /* background-color: rgb(249, 231, 159); */
+  }
+
+  .formGiveAwayContainer {
+    background-color: #e6e6e6;
+  }
+
+  .questionWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin: 0 100px; */
+    margin: 10px 100px;
+    padding: 20px 100px;
+    border: 3px dashed black;
+  }
+  
+  .questionCategory {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row wrap;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    /* padding: 20px 100px; */
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .questionCategoryGiveAway {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0;
+    width: 100%;
+  }
+
+  .option-heading {
+    display: flex;
+  }
+  
+  .option-container {
+    width: 40%;
+    /* height: fit-content; */
+    display: flex;
+    /* flex-flow: row wrap; */
+    /* flex-direction: column; */
+    align-items: center;
+    /* justify-content: space-between; */
+    margin: 20px 20px 0 20px;
+    padding: 10px;
+    /* margin: 0 20px 20px 20px; */
+    border: 1px solid black;
+  }
+  
+  .option-containerRadios {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px 20px 20px;
+  }
+
+  .option-containerGiveAway {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px 20px 0px;
+  }
+
+  .option-containerRadios label {
+    margin-right: 15px;
+  }
+
+  .textareaGiveAway {
+    min-width: 450px;
+    min-height: 80px;
+    border-radius: 60px;
+    margin-top: 15px;
+    padding: 30px 25px;
+    outline: none;
+    border: none;
+    /* background-color: rgba(255, 255, 255, 0.6); */
+  }
+
+  .textareaGiveAway-small {
+    min-width: 350px;
+    height: 18px;
+    border-radius: 25px;
+    margin-top: 15px;
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+  }
+
+  /* 
+  .option-input {
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    position: relative;
+    z-index: 1000;
+  } */
+  
+  
+  @keyframes click-wave {
+    0% {
+      height: 40px;
+      width: 40px;
+      opacity: 0.35;
+      position: relative;
+    }
+    100% {
+      height: 200px;
+      width: 200px;
+      margin-left: -80px;
+      margin-top: -80px;
+      opacity: 0;
+    }
+  }
+  
+  .option-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    /* position: relative;
+    top: 13.33333px;
+    right: 0;
+    bottom: 0;
+    left: 0; */
+    height: 20px;
+    width: 20px;
+    transition: all 0.15s ease-out 0s;
+    background: #ffffff;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 20px;
+    outline: none;
+    /* position: relative; */
+    z-index: 1000;
+  }
+  .option-input:hover, .option-inputGiveAway:hover {
+    background: #9faab7;
+  }
+  .option-input:checked, .option-inputGiveAway:checked {
+    background: #222222;
+  }
+  .option-input:checked::before, .option-inputGiveAway:checked::before {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    content: '✖';
+    display: inline-block;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+  }
+  .option-input:checked::after, .option-inputGiveAway:checked::after {
+    -webkit-animation: click-wave 0.65s;
+    -moz-animation: click-wave 0.65s;
+    animation: click-wave 0.65s;
+    background: #40e0d0;
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 100;
+  }
+  .option-input.radio {
+    border-radius: 50%;
+  }
+  .option-input.radio::after {
+    border-radius: 50%;
+  }
+
+  .option-inputGiveAway {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    /* position: relative;
+    top: 13.33333px;
+    right: 0;
+    bottom: 0;
+    left: 0; */
+    height: 40px;
+    width: 40px;
+    transition: all 0.15s ease-out 0s;
+    background: #ffffff;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .yellow {
+    background-color: rgb(249, 231, 159);
+  }
+
+  .grey {
+    background-color: #e6e6e6;
+  }

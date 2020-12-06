@@ -1,0 +1,103 @@
+{
+	"dogs": [{
+			"id": "1",
+			"name": "Pete",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+			"image": "https://images.unsplash.com/photo-1523626797181-8c5ae80d40c2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fGRvZ3N8ZW58MHx8MHw%3D&auto=format&fit=crop&w=800&q=60",
+			"imageCover": "https://images.unsplash.com/photo-1536809188428-e8ecf663d0be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+			"breed": "Bulldog",
+			"age": 6,
+			"energy": 30,
+			"integrity": 40,
+			"closeness": 80,
+			"cat": false,
+			"children": true,
+			"longWalks": false
+		},
+		{
+			"id": "2",
+			"name": "Tottie",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+			"image": "https://images.unsplash.com/photo-1590508292979-a30664cfdb51?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8ZG9nc3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=800&q=60",
+			"breed": "Labradoodle",
+			"age": 8,
+			"energy": 30,
+			"integrity": 40,
+			"closeness": 80,
+			"cat": true,
+			"children": true,
+			"longWalks": true
+		},
+		{
+			"id": "3",
+			"name": "Limpan",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+			"image": "https://images.unsplash.com/photo-1535923454971-c246f2709e5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+			"breed": "Golden retriever",
+			"age": 11,
+			"energy": 30,
+			"integrity": 40,
+			"closeness": 80,
+			"cat": false,
+			"children": true,
+			"longWalks": true
+		},
+		{
+			"id": "4",
+			"name": "Björne",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+			"image": "https://images.unsplash.com/photo-1568572933382-74d440642117?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8ZG9nc3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=800&q=60",
+			"breed": "Husky",
+			"age": 6,
+			"energy": 30,
+			"integrity": 40,
+			"closeness": 80,
+			"cat": true,
+			"children": true,
+			"longWalks": true
+		},
+		{
+			"id": "5",
+			"name": "Fia",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+			"image": "https://images.unsplash.com/photo-1516371535707-512a1e83bb9a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDF8fGRvZ3N8ZW58MHx8MHw%3D&auto=format&fit=crop&w=800&q=60",
+			"breed": "Pudel",
+			"age": 1,
+			"energy": 30,
+			"integrity": 40,
+			"closeness": 80,
+			"cat": true,
+			"children": true,
+			"longWalks": false
+		},
+		{
+			"id": "6",
+			"name": "Dottie",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+			"image": "https://images.unsplash.com/photo-1495096848005-d77907109d78?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjE5fHxkb2dzfGVufDB8fDB8&auto=format&fit=crop&w=800&q=60",
+			"breed": "Dalmatin",
+			"age": 3,
+			"energy": 30,
+			"integrity": 40,
+			"closeness": 80,
+			"cat": false,
+			"children": false,
+			"longWalks": true
+
+		},
+		{
+			"id": "7",
+			"name": "Molson",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+			"image": "https://images.unsplash.com/photo-1562462863-42d40916e6b8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjd8fGRvZ3N8ZW58MHx8MHw%3D&auto=format&fit=crop&w=800&q=60",
+			"breed": "Labrador",
+			"age": 10,
+			"energy": 30,
+			"integrity": 40,
+			"closeness": 80,
+			"cat": false,
+			"children": true,
+			"longWalks": true
+		}
+	]
+}
