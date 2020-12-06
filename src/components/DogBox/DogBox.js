@@ -9,7 +9,7 @@ class DogBox extends React.Component {
       <div className="dog-wrapper">
         <Link to={`/adoptera/${this.props.id}`}>
           <div className="dog-image-wrapper">
-            <img src={this.props.image} className="dog-image"/>
+            <img alt="dog" src={this.props.image} className="dog-image"/>
           </div>
         </Link>
         <div className="dog-info-wrapper">

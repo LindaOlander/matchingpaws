@@ -1,6 +1,6 @@
 import React from 'react';
 import dogsJson from '../../dogsJson.json';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './DogPage.css';
 
 class DogPage extends React.Component {
@@ -21,7 +21,7 @@ class DogPage extends React.Component {
       <Link to="/quiz"><div className="back">Gå tillbaka</div></Link>
         <div className="dogpage-wrapper">
             <div className="dogpage-image-wrapper">
-              <img src={dog.image} className="dogpage-image"/>
+              <img alt="dog" src={dog.image} className="dogpage-image"/>
             </div>
           <div className="dogpage-info-wrapper">
               <h2>{dog.name}</h2>

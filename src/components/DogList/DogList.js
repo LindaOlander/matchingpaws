@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 //import {useDispatch, useSelector} from 'react-redux';
 //import Dog from '../Dog/DogPage';
 //import { fetchDogs } from '../../store/actions/dogAction';
@@ -6,7 +6,7 @@ import dogsJson from '../../dogsJson.json';
 import DogBox from '../DogBox/DogBox';
 
 const DogList = () => {
-  const [filteredDogs, setFilteredDogs] = useState([]);
+  //const [filteredDogs, setFilteredDogs] = useState([]);
   // const dogs = useSelector(state => state.dogs);
   // const dispatch = useDispatch();
   
@@ -28,18 +28,18 @@ const DogList = () => {
   //   setFilteredDogs(dogs)
   // }, [dogs]);
 
-  let allDogs = dogsJson.dogs;
+  // let allDogs = dogsJson.dogs;
 
-  const filterAge = () => {
-    const copyDogs = [...allDogs]
-    const filterOnAge = dogsJson.dogs.filter(dog => dog.age > 2);
-    setFilteredDogs(filterOnAge);
-  }
+  // const filterAge = () => {
+  //   const copyDogs = [...allDogs]
+  //   const filterOnAge = dogsJson.dogs.filter(dog => dog.age > 2);
+  //   setFilteredDogs(filterOnAge);
+  // }
 
-  console.log('allDogs', allDogs);
+  // console.log('allDogs', allDogs);
 
-  const arr2 = dogsJson.dogs.filter(dog => dog.children === true);
-  console.log('arr2', arr2);
+  // const arr2 = dogsJson.dogs.filter(dog => dog.children === true);
+  // console.log('arr2', arr2);
 
   //const ageAndGender = d => d.age > 37 && d.gender === 'female';
 

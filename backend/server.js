@@ -8,10 +8,6 @@ app.use(bodyParser.json())
 app.use(cors())
 app.use(express.static("public"))
 
-// const mongoUrl = "mongodb://localhost/finalproject"
-// mongoose.connect(mongoUrl, { useNewUrlParser: true })
-// mongoose.Promise = Promise
-
 const mongoServer = process.env.MONGO_URL || "mongodb+srv://matchingpawsUser:juniboltwilma2020@cluster0.8ft70.mongodb.net/matching-paws-dogs?retryWrites=true&w=majority" // add mongourl
 mongoose.connect(mongoServer, { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.Promise = Promise

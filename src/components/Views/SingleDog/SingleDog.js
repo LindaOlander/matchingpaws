@@ -15,7 +15,7 @@ const SingleDog = () => {
     return (
     <div className="dog-wrapper">
         <div className="dog-image-wrapper">
-          <img src={dog.image} className="dog-image"/>
+          <img alt="dog" src={dog.image} className="dog-image"/>
         </div>
       <div className="dog-info-wrapper">
         <div>

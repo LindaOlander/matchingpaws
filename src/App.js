@@ -1,6 +1,6 @@
 import React from 'react';
 import Start from './components/Views/Start/Start';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import GiveAway from './components/Views/GiveAway/GiveAway';
 import DogPage from './components/DogPage/DogPage';
 import Quiz from './components/Views/Quiz/Quiz';
