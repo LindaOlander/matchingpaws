@@ -23,11 +23,6 @@ const Start = () => {
                 <Link to="/quiz"><h3 style={{color: "#ffffff"}}>Låt våra algoritmer hitta den perfekta hunden för dig</h3></Link>
             </div>
             <AboutSmall />
-            <form action="/dogs" method="POST">
-                <input type="text" placeholder="name" name="name" />
-                <input type="text" placeholder="quote" name="quote" />
-                <button type="submit">Submit</button>
-            </form>
             <Footer />
         </>
     )
