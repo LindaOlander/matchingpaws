@@ -42,10 +42,12 @@ app.get("/dogs", (req, res) => {
 app.post("/dogs", (req, res) => {
   const dog = new Dog(req.body)
 
+  console.log(req.body);
   dog.save()
     .then(() => { res.status(201).send("Dog added") })
     .catch(err => { res.status(400).send(err) })
 })
 
+
 const port = process.env.PORT || 8080
-app.listen(port, () => console.log(`listening on port ${port}`)) // add port variable
+app.listen(port, () => console.log(`listening on port ${port}`))
