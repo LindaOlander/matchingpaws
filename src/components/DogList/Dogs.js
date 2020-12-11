@@ -217,6 +217,7 @@ const Dogs = () => {
       </div>
       {dogs.map(dog =>
         <DogBox
+          key={dog.id}
           name={dog.name}
           image={dog.image}
           breed={dog.breed}

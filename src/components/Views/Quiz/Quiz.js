@@ -20,22 +20,22 @@ const Quiz = () => {
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 1a*/}
                             <input type="radio" name="1" id="1a" value="1a" />
-                            <label for="1a">Jag anser mig kunnig inom hundar och har erfarenhet från att hantera många olika typer av hundar och personlighet</label>
+                            <label htmlFor="1a">Jag anser mig kunnig inom hundar och har erfarenhet från att hantera många olika typer av hundar och personlighet</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 1b*/}
                             <input type="radio" name="1" id="1b" value="1b" />
-                            <label for="1b">Jag har haft fullt ansvar för en hund tidigare</label>
+                            <label htmlFor="1b">Jag har haft fullt ansvar för en hund tidigare</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 1c*/}
                             <input type="radio" name="1" id="1c" value="1c" />
-                            <label for="1c">Jag har inte haft hund själv, men har hjälpt vänner och familj med deras hundar</label>
+                            <label htmlFor="1c">Jag har inte haft hund själv, men har hjälpt vänner och familj med deras hundar</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 1d*/}
                             <input type="radio" name="1" id="1d" value="1d" />
-                            <label for="1d">Jag har ingen tidigare hunderfarenhet</label>
+                            <label htmlFor="1d">Jag har ingen tidigare hunderfarenhet</label>
                         </div>
                     </div>
                     <div style={{display: "flex", flexDirection: "row", justifyContent: "flex-end", marginTop: "30px"}}>
@@ -51,17 +51,17 @@ const Quiz = () => {
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 2a*/}
                             <input type="radio" name="2" id="2a" value="2a" />
-                            <label for="2a">Jag är stark och kan hålla emot även tyngre starka hundar om det behövs</label>
+                            <label htmlFor="2a">Jag är stark och kan hålla emot även tyngre starka hundar om det behövs</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 2b*/}
                             <input type="radio" name="2" id="2b" value="2b" />
-                            <label for="2b">Jag skulle beskriva min fysiska förmåga som normal</label>
+                            <label htmlFor="2b">Jag skulle beskriva min fysiska förmåga som normal</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 2c*/}
                             <input type="radio" name="2" id="2c" value="2c" />
-                            <label for="2c">Jag har vissa fysiska begränsningar som gör att jag inte är lämplig som ägare till starkare hundar</label>
+                            <label htmlFor="2c">Jag har vissa fysiska begränsningar som gör att jag inte är lämplig som ägare till starkare hundar</label>
                         </div>
                     </div>
                     <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "30px"}}>
@@ -78,12 +78,12 @@ const Quiz = () => {
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 3a*/}
                             <input type="radio" name="3" id="3a" value="3a" />
-                            <label for="3a">Kan bo med en hund som fäller päls</label>
+                            <label htmlFor="3a">Kan bo med en hund som fäller päls</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 3b*/}
                             <input type="radio" name="3" id="3b" value="3b" />
-                            <label for="3b">Kan <b>inte</b> bo med en hund som fäller päls</label>
+                            <label htmlFor="3b">Kan <b>inte</b> bo med en hund som fäller päls</label>
                         </div>
                     </div>
                     <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "30px"}}>
@@ -100,22 +100,22 @@ const Quiz = () => {
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 4a*/}
                             <input type="radio" name="4" id="4a" value="4a" />
-                            <label for="4a">Vardagligen i hemmet</label>
+                            <label htmlFor="4a">Vardagligen i hemmet</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 4b*/}
                             <input type="radio" name="4" id="4b" value="4b" />
-                            <label for="4b">Då och då när besökare kommer över</label>
+                            <label htmlFor="4b">Då och då när besökare kommer över</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 4c*/}
                             <input type="radio" name="4" id="4c" value="4c" />
-                            <label for="4c">Ytterst sällan eller aldrig</label>
+                            <label htmlFor="4c">Ytterst sällan eller aldrig</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 4d*/}
                             <input type="radio" name="4" id="4d" value="4d" />
-                            <label for="4d">Till en början inte alls men i framtiden vill jag ha barn som jag önskar att min hund kan leva med</label>
+                            <label htmlFor="4d">Till en början inte alls men i framtiden vill jag ha barn som jag önskar att min hund kan leva med</label>
                         </div>
                     </div>
                     <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "30px"}}>
@@ -132,22 +132,22 @@ const Quiz = () => {
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 5a*/}
                             <input type="radio" name="5" id="5a" value="5a" />
-                            <label for="5a">I lägenhet i stadsmiljö</label>
+                            <label htmlFor="5a">I lägenhet i stadsmiljö</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 5c*/}
                             <input type="radio" name="5" id="5c" value="5c" />
-                            <label for="5c">I lägenhet på landet</label>
+                            <label htmlFor="5c">I lägenhet på landet</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 5b*/}
                             <input type="radio" name="5" id="5b" value="5b" />
-                            <label for="5b">I villa/radhus på landet</label>
+                            <label htmlFor="5b">I villa/radhus på landet</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 5d*/}
                             <input type="radio" name="5" id="5d" value="5d" />
-                            <label for="5d">Villa/radhus i stadsmiljö</label>
+                            <label htmlFor="5d">Villa/radhus i stadsmiljö</label>
                         </div>
                         <p><i>* Stadsmiljö = en miljö med grannar och trafik</i></p>
                         <p><i>* Landet = en miljö med få grannar och lite trafik </i></p>
@@ -166,22 +166,22 @@ const Quiz = () => {
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 6a*/}
                             <input type="radio" name="6" id="6a" value="6a" />
-                            <label for="6a">Hunden kommer att gå på hunddagis</label>
+                            <label htmlFor="6a">Hunden kommer att gå på hunddagis</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 6b*/}
                             <input type="radio" name="6" id="6b" value="6b" />
-                            <label for="6b">Hunden kommer följa med till arbetet</label>
+                            <label htmlFor="6b">Hunden kommer följa med till arbetet</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 6c*/}
                             <input type="radio" name="6" id="6c" value="6c" />
-                            <label for="6c">Hunden kommer få vara ensam hemma ett par timmar om dagen</label>
+                            <label htmlFor="6c">Hunden kommer få vara ensam hemma ett par timmar om dagen</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 6d*/}
                             <input type="radio" name="6" id="6d" value="6d" />
-                            <label for="6d">Hunden kommer kunna vara hemma med mig eller annan närstående om dagarna</label>
+                            <label htmlFor="6d">Hunden kommer kunna vara hemma med mig eller annan närstående om dagarna</label>
                         </div>
                         <p><i>* Obs - Utgå från vardagen efter pandemin</i></p>
                     </div>
@@ -199,32 +199,32 @@ const Quiz = () => {
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 7a*/}
                             <input type="checkbox" name="7" id="7a" value="7a" />
-                            <label for="7a">Primärt gå som sällskapshund och få stimulans via promenader, aktivitetsövningar och gos</label>
+                            <label htmlFor="7a">Primärt gå som sällskapshund och få stimulans via promenader, aktivitetsövningar och gos</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 7b*/}
                             <input type="checkbox" name="7" id="7b" value="7b" />
-                            <label for="7b">Användas i jakt</label>
+                            <label htmlFor="7b">Användas i jakt</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 7c*/}
                             <input type="checkbox" name="7" id="7c" value="7c" />
-                            <label for="7c">Aktiveras som sportkompis</label>
+                            <label htmlFor="7c">Aktiveras som sportkompis</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 7d*/}
                             <input type="checkbox" name="7" id="7d" value="7d" />
-                            <label for="7d">Aktiveras inom sök</label>
+                            <label htmlFor="7d">Aktiveras inom sök</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 7e*/}
                             <input type="checkbox" name="7" id="7e" value="7e" />
-                            <label for="7e">Aktiveras inom hundsporter, t.ex. agility</label>
+                            <label htmlFor="7e">Aktiveras inom hundsporter, t.ex. agility</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 7f*/}
                             <input type="checkbox" name="7" id="7f" value="7f" />
-                            <label for="7f">Användas som vakthund</label>
+                            <label htmlFor="7f">Användas som vakthund</label>
                         </div>
                     </div>
                     <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "30px"}}>
@@ -241,12 +241,12 @@ const Quiz = () => {
                         <div style={{padding: "10px 0"}}>
                             {/* 8a*/}
                             <input type="radio" name="8" id="8a" value="8a" />
-                            <label for="8a">I mitt hem är det full fart och fläkt. Mycket besökare och saker som händer hela tiden</label>
+                            <label htmlFor="8a">I mitt hem är det full fart och fläkt. Mycket besökare och saker som händer hela tiden</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* 8b*/}
                             <input type="radio" name="8" id="8b" value="8b" />
-                            <label for="8b">I mitt hem är det lugnt, tryggt och sansat</label>
+                            <label htmlFor="8b">I mitt hem är det lugnt, tryggt och sansat</label>
                         </div>
                     </div>
                     <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "30px"}}>
@@ -263,42 +263,42 @@ const Quiz = () => {
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 9a*/}
                             <input type="checkbox" name="9" id="9a" value="9a" />
-                            <label for="9a">Hundaggresivitet</label>
+                            <label htmlFor="9a">Hundaggresivitet</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 9b*/}
                             <input type="checkbox" name="9" id="9b" value="9b" />
-                            <label for="9b">Hoppar på folk när den hälsar</label>
+                            <label htmlFor="9b">Hoppar på folk när den hälsar</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 9c*/}
                             <input type="checkbox" name="9" id="9c" value="9c" />
-                            <label for="9c">Hög intigritet</label>
+                            <label htmlFor="9c">Hög intigritet</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 9d*/}
                             <input type="checkbox" name="9" id="9d" value="9d" />
-                            <label for="9d">Drar i kopplet</label>
+                            <label htmlFor="9d">Drar i kopplet</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 9e*/}
                             <input type="checkbox" name="9" id="9e" value="9e" />
-                            <label for="9e">Kan inte vara ensam hemma</label>
+                            <label htmlFor="9e">Kan inte vara ensam hemma</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 9f*/}
                             <input type="checkbox" name="9" id="9f" value="9f" />
-                            <label for="9f">Resursförsvar</label>
+                            <label htmlFor="9f">Resursförsvar</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 9g*/}
                             <input type="checkbox" name="9" id="9g" value="9f" />
-                            <label for="9f">Skällig</label>
+                            <label htmlFor="9f">Skällig</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* Svar 9h*/}
                             <input type="checkbox" name="9" id="9h" value="9f" />
-                            <label for="9f">Sjukdomstillstånd som kräver regelbunden veterinärvård</label>
+                            <label htmlFor="9f">Sjukdomstillstånd som kräver regelbunden veterinärvård</label>
                         </div>
                     </div>
                     <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "30px"}}>
@@ -315,12 +315,12 @@ const Quiz = () => {
                         <div style={{padding: "10px 0"}}>
                             {/* 10a*/}
                             <input type="radio" name="10" id="10a" value="10a" />
-                            <label for="10a">Nej</label>
+                            <label htmlFor="10a">Nej</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* 10b*/}
                             <input type="radio" name="10" id="10b" value="10b" />
-                            <label for="10b">Ja</label>
+                            <label htmlFor="10b">Ja</label>
                         </div>
                     </div>
                     <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "30px"}}>
@@ -337,17 +337,17 @@ const Quiz = () => {
                         <div style={{padding: "10px 0"}}>
                             {/* 11a*/}
                             <input type="checkbox" name="11" id="11a" value="11a" />
-                            <label for="11a">Ja - En eller flera tikar</label>
+                            <label htmlFor="11a">Ja - En eller flera tikar</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* 11b*/}
                             <input type="checkbox" name="11" id="11b" value="11b" />
-                            <label for="11b">Ja - En eller flera hanar</label>
+                            <label htmlFor="11b">Ja - En eller flera hanar</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* 11b*/}
                             <input type="radio" name="11" id="11c" value="11c" />
-                            <label for="11c">Nej</label>
+                            <label htmlFor="11c">Nej</label>
                         </div>
                     </div>
                     <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "30px"}}>
@@ -364,12 +364,12 @@ const Quiz = () => {
                         <div style={{padding: "10px 0"}}>
                             {/* 12a*/}
                             <input type="radio" name="12" id="12a" value="12a" />
-                            <label for="12a">Jag är väldigt mjuk och kärleksfull i mitt umgänge med hundar</label>
+                            <label htmlFor="12a">Jag är väldigt mjuk och kärleksfull i mitt umgänge med hundar</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* 12b*/}
                             <input type="radio" name="12" id="12b" value="12b" />
-                            <label for="12b">Jag är rak och tydlig men bestämd i min hunduppfostran</label>
+                            <label htmlFor="12b">Jag är rak och tydlig men bestämd i min hunduppfostran</label>
                         </div>
                     </div>
                     <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "30px"}}>
@@ -386,17 +386,17 @@ const Quiz = () => {
                         <div style={{padding: "10px 0"}}>
                             {/* 13a*/}
                             <input type="checkbox" name="13" id="13a" value="13a" />
-                            <label for="13a">Liten hund (>45 cm mankhöjd)</label>
+                            <label htmlFor="13a">Liten hund (>45 cm mankhöjd)</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* 13b*/}
                             <input type="checkbox" name="13" id="13b" value="13b" />
-                            <label for="13b">Mellan stor hund (45-55 cm mankhöjd)</label>
+                            <label htmlFor="13b">Mellan stor hund (45-55 cm mankhöjd)</label>
                         </div>
                         <div style={{padding: "10px 0"}}>
                             {/* 13c*/}
                             <input type="checkbox" name="13" id="13c" value="13c" />
-                            <label for="13c">Stor hund (55 cm+ mankhöjd)</label>
+                            <label htmlFor="13c">Stor hund (55 cm+ mankhöjd)</label>
                         </div>
                     </div>
                     <div style={{display: "flex", flexDirection: "row", alignSelf: "center", marginTop: "30px"}}>

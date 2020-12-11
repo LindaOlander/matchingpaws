@@ -12,12 +12,12 @@ function App() {
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
-      <Route path="/" exact="true" component={Start} />
-      <Route path="/adoptera" exact="true" component={Adoptera} />
+      <Route path="/" exact component={Start} />
+      <Route path="/adoptera" exact component={Adoptera} />
       <Route path="/adoptera/:id" component={DogPage} />
-      <Route path="/adoptera-bort" exact="true" component={GiveAway} />
-      <Route path="/quiz" exact="true" component={Quiz} />
-      <Route path="/om" exact="true" component={Om} />
+      <Route path="/adoptera-bort" exact component={GiveAway} />
+      <Route path="/quiz" exact component={Quiz} />
+      <Route path="/om" exact component={Om} />
     </Router>
   );
 }
