@@ -1,59 +1,35 @@
-import React from 'react';
-//import {useDispatch, useSelector} from 'react-redux';
-//import Dog from '../Dog/DogPage';
-//import { fetchDogs } from '../../store/actions/dogAction';
-import dogsJson from '../../dogsJson.json';
+import React, { useState, useEffect } from 'react';
 import DogBox from '../DogBox/DogBox';
+import axios from 'axios';
+import './DogList.css';
 
 const DogList = () => {
-  //const [filteredDogs, setFilteredDogs] = useState([]);
-  // const dogs = useSelector(state => state.dogs);
-  // const dispatch = useDispatch();
-  
-  // const getDogs = () => {
-  //   dispatch(fetchDogs())
-  // };
+  const finalprojectServer =
+  process.env.NODE_ENV === "production"
+  ? "https://finalprojectlinda.herokuapp.com/products"
+  : "http://localhost:8080/dogs";
 
-  // const getDogImage = () => {
-  //   dispatch(fetchRandomDogImage())
-  // };
+  const [data, setData] = useState([{}]);
 
-  // const filterDogs = () => {
-  //   const copyDogs = [...dogs];
-  //   const filtered = copyDogs.filter(dog => dog.startsWith('e'))
-  //   setFilteredDogs(filtered)
-  // }
+  useEffect(() => {
+    const fetchDogs = async () => {
+      const result = await axios(finalprojectServer);
+      setData(result.data);
+    };
+ 
+    fetchDogs();
+  }, []);
 
-  // useEffect(() => {
-  //   setFilteredDogs(dogs)
-  // }, [dogs]);
-
-  // let allDogs = dogsJson.dogs;
-
-  // const filterAge = () => {
-  //   const copyDogs = [...allDogs]
-  //   const filterOnAge = dogsJson.dogs.filter(dog => dog.age > 2);
-  //   setFilteredDogs(filterOnAge);
-  // }
-
-  // console.log('allDogs', allDogs);
-
-  // const arr2 = dogsJson.dogs.filter(dog => dog.children === true);
-  // console.log('arr2', arr2);
-
-  //const ageAndGender = d => d.age > 37 && d.gender === 'female';
-
-  //const arr3 = dogsJson.dogs.filter(ageAndGender);
-  //console.log('arr3', arr3);
+  console.log(data);
 
   return (
-    <div className="siteWrapper">
-      {/* <button className="button" onClick={getDogs}>Alla hundar</button>
-      <button className="button" onClick={filterDogs}>Se mina matchningar</button>
-      <Dog dogs={filteredDogs}/> */}
-
-      {dogsJson.dogs.map(dog =>
+    <div className="dogs-wrapper">
+      <div id="dogs" style={{padding: "60px 10px 0 10px"}}>
+        <h4 style={{margin: "0", fontSize: "24px", textAlign: "center"}}>Enligt våra algoritmer skulle du passa bäst ihop med:</h4>
+      </div>
+      {data.map(dog =>
         <DogBox
+          key={dog._id}
           name={dog.name}
           image={dog.image}
           breed={dog.breed}
@@ -61,7 +37,7 @@ const DogList = () => {
           cat={dog.cat}
           children={dog.children}
           longWalks={dog.longWalks}
-          id={dog.id} />)}
+          id={dog._id} />)}
     </div>
   )
 };

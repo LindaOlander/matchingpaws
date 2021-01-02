@@ -1,0 +1,80 @@
+.addProductContainer {
+    width: 100%;
+    padding: 20px 30px 0 30px;
+}
+
+.postingForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.postingForm input {
+    margin: 10px 0;
+}
+
+.questionContainer {
+    margin: 20px 0;
+}
+
+.questionHeading {
+    padding-top: 0;
+    margin-top: 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.inputRadioWrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.inputRadioWrapper input {
+    margin: 0;
+    margin-right: 10px;
+}
+
+.inputRadioWrapper label {
+    font-size: 20px;
+    margin: 10px 0;
+    /* margin: 0 0 0 40px; */
+}
+
+.labelText {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+.labelText input {
+    font-size: 20px;
+}
+
+.inputRadioWrapper input[type="radio"]:checked ~ * { 
+    text-decoration: underline;
+}
+
+/* .inputRadioLabel input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.inputRadioLabel .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+.inputRadioLabel:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.inputRadioLabel input:checked ~ .checkmark {
+    background-color: #2196F3;
+  } */

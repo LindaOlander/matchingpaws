@@ -1,8 +1,8 @@
 import React from 'react';
-import Dogs from '../../DogList/Dogs';
 import Navbar from '../../Navbar/Navbar';
 import HeaderAdopt from '../../Header/HeaderAdopt';
 import Quiz from '../Quiz/Quiz';
+import DogList from '../../DogList/DogList';
 
 const Adoptera = () => {
     return (
@@ -10,7 +10,7 @@ const Adoptera = () => {
             <Navbar />
             <HeaderAdopt />
             <Quiz />
-            <Dogs />
+            <DogList />
         </>
     )
 }

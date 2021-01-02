@@ -1,7 +1,7 @@
 import React from 'react';
-import Dogs from '../../DogList/Dogs';
 import Navbar from '../../Navbar/Navbar';
 import Footer from '../../Footer/Footer';
+import DogList from '../../DogList/DogList';
 
 const Quiz = () => {
     return (
@@ -404,7 +404,7 @@ const Quiz = () => {
                     </div>
                 </div>
             </div>
-            <Dogs />
+            <DogList />
             <Footer />
         </>
     )
