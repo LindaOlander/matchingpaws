@@ -15,7 +15,7 @@ const Navbar = ({color}) => {
                 <span></span>
                 <ul id="menu">
                     <Link to="/"><li><b>Matching Paws</b></li></Link>
-                    <Link to="/quiz"><li>Hitta din match</li></Link>
+                    <Link to="/adoptera"><li>Hitta din match</li></Link>
                     <Link to="/omplacera"><li>Att behöva omplacera</li></Link>
                     <Link to="/quiz"><li>Livet med hund</li></Link>
                     <Link to="/quiz"><li>Adoptionsprocessen</li></Link>
@@ -24,7 +24,7 @@ const Navbar = ({color}) => {
             </div>
             <div className="header-menu">
                 <Link to="/"><p><b>Matching Paws</b></p></Link>
-                <Link to="/quiz"><p>Hitta din match</p></Link>
+                <Link to="/adoptera"><p>Hitta din match</p></Link>
                 <Link to="/omplacera"><li>Att behöva omplacera</li></Link>
                 <Link to="/quiz"><p>Livet med hund</p></Link>
                 <Link to="/quiz"><p>Adoptionsprocessen</p></Link>

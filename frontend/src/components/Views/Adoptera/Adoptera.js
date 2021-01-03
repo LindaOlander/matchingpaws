@@ -8,8 +8,7 @@ const Adoptera = () => {
     return (
         <>
             <Navbar />
-            <HeaderAdopt />
-            <Quiz />
+            {/* <Quiz /> */}
             <DogList />
         </>
     )

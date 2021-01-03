@@ -6,7 +6,6 @@ import DogList from '../../DogList/DogList';
 const Quiz = () => {
     return (
         <>
-            <Navbar />
             <div style={{height: "100vh", backgroundColor: "rgb(8, 29, 41)", padding: "0 10px", textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", background: "url(https://images.unsplash.com/photo-1504595403659-9088ce801e29?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8ZG9nc3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=700&q=60)"}}>
                 <h1 style={{color: "#222222", margin: "0"}}>Hitta din bästa vän</h1>
                 <p>Låt våra algoritmer identifiera lämpliga matchingar till dig</p>
@@ -404,8 +403,6 @@ const Quiz = () => {
                     </div>
                 </div>
             </div>
-            <DogList />
-            <Footer />
         </>
     )
 }

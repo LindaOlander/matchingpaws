@@ -167,6 +167,10 @@ app.get('/dogs', (req, res) => {
     Dog.find({ style: req.query.style }).then(dog => {
       res.json(dog)
     })
+  } else if (req.query.age) {
+    Dog.find({ age: req.query.age }).then(dog => { // finds dog.category
+      res.json(dog)
+    })
   } else {
     Dog.find().then(dog => {
       res.json(dog)

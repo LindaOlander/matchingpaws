@@ -1,3 +1,69 @@
 .dogs-wrapper {
     box-sizing: border-box;
 }
+
+/* QUIZ */
+.quizStartWrapper {
+    height: 90vh;
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    /* background-image: url('https://images.unsplash.com/photo-1504595403659-9088ce801e29?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8ZG9nc3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=700&q=6'); */
+    /* background-image: url('https://images.unsplash.com/photo-1555711123-e079203c8359?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTgzfHxkb2dzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'); */
+    /* background-image: url('https://images.unsplash.com/photo-1522233361235-9182b0b01872?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8Mnw0ODIwODIxfHxlbnwwfHx8&auto=format&fit=crop&w=800&q=60'); */
+    /* background-image: url('https://images.unsplash.com/photo-1571972269933-1289cd01e0aa?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60'); */
+    background-image: url('https://images.unsplash.com/photo-1562771968-460f99cf25e5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=668&q=80');
+    background-size: cover;
+}
+
+.quizStartWrapper h1 {
+    margin: 270px 0 0 0;
+    color: white;
+    background-color: #222222;
+}
+
+.quizStartWrapper p {
+    font-size: 22px;
+    color: white;
+    text-align: center;
+}
+
+.quizWrapper {
+    height: 90vh;
+    background-color: #36423F;
+    padding-top: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.questionWrapper {
+    min-height: 200px;
+    width: 340px;
+    background-color: #fff;
+    border-radius: 9px;
+    margin: 0 20px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 30px 0;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0;
+}
+
+.inputContainer input {
+    margin: 3px 8px 0px 0px;
+}

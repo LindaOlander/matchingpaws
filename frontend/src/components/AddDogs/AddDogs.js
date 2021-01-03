@@ -520,7 +520,7 @@ const AddDogs = () => {
                             checked={state.energi === "båda"}
                             onChange={handleChange}
                         />
-                        <span>Lugnt och sansat</span>
+                        <span>Min hund kan trivas i både lugnare och mer fartfyllda hem</span>
                     </label>
                 </div>
             </div>

@@ -25,6 +25,13 @@ h4 {
   font-weight: normal;
 }
 
+h5 {
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
 .siteWrapper {
   padding: 0 150px;
 }
@@ -60,12 +67,12 @@ h4 {
 }
 
 .button {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-between; */
   min-width: 130px;
   font-size: 18px;
-  margin: 0 20px;
+  /* margin: 0 20px; */
   padding: 16px 30px;
   background-color: #ffffff;
   color: #222222;
