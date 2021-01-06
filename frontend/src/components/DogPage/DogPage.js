@@ -33,6 +33,7 @@ const DogPage = ({ match }) => {
             </div>
           <div className="dogpage-info-wrapper">
               <h2>{data.hundnamn}</h2>
+              <p><i>{data.beskrivning}</i></p>
               <p>Ras: {data.ras}</p>
               <p>Ålder: {data.alder} år</p>
               <p>Storlek: {data.storlek}</p>

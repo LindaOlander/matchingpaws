@@ -6,6 +6,7 @@ import AboutMedium from '../../About/AboutMedium';
 import AboutSmall from '../../About/AboutSmall';
 import Navbar from '../../Navbar/Navbar';
 import Footer from '../../Footer/Footer';
+import BannerAgria from '../../Banners/BannerAgria';
 
 const Start = () => {
     const { pathname } = useLocation();
@@ -23,6 +24,7 @@ const Start = () => {
                 <Link to="/quiz"><h3 style={{color: "#ffffff"}}>Låt våra algoritmer hitta den perfekta hunden för dig</h3></Link>
             </div>
             <AboutSmall />
+            <BannerAgria />
             <Footer />
         </>
     )

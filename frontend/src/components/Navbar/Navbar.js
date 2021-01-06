@@ -17,8 +17,8 @@ const Navbar = ({color}) => {
                     <Link to="/"><li><b>Matching Paws</b></li></Link>
                     <Link to="/adoptera"><li>Hitta din match</li></Link>
                     <Link to="/omplacera"><li>Att behöva omplacera</li></Link>
-                    <Link to="/quiz"><li>Livet med hund</li></Link>
-                    <Link to="/quiz"><li>Adoptionsprocessen</li></Link>
+                    <Link to="/hund"><li>Livet med hund</li></Link>
+                    <Link to="/"><li>Adoptionsprocessen</li></Link>
                     <Link to="/om"><li>Om oss</li></Link>
                 </ul>
             </div>
@@ -26,8 +26,8 @@ const Navbar = ({color}) => {
                 <Link to="/"><p><b>Matching Paws</b></p></Link>
                 <Link to="/adoptera"><p>Hitta din match</p></Link>
                 <Link to="/omplacera"><li>Att behöva omplacera</li></Link>
-                <Link to="/quiz"><p>Livet med hund</p></Link>
-                <Link to="/quiz"><p>Adoptionsprocessen</p></Link>
+                <Link to="/hund"><p>Livet med hund</p></Link>
+                <Link to="/"><p>Adoptionsprocessen</p></Link>
                 <Link to="/om"><p>Om oss</p></Link>
             </div>
         </header>

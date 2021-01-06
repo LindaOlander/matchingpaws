@@ -58,6 +58,8 @@ const DogList = () => {
     setBoende(boendeInput);
   }
 
+  const dogMatch = data.length > 0;
+
   return (
     <>
       <div className="quizStartWrapper" id="quizStart">
@@ -139,8 +141,20 @@ const DogList = () => {
         </div>
       </div>
       <div className="dogs-wrapper" id="dogs">
-        <div style={{padding: "60px 10px 0 10px"}}>
-          <h4 style={{margin: "0", fontSize: "24px", textAlign: "center"}}>Enligt våra algoritmer skulle du passa bäst ihop med:</h4>
+        <div style={{padding: "60px 10px 20px 10px", display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+          {!dogMatch && (
+            <>
+              <h4 style={{margin: "0 0 15px 0", fontSize: "24px", textAlign: 'center'}}>
+                Just nu finns ingen matchning för dig. Men det kommer löpande in hundar. Lämna din mailadress så meddelar vi dig när du får en matchning.
+              </h4>
+              <input placeholder="Din mailadress"/>
+            </>
+          )}
+          {dogMatch && (
+            <h4 style={{margin: "0", fontSize: "24px", textAlign: "center"}}>
+              Enligt våra algoritmer skulle du passa bäst ihop med:
+            </h4>
+          )}
         </div>
         {data.map(dog =>
           <DogBox

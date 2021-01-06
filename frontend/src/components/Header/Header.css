@@ -34,28 +34,6 @@
     color: #ffffff;
 }
 
-/* .headerGiveAway {
-    box-sizing: border-box;
-    width: 100%;
-    background-color: rgb(249, 231, 159);
-    min-height: 180px;
-    background-color: #e6e6e6;
-    display: flex;
-    flex-direction: column;
-    padding: 0 500px 0 150px;
-} */
-
-/* .headerGiveAway h1 {
-    font-size: 75px;
-    line-height: 70px;
-    margin-top: 70px;
-} */
-
-/* .headerGiveAway p {
-    margin-top: -20px;
-    margin-bottom: 40px;
-} */
-
 @media screen and (max-width: 820px) {
     .header {
         height: 80vh;
@@ -99,5 +77,13 @@
 
     .headerAbout h1 {
         margin: 0;
+    }
+
+    .headerHundlivet {
+        padding: 80px 15px 0 15px;
+    }
+
+    .headerHundlivet p {
+        font-size: 22px;
     }
 }
