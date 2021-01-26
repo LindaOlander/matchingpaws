@@ -62,9 +62,16 @@
 .inputContainer {
     display: flex;
     flex-direction: row;
-    margin: 5px 0;
+    align-items: center;
+    margin: 10px 0;
 }
 
-.inputContainer input {
-    margin: 3px 8px 0px 0px;
+.inputContainerCheckbox {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
 }
+
+/*.inputContainer input {
+    margin: 3px 8px 0px 0px;
+} */

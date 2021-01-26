@@ -6,7 +6,7 @@ import './DogList.css';
 const DogList = () => {
   const finalprojectServer =
   process.env.NODE_ENV === "production"
-  ? "https://finalprojectlinda.herokuapp.com/products"
+  ? "https://matchingpaws.herokuapp.com/dogs"
   : "http://localhost:8080/dogs";
 
   const [data, setData] = useState([{}]);
@@ -62,14 +62,14 @@ const DogList = () => {
 
   return (
     <>
-      <div className="quizStartWrapper" id="quizStart">
+      <div>
+      {/* <div className="quizStartWrapper" id="quizStart">
         <h1>Hitta din bästa vän</h1>
         <p>Låt våra algoritmer identifiera lämpliga matchingar till dig</p>
         <a href="#questionErfarenhet"><button className="button" style={{textAlign: "center"}}>Starta</button></a>
       </div>
       <div className="quizWrapper" id="questionErfarenhet">
         <div className="questionWrapper">
-            {/* Erfarenhet */}
             <h5>Vilket alternativ beskriver bäst din tidigare hunderfarenhet?</h5>
             <div className="inputWrapper">
               <div className="inputContainer">
@@ -96,7 +96,6 @@ const DogList = () => {
       </div>
       <div className="quizWrapper" id="questionCat">
         <div className="questionWrapper">
-          {/* Cat */}
           <h5>Finns det katt i hemmet?</h5>
           <div className="inputWrapper">
             <div className="inputContainer">
@@ -115,7 +114,6 @@ const DogList = () => {
       </div>
       <div className="quizWrapper" id="questionBoende">
         <div className="questionWrapper">
-          {/* Boende */}
           <h5>Hur bor du?</h5>
           <div className="inputWrapper">
             <div className="inputContainer">  
@@ -155,7 +153,7 @@ const DogList = () => {
               Enligt våra algoritmer skulle du passa bäst ihop med:
             </h4>
           )}
-        </div>
+        </div> */}
         {data.map(dog =>
           <DogBox
             key={dog._id}

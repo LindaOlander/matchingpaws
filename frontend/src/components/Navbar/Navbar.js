@@ -20,6 +20,7 @@ const Navbar = ({color}) => {
                     <Link to="/hund"><li>Livet med hund</li></Link>
                     <Link to="/"><li>Adoptionsprocessen</li></Link>
                     <Link to="/om"><li>Om oss</li></Link>
+                    <Link to="/hundar"><li>Hundar</li></Link>
                 </ul>
             </div>
             <div className="header-menu">
@@ -29,6 +30,7 @@ const Navbar = ({color}) => {
                 <Link to="/hund"><p>Livet med hund</p></Link>
                 <Link to="/"><p>Adoptionsprocessen</p></Link>
                 <Link to="/om"><p>Om oss</p></Link>
+                <Link to="/hundar"><p>Hundar</p></Link>
             </div>
         </header>
     )
