@@ -99,7 +99,8 @@ const AddDogs = () => {
             lank: state.lank
         }
 
-        const herokuUrl = "http://localhost:8080/dogs/";
+        // const herokuUrl = "http://localhost:8080/dogs/";
+        const herokuUrl = "https://test-matchingpaws.herokuapp.com/dogs";
 
         fetch(herokuUrl, {
                 headers: { "Content-Type": "application/json" },
@@ -113,7 +114,7 @@ const AddDogs = () => {
                 console.log('Request failure: ', error)
                 alert(error)
             })
-
+            console.log('dog added')
     }
 
     return (
@@ -292,8 +293,8 @@ const AddDogs = () => {
                         <input
                             type="radio"
                             name="allergi"
-                            value="lite"
-                            checked={state.allergi === "lite"}
+                            value="nej"
+                            checked={state.allergi === "nej"}
                             onChange={handleChange}
                         />
                         <span>Nej</span>

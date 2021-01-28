@@ -7,9 +7,7 @@ import Adoptera from './components/Views/Adoptera/Adoptera';
 import Om from './components/Views/Om/Om';
 import Omplacera from './components/Views/Omplacera/Omplacera';
 import Hundlivet from './components/Views/Hundlivet/Hundlivet';
-import Forumlär from './components/Formulär/Formulär';
 import './App.css';
-import Resultat from './components/Formulär/Resultat';
 import DogList from './components/DogList/DogList';
 
 function App() {

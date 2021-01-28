@@ -16,13 +16,22 @@ const DogList = () => {
 
   useEffect(() => {
     const fetchDogs = async () => {
-      const result = await axios(finalprojectServer);
+      const result = await axios('https://test-matchingpaws.herokuapp.com/dogs');
       setData(result.data);
     };
  
     fetchDogs();
   }, []);
 
+  // useEffect(() => {
+  //   const fetchDogs = async () => {
+  //     const result = await axios(finalprojectServer);
+  //     setData(result.data);
+  //   };
+ 
+  //   fetchDogs();
+  // }, []);
+  
   console.log(data);
 
   const filterErfarenhet = () => {
@@ -62,8 +71,7 @@ const DogList = () => {
 
   return (
     <>
-      <div>
-      {/* <div className="quizStartWrapper" id="quizStart">
+      <div className="quizStartWrapper" id="quizStart">
         <h1>Hitta din bästa vän</h1>
         <p>Låt våra algoritmer identifiera lämpliga matchingar till dig</p>
         <a href="#questionErfarenhet"><button className="button" style={{textAlign: "center"}}>Starta</button></a>
@@ -153,7 +161,7 @@ const DogList = () => {
               Enligt våra algoritmer skulle du passa bäst ihop med:
             </h4>
           )}
-        </div> */}
+        </div>
         {data.map(dog =>
           <DogBox
             key={dog._id}

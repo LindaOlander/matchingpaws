@@ -10,6 +10,8 @@ import DogBox from '../DogBox/DogBox';
 /* eslint react/prop-types: 0 */
 
 const Wizard = () => {
+    const [data, setData] = useState([{}]);
+    
     const [state, updateState] = useState({
         form: {
             hunderfarenhet: '', 
@@ -39,12 +41,18 @@ const Wizard = () => {
     const onStepChange = (stats) => {
     };
 
-    const setInstance = SW => updateState({
-        ...state,
-        SW,
-    });
+    useEffect(() => {
+        const fetchDogs = async () => {
+          const result = await axios('https://test-matchingpaws.herokuapp.com/dogs');
+          setData(result.data);
+        };
+     
+        fetchDogs();
+      }, []);
 
-    const { SW, demo } = state;
+      console.log('state', state.form)
+      console.log('data', data)
+
 
     return (
         <div className='wizardContainer'>
@@ -258,35 +266,6 @@ const Last = (props) => {
     const submit = () => {
         alert('You did it! Yay!') // eslint-disable-line
     };
-
-    const finalprojectServer =
-        process.env.NODE_ENV === "production"
-        ? "https://matchingpaws.herokuapp.com/dogs"
-        : "http://localhost:8080/dogs";
-
-    const [data, setData] = useState([{}]);
-
-    useEffect(() => {
-        const fetchDogs = async () => {
-        const result = await axios(finalprojectServer);
-        setData(result.data);
-        };
-    
-        fetchDogs();
-    }, []);
-
-    console.log('data', data)
-    console.log('state', props.form)
-
-    const filterDogs = () => {
-        const copyDogs = [...data];
-        const formState = props.form;
-        console.log('erfarehenhet från data', copyDogs.hunderfarenhet);
-        console.log('erfarenhet från form', formState.hunderfarenhet)
-        const filterOnErfarenhet = copyDogs.filter(dog => dog.hunderfarenhet === formState.hunderfarenhet)
-        setData(filterOnErfarenhet);
-      }
-
     return (
         <>
             <div className="wizardWrapper">
@@ -294,16 +273,7 @@ const Last = (props) => {
                 <p>{props.form.hunderfarenhet}</p>
                 <p>{props.form.cat}</p>
                 <p>{props.form.aktiviteter}</p>
-                <button onClick={filterDogs}>Filtrera</button>
                 <Stats step={4} {...props} nextStep={submit} />
-                {data.map(dog =>
-                <DogBox
-                    key={dog._id}
-                    hundnamn={dog.hundnamn}
-                    alder={dog.alder}
-                    ras={dog.ras}
-                    bild={dog.bild}
-                    id={dog._id} />)}
             </div>
         </>
     );
