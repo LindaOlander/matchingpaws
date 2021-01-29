@@ -132,18 +132,18 @@ class WizardParent extends React.Component {
         const copyDogs = [...this.state.data];
         const filterOnErfarenhet = copyDogs.filter(dog => dog.hunderfarenhet === this.state.hunderfarenhet)
         this.setState({data: filterOnErfarenhet}); 
-        const filterOnBoende = copyDogs.filter(dog => dog.boende === this.state.boende)
-        this.setState({data: filterOnBoende}); 
-        const filterOnFysik = copyDogs.filter(dog => dog.fysik === this.state.fysik)
-        this.setState({data: filterOnFysik}); 
-        const filterOnAllergi = copyDogs.filter(dog => dog.allergi === this.state.allergi)
+        // const filterOnBoende = copyDogs.filter(dog => dog.boende === this.state.boende)
+        // this.setState({data: filterOnBoende}); 
+        // const filterOnFysik = copyDogs.filter(dog => dog.fysik === this.state.fysik)
+        // this.setState({data: filterOnFysik}); 
+        // const filterOnAllergi = copyDogs.filter(dog => dog.allergi === this.state.allergi)
         // this.setState({data: filterOnAllergi}); 
         // const filterOnBarn = copyDogs.filter(dog => dog.barn === this.state.barn)
         // this.setState({data: filterOnBarn}); 
         // const filterOnHundpassning = copyDogs.filter(dog => dog.hundpassning === this.state.hundpassning)
         // this.setState({data: filterOnHundpassning}); 
-        const filterOnAktivitet = copyDogs.filter(dog => dog.aktivitet === this.state.aktivitet)
-        this.setState({data: filterOnAktivitet}); 
+        // const filterOnAktivitet = copyDogs.filter(dog => dog.aktivitet === this.state.aktivitet)
+        // this.setState({data: filterOnAktivitet}); 
         // const filterOnEnergi = copyDogs.filter(dog => dog.energi === this.state.energi)
         // this.setState({data: filterOnEnergi}); 
         // const filterOnProblematik = copyDogs.filter(dog => dog.problematik === this.state.problematik)
@@ -193,7 +193,7 @@ class WizardParent extends React.Component {
             </div>
           </Step>
 
-          <Step title="Fysik" description="Fysik">
+          {/* <Step title="Fysik" description="Fysik">
             <div>
                 Vilket alternativ beskriver bäst din fysiska förmåga?
                 <div className="inputContainer">
@@ -212,9 +212,9 @@ class WizardParent extends React.Component {
                     <label className="radioLabel" htmlFor='låg'>Jag har vissa fysiska begränsningar som gör att jag inte är lämplig som ägare till starkare hundar</label>
                 </div>
             </div>
-            </Step>
+            </Step> */}
 
-          <Step title="Allergi" description="Allergi">
+          {/* <Step title="Allergi" description="Allergi">
             <div>
                 Har du pälsallergi?
                 <div className="inputContainer">  
@@ -228,7 +228,7 @@ class WizardParent extends React.Component {
                     <label className="radioLabel" htmlFor='allergiNej'>Nej</label>
                 </div>
             </div>
-          </Step>
+          </Step> */}
           
 
           {/*}<Step title="Barn" description="Barn">
@@ -297,14 +297,14 @@ class WizardParent extends React.Component {
             </div>
           </Step>*/}
 
-          <Step title="Aktiviteter" description="Aktiviteter">
+          {/* <Step title="Aktiviteter" description="Aktiviteter">
             <div>
                 Vilken typ av aktiviteter planerar du att göra med din hund?
                 <div className="inputContainer">  
                     <input type="checkbox" onClick={this.onClick} value={!this.state.test}></input>
                 </div>
                 <div className="inputContainer">  
-                    {/* <input type='checkbox' id='sällskap' name='aktivitet' value='sällskap' checked={this.state.aktivitet === 'sällskap'} onChange={this.handleAktivitetChange} /> */}
+                    <input type='checkbox' id='sällskap' name='aktivitet' value='sällskap' checked={this.state.aktivitet === 'sällskap'} onChange={this.handleAktivitetChange} />
                     <input type="checkbox"
                         checked={this.state.aktivitet.sällskap}
                         onChange={this.handleAktivitetSällskapChange}
@@ -316,7 +316,7 @@ class WizardParent extends React.Component {
                     <label htmlFor='jakt'>Hunden kommer användas till jakt</label>
                 </div>
                 <div className="inputContainer">
-                    {/* <input type='checkbox' id='sportkompis' name='aktivitet' value='sportkompis' checked={this.state.aktivitet === 'sportkompis'} onChange={this.handleAktivitetChange} /> */}
+                    <input type='checkbox' id='sportkompis' name='aktivitet' value='sportkompis' checked={this.state.aktivitet === 'sportkompis'} onChange={this.handleAktivitetChange} />
                     <input type="checkbox"
                         checked={this.state.aktivitet.sportkompis}
                         onChange={this.handleAktivitetSportkompisChange}
@@ -336,7 +336,7 @@ class WizardParent extends React.Component {
                     <label htmlFor='vakt'>Hunden kommer användas som vakthund</label>
                 </div>
             </div>
-          </Step>
+          </Step> */}
 
           {/* <Step title="Energi" description="Energi">
             <div>

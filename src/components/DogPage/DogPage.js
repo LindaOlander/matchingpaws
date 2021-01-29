@@ -12,7 +12,7 @@ const DogPage = ({ match }) => {
 
     useEffect(() => {
       const fetchDogs = async () => {
-        const result = await axios(`http://localhost:8080/dogs/${id}`);
+        const result = await axios(`https://test-matchingpaws.herokuapp.com/dogs/${id}`);
         setData(result.data);
       };
       fetchDogs();
@@ -29,7 +29,7 @@ const DogPage = ({ match }) => {
       <Link to="/adoptera"><div className="back">Gå tillbaka</div></Link>
         <div className="dogpage-wrapper">
             <div className="dogpage-image-wrapper">
-              <img alt="dog" src={data.bild} className="dogpage-image"/>}
+              <img alt="dog" src={data.bild} className="dogpage-image"/>
             </div>
           <div className="dogpage-info-wrapper">
               <h2>{data.hundnamn}</h2>
