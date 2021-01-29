@@ -1,4 +1,5 @@
 import React from "react";
+import './Wizard.css';
 
 export const WizardForm = ({ step: currentIndex, ...props }) => {
   const steps = React.Children.toArray(props.children);
@@ -7,12 +8,11 @@ export const WizardForm = ({ step: currentIndex, ...props }) => {
     currentIndex !== steps.length - 1 && steps[currentIndex + 1].props;
 
   return (
-    <div>
+    <div >
       {steps[currentIndex]}
-
-      <div>
+      <div className="wizardButtonWrapper">
         <Button
-          visible={prevStep}
+          visible={prevStep < 1}
           onClick={() => props.onChange(currentIndex - 1)}
           title={prevStep.description}
         >

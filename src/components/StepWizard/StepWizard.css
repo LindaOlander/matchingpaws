@@ -1,17 +1,17 @@
-.wizardContainer {
+/* .wizardContainer {
     height: 100vh;
     display: flex;
     margin-top: 200px;
-}
+} */
 
-.wizardWrapper {
+/* .wizardWrapper {
     padding: 0 20px;
 }
 
 .wizardWrapper h5 {
     margin-bottom: 2
     0px;
-}
+} */
 
 .checkbox {
     position: relative;
@@ -62,7 +62,7 @@
 .check {
     display: block;
     position: absolute;
-    border: 2px solid #f2f2f2;
+    border: 2px solid #dbdada;
     border-radius: 100%;
     height: 18px;
     width: 18px;
