@@ -5,7 +5,6 @@
     flex-direction: column;
     padding: 0 25px;
     padding-top: 150px;
-    /* justify-content: center; */
 }
 
 .wizardButtonWrapper {
@@ -13,21 +12,13 @@
 }
 
 .wizardButtonWrapper button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 8px;
     margin-right: 10px;
-    background-color: #f5baac;
 }
 
-.wizardButtonWrapper button:hover {
-    background-color: #ea947e;
-}
 
 .inputContainer {
     display: flex;
     flex-direction: row;
-    align-items: center;
     margin: 20px 0;
 }
 

@@ -9,7 +9,11 @@ import WizardParent from '../../StepWizard/Wizard/WizardParent';
 const Adoptera = () => {
     return (
         <>
-            <Navbar />
+            <Navbar color="black" />
+            <div className="headerWizard" style={{height: '100vh', padding: '0 25px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+                <h2>Hitta din match</h2>
+                <a href="#quiz"><button>Starta testet</button></a>
+            </div>
             <WizardParent />
             {/* <Wizard /> */}
             {/* <Quiz /> */}
