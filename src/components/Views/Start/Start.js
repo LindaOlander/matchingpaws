@@ -21,7 +21,7 @@ const Start = () => {
             <Header />
             <AboutMedium />
             <div style={{height: "30vh", color: "#ffffff", backgroundColor: "#838976", padding: "0 40px", display: "flex", alignItems: "center", justifyContent: "center"}}>
-                <Link to="/quiz"><h3 style={{color: "#ffffff"}}>Låt våra algoritmer hitta den perfekta hunden för dig</h3></Link>
+                <Link to="/quiz"><h3 style={{color: "#ffffff"}}>Hitta min bästa vän. Testa vårt matchningsverktyg här</h3></Link>
             </div>
             <AboutSmall />
             <BannerAgria />

@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../../Navbar/Navbar';
+import NavbarBlack from '../../Navbar/NavbarBlack';
 import Footer from '../../Footer/Footer';
 import HeaderHundlivet from '../../Header/HeaderHundlivet';
 import FaqBoxes from '../../FaqBoxes/FaqBoxes';
@@ -8,7 +8,7 @@ import FaqAccordion from '../../FaqAccordion/FaqAccordion';
 const Hundlivet = () => {
     return (
         <>
-            <Navbar color="black"/>
+            <NavbarBlack color="black"/>
             <HeaderHundlivet />
             <FaqBoxes />
             <div id="förberedelser" style={{margin: "0 15px"}}>

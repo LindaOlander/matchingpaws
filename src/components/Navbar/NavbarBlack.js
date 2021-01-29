@@ -4,13 +4,12 @@ import './NavBar.css';
 
 
 const Navbar = ({color}) => {
-    const iconWhite = require('../../images/Icon-MatchingPaws-white.png')
     const iconBlack = require('../../images/Icon-MatchingPaws-black.png')
     return (
         <header className="navbar">
             <Link to="/">
                 <div className="navbar-logo">
-                    <img className="logo" src={iconWhite.default} />
+                    <img className="logo" src={iconBlack.default} />
                     <p className="logoText" style={{color: `${color}`}}>Matching Paws</p>
                 </div>
             </Link>

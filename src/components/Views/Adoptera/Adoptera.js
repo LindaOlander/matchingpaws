@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../../Navbar/Navbar';
+import NavbarBlack from '../../Navbar/NavbarBlack';
 import HeaderAdopt from '../../Header/HeaderAdopt';
 import Quiz from '../Quiz/Quiz';
 import DogList from '../../DogList/DogList';
@@ -9,7 +9,7 @@ import WizardParent from '../../StepWizard/Wizard/WizardParent';
 const Adoptera = () => {
     return (
         <>
-            <Navbar color="black" />
+            <NavbarBlack color="black" />
             <div className="headerWizard" style={{height: '100vh', padding: '0 25px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                 <h2>Hitta din match</h2>
                 <a href="#quiz"><button>Starta testet</button></a>
