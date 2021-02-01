@@ -22,18 +22,18 @@ const Navbar = ({color}) => {
                 <ul id="menu">
                     <Link to="/"><li><img className="logo" src={iconBlack.default} /></li></Link>
                     <Link to="/adoptera"><li>Hitta din match</li></Link>
-                    <Link to="/omplacera"><li>Att behöva omplacera</li></Link>
+                    <Link to="/omplacera"><li>Omplacera</li></Link>
                     <Link to="/hund"><li>Livet med hund</li></Link>
-                    <Link to="/"><li>Adoptionsprocessen</li></Link>
+                    <Link to="/adoptionsprocessen"><li>Adoptionsprocessen</li></Link>
                     <Link to="/om"><li>Om oss</li></Link>
                 </ul>
             </div>
             <div className="header-menu">
                 <Link to="/"><p><b>Matching Paws</b></p></Link>
                 <Link to="/adoptera"><p>Hitta din match</p></Link>
-                <Link to="/omplacera"><li>Att behöva omplacera</li></Link>
+                <Link to="/omplacera"><li>Omplacera</li></Link>
                 <Link to="/hund"><p>Livet med hund</p></Link>
-                <Link to="/"><p>Adoptionsprocessen</p></Link>
+                <Link to="/adoptionsprocessen"><p>Adoptionsprocessen</p></Link>
                 <Link to="/om"><p>Om oss</p></Link>
             </div>
         </header>

@@ -78,3 +78,6 @@
 .inputRadioLabel input:checked ~ .checkmark {
     background-color: #2196F3;
   } */
+
+  .submitMessage {
+  }

@@ -7,8 +7,9 @@ import Adoptera from './components/Views/Adoptera/Adoptera';
 import Om from './components/Views/Om/Om';
 import Omplacera from './components/Views/Omplacera/Omplacera';
 import Hundlivet from './components/Views/Hundlivet/Hundlivet';
-import './App.css';
+import Adoptionsprocessen from './components/Views/Adoptionsprocessen/Adoptionsprocessen';
 import DogList from './components/DogList/DogList';
+import './App.css';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <Route path="/adoptera" exact component={Adoptera} />
       <Route path="/adoptera/:id" component={DogPage} />
       <Route path="/omplacera" exact component={Omplacera} />
+      <Route path="/adoptionsprocessen" exact component={Adoptionsprocessen} />
       <Route path="/hund" exact component={Hundlivet} />
       <Route path="/om" exact component={Om} />
       <Route path="/hundar" exact component={DogList} />

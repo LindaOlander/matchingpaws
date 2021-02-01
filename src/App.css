@@ -10,6 +10,12 @@ body {
   box-sizing: border-box;
 }
 
+p {
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: normal;
+}
+
 h2 {
   font-size: 65px;
   padding: 0;
@@ -185,6 +191,10 @@ button:hover {
 /* .start-wrapper {
   width: fit-content;
 } */
+
+.textblockWrapper {
+  padding: 0 15px;
+}
 
 @media screen and (max-width: 820px) {
   .navbar-wrapper {

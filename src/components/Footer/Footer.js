@@ -11,7 +11,7 @@ import './Footer.css';
 const Footer = () => {
     return (
         <div className="footer-wrapper">
-            <p>Matching Paws</p>
+            <p>© Matching Paws</p>
         </div>
     )
 }

@@ -8,10 +8,14 @@ const FaqBoxes = () => {
                 <a href="#förberedelser">Förberedelser</a>
             </div>
             <div className="boxWrapper image2">
-                <a href="#hämtning">Hämtning</a>
+                <a href="#ekonomi">Ekonomi & försäkringar</a>
             </div>
-            <div className="boxWrapper image3">Under</div>
-            <div className="boxWrapper image4">Prylar</div>
+            <div className="boxWrapper image3">
+                <a href="#första-tiden">Första tiden</a>
+            </div>
+            <div className="boxWrapper image4">
+                <a href="#mat-utrustning">Mat och utrustning</a>
+            </div>
         </div>
     )
 };

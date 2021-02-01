@@ -46,6 +46,8 @@ const AddDogs = () => {
         lank: ""
       })
 
+    const [submitted, setSubmitted] = useState(false);
+
     const handleChange = (event) => {
         const value = 
             event.target.type === "checkbox" ? event.target.checked : event.target.value;
@@ -115,7 +117,15 @@ const AddDogs = () => {
                 alert(error)
             })
             console.log('dog added')
+            
+        }
+        
+    const handleOnSubmit = () => {
+        setSubmitted(true);
     }
+
+    const submitButtonMessage = `Skicka in ${state.hundnamn} för matchning`;
+    console.log(submitted)
 
     return (
     <div className="addProductContainer">
@@ -764,7 +774,18 @@ const AddDogs = () => {
                     <input value={state.lank} type="text" name="lank" onChange={handleChange}/>
                 </label>
             </div>
-            <input className="submitButton" type="submit" />
+            <div style={{margin: '20px 0 20px 0', display: 'flex', justifyContent: 'center'}}>
+                <button style={{fontSize: '18px'}} type="submit" onClick={handleOnSubmit}>
+                    {submitButtonMessage}
+                </button>
+            </div>
+            {submitted && 
+                <div className="submitMessage">
+                    <p>
+                        Din hund är inlagd för matchning.
+                    </p>
+                </div>
+            }
         </form>
     </div>
     )
