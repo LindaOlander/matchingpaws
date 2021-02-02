@@ -503,21 +503,23 @@ class WizardParent extends React.Component {
           </Step> */}
 
           <Step>
-          <h3>Grattis, du har blivit matchad!</h3>
-          <p>Enligt våra algoritmer skulle du passa bäst med nedanstående hundar. Läs på om hunden du matchats med och kontakta deras nuvarande ägare om du seriöst är intresserad av att adoptera deras hund.</p>
-          <button onClick={this.filterDogs}>Visa hundar</button>
-          
-          {this.state.match && 
-            <>
-            {this.state.data.map(dog =>
-                    <DogBox
-                    key={dog._id}
-                        hundnamn={dog.hundnamn}
-                        alder={dog.alder}
-                        ras={dog.ras}
-                        bild={dog.bild}
-                        id={dog._id} />)}
-            </>}
+              <div className="resultContainer">
+                <h3>Grattis, du har blivit matchad!</h3>
+                <p>Enligt våra algoritmer skulle du passa bäst med nedanstående hundar. Läs på om hunden du matchats med och kontakta deras nuvarande ägare om du seriöst är intresserad av att adoptera deras hund.</p>
+                <button onClick={this.filterDogs}>Visa hundar</button>
+                
+                {this.state.match && 
+                    <>
+                    {this.state.data.map(dog =>
+                            <DogBox
+                            key={dog._id}
+                                hundnamn={dog.hundnamn}
+                                alder={dog.alder}
+                                ras={dog.ras}
+                                bild={dog.bild}
+                                id={dog._id} />)}
+                    </>}
+              </div>
           </Step>
 
         </WizardForm>
