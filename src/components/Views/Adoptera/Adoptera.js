@@ -10,8 +10,10 @@ const Adoptera = () => {
     return (
         <>
             <NavbarBlack color="black" />
-            <div className="headerWizard" style={{height: '100vh', padding: '0 25px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+            <div className="headerWizard">
                 <h2>Hitta din match</h2>
+                <p>Låt vårt matchningsverktyg identifiera lämpliga matchningar till dig.</p>
+                <p>Var noga med att svara sanningsenligt på testet - för dig och din framtida hunds skull!</p>
                 <a href="#quiz"><button>Starta testet</button></a>
             </div>
             <WizardParent />

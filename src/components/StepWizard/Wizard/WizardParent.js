@@ -241,14 +241,14 @@ class WizardParent extends React.Component {
                     <label className="radioLabel" htmlFor='ibland'>Då och då när besökare kommer över</label>
                 </div>
                 <div className="inputContainer">  
-                    <input className="radio" type='radio' id='aldrig' name='barn' value='aldrig' checked={this.state.barn === 'aldrig'} onChange={this.handleBarnChange} />
-                    <div className="check"></div>
-                    <label className="radioLabel" htmlFor='aldrig'>Ytterst sällan eller aldrig</label>
-                </div>
-                <div className="inputContainer">  
                     <input className="radio" type='radio' id='ibland' name='barn' value='ibland' checked={this.state.barn === 'ibland'} onChange={this.handleBarnChange} />
                     <div className="check"></div>
                     <label className="radioLabel" htmlFor='ibland'>Till en början inte alls men i framtiden vill jag ha barn som jag önskar att min hund kan leva med</label>
+                </div>
+                <div className="inputContainer">  
+                    <input className="radio" type='radio' id='aldrig' name='barn' value='aldrig' checked={this.state.barn === 'aldrig'} onChange={this.handleBarnChange} />
+                    <div className="check"></div>
+                    <label className="radioLabel" htmlFor='aldrig'>Ytterst sällan eller aldrig</label>
                 </div>
             </div>
           </Step>
