@@ -3,3 +3,13 @@
     background-image: url('https://www.försäkrahunden.se/wp-content/uploads/2018/07/Agria-omslag.jpg');
     background-size: cover;
 }
+
+.bannerQuiz {
+    height: 30vh;
+    color: #ffffff;
+    background-color: #838976;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -7,6 +7,7 @@ import AboutSmall from '../../About/AboutSmall';
 import Navbar from '../../Navbar/Navbar';
 import Footer from '../../Footer/Footer';
 import BannerAgria from '../../Banners/BannerAgria';
+import BannerQuiz from '../../Banners/BannerQuiz';
 
 const Start = () => {
     const { pathname } = useLocation();
@@ -20,9 +21,7 @@ const Start = () => {
             <Navbar />
             <Header />
             <AboutMedium />
-            <div style={{height: "30vh", color: "#ffffff", backgroundColor: "#838976", padding: "0 40px", display: "flex", alignItems: "center", justifyContent: "center"}}>
-                <Link to="/quiz"><h3 style={{color: "#ffffff"}}>Hitta min bästa vän. Testa vårt matchningsverktyg här</h3></Link>
-            </div>
+            <BannerQuiz />
             <AboutSmall />
             <BannerAgria />
             <Footer />
