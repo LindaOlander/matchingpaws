@@ -7,10 +7,13 @@
     width: 100%;
     height: 500px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .dogpage-image {
-    width: 100%;
+    /* width: 100%; */
+    height: 100%;
     background-position: center;
 }
 
@@ -18,7 +21,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    margin: 0 50px;
+    margin: 20px 50px 0 50px;
 }
 
 .dogpage-info-wrapper div {
@@ -72,6 +75,7 @@
     .dogpage-info-wrapper {
         flex-direction: column;
         margin: 0;
+        margin: 20px 0 0 0;
     }
     
     .dogpage-info-wrapper div {

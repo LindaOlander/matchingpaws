@@ -8,3 +8,23 @@
     align-items: center;
     width: 100%;
 }
+
+.footer-wrapper p {
+    margin: 10px 0 0 0;
+}
+
+.footer-wrapper a {
+    color: white;
+    margin: 0;
+}
+
+.footer-icons {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+}
+
+.footer-icons img {
+    width: 20px;
+    margin-right: 10px;
+}

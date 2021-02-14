@@ -10,7 +10,7 @@ const Adoptera = () => {
                 <h2>Hitta din match</h2>
                 <p>Låt vårt matchnings-verktyg identifiera <br /> lämpliga matchningar <br /> till dig.</p>
                 <p>Var noga med att svara sanningsenligt på testet, <br />för dig och din framtida hunds skull!</p>
-                <a href="#quiz"><button>Starta testet</button></a>
+                <a href="#quiz"><button className="button">Starta testet</button></a>
             </div>
             <WizardParent />
         </>

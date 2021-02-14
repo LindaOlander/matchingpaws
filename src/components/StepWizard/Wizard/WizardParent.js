@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import { Step, WizardForm } from "./WizardForm";
 import axios from 'axios';
 import DogBox from "../../DogBox/DogBox";
+import { Link } from "react-router-dom";
 import './Wizard.css';
 
 class WizardParent extends React.Component {
@@ -10,7 +11,12 @@ class WizardParent extends React.Component {
         step: 0, 
         data: [],
         match: false,
-        hunderfarenhet: '',
+        dogsShown: false,
+        hunderfarenhet: {
+            mycket: false,
+            ganska: false,
+            lite: false,
+        },
         fysik: '',
         allergi: '',
         barn: '',
@@ -19,10 +25,10 @@ class WizardParent extends React.Component {
         aktivitet: {
             sällskap: true,
             jakt: true,
-            sportkompis: true,
-            sök: true,
-            hundsport: true,
-            vakt: true
+            sportkompis: false,
+            sök: false,
+            hundsport: false,
+            vakt: false
         },
         energi: '',
         problematik: {},
@@ -36,6 +42,7 @@ class WizardParent extends React.Component {
     fetchUsersWithAxios = () => {
         this.setState({...this.state});
         axios.get('https://test-matchingpaws.herokuapp.com/dogs')
+        // axios.get('http://localhost:8080/dogs')
             .then(response => {
                 this.setState({data: response.data})
             })
@@ -128,9 +135,26 @@ class WizardParent extends React.Component {
         const storlekInput = event.target.value;
         this.setState({storlek: storlekInput});
     }
+
+    handleRedoQuiz = () => {
+        window.scrollTo(0, 0);
+    }
+
+    handleErfarenhetMycket = (event) => {
+        this.setState({ hunderfarenhet: { ...this.state.hunderfarenhet, mycket: true} });
+        // const hunderfarenhet = {...this.state.hunderfarenhet}
+        // hunderfarenhet.mycket = true;
+        // this.setState({
+        //     erfarenhetMycket: event.target.checked
+        // })
+      }
+    handleErfarenhetGanska = () => {
+        this.setState({ hunderfarenhet: { ...this.state.hunderfarenhet, ganska: true} })
+    }
     
     filterDogs = () => {
         this.setState({match: true})
+        this.setState({dogsShown: true})
         const copyDogs = [...this.state.data];
         const filterOnErfarenhet = copyDogs.filter(dog => dog.hunderfarenhet === this.state.hunderfarenhet)
         this.setState({data: filterOnErfarenhet}); 
@@ -168,39 +192,49 @@ class WizardParent extends React.Component {
       <div className="wizardContainer" id="quiz">
         <WizardForm step={this.state.step} onChange={this.handleStep}>
 
+        {/* Check */}
           <Step title="Erfarenhet" description="Erfarenhet">
             <div>
                 Vilket alternativ beskriver bäst din tidigare hunderfarenhet?
+                <div>
+                    <input type="checkbox" onChange={this.handleErfarenhetMycket} checked={this.state.hunderfarenhet.mycket} />
+                    <input type="checkbox" onChange={this.handleErfarenhetGanska} checked={this.state.hunderfarenhet.ganska} />
+                </div>
                 <div className="inputContainer">
-                    <input className="radio" type='radio' id='mycket' name='erfarenhet' value='mycket' checked={this.state.hunderfarenhet === 'mycket'} onChange={this.handleErfarenhetChange} />
+                    <input className="radio" type='radio' id='mycket' name='erfarenhet' value='mycket' checked={this.state.hunderfarenhet.mycket === true} onChange={this.handleErfarenhetChange} />
+                    {/* Matchas med mycket, ganska, lite */}
                     <div className="check"></div>
                     <label className="radioLabel" htmlFor='mycket'>Jag har haft fullt ansvar för en hund tidigare</label>
                 </div>
                 <div className="inputContainer">
-                    <input className="radio" type='radio' id='ganska' name='erfarenhet' value='ganska' checked={this.state.hunderfarenhet === 'ganska'} onChange={this.handleErfarenhetChange} />
+                    <input className="radio" type='radio' id='ganska' name='erfarenhet' value='ganska' checked={this.state.hunderfarenhet.ganska === true} onChange={this.handleErfarenhetChange} />
+                    {/* Matchas med ganska, lite */}
                     <div className="check"></div>
                     <label className="radioLabel" htmlFor='ganska'>Jag har inte haft hund själv, men har hjälpt vänner och familj med deras hundar</label>
                 </div>
                 <div className="inputContainer">
-                    <input className="radio" type='radio' id='lite' name='erfarenhet' value='lite' checked={this.state.hunderfarenhet === 'lite'} onChange={this.handleErfarenhetChange} />
+                    <input className="radio" type='radio' id='lite' name='erfarenhet' value='lite' checked={this.state.hunderfarenhet.lite === true} onChange={this.handleErfarenhetChange} />
                     <div className="check"></div>
                     <label className="radioLabel" htmlFor='lite'>Jag har ingen tidigare hunderfarenhet</label>
                 </div>
             </div>
           </Step>
 
+            {/* Check */}
           <Step title="Fysik" description="Fysik">
             <div>
                 Vilket alternativ beskriver bäst din fysiska förmåga?
                 <div className="inputContainer">
                     <input className="radio" type='radio' id='hög' name='fysik' value='hög' checked={this.state.fysik === 'hög'} onChange={this.handleFysikChange} />
+                    {/* Matchas med hög, låg, normal */}
                     <div className="check"></div>
                     <label className="radioLabel" htmlFor='hög'>Jag är stark och kan hålla emot även tyngre starka hundar om det behövs</label>
                 </div>
                 <div className="inputContainer">
-                    <input className="radio" type='radio' id='mellan' name='fysik' value='mellan' checked={this.state.fysik === 'mellan'} onChange={this.handleFysikChange} />
+                    <input className="radio" type='radio' id='normal' name='fysik' value='normal' checked={this.state.fysik === 'normal'} onChange={this.handleFysikChange} />
+                    {/* Matchas med normal, låg */}
                     <div className="check"></div>
-                    <label className="radioLabel" htmlFor='mellan'>Jag skulle beskriva min fysiska förmåga som normal</label>
+                    <label className="radioLabel" htmlFor='normal'>Jag skulle beskriva min fysiska förmåga som normal</label>
                 </div>
                 <div className="inputContainer">
                     <input className="radio" type='radio' id='låg' name='fysik' value='låg' checked={this.state.fysik === 'låg'} onChange={this.handleFysikChange} />
@@ -210,9 +244,10 @@ class WizardParent extends React.Component {
             </div>
             </Step>
 
+        {/* Check */}
           <Step title="Allergi" description="Allergi">
             <div>
-                Har du pälsallergi?
+                Kan du bo med en hund som fäller päls?
                 <div className="inputContainer">  
                     <input className="radio" type='radio' id='allergiJa' name='allergi' value='ja' checked={this.state.allergi === 'ja'} onChange={this.handleAllergiChange} />
                     <div className="check"></div>
@@ -226,7 +261,7 @@ class WizardParent extends React.Component {
             </div>
           </Step>
           
-
+            {/* Check */}
           <Step title="Barn" description="Barn">
             <div>
                 Hur mycket kommer hunden träffa och umgås med barn?
@@ -253,32 +288,34 @@ class WizardParent extends React.Component {
             </div>
           </Step>
 
+        {/* Check */}
           <Step title="Boende" description="Boende">
             <div>
                 Hur bor du?
                 <div className="inputContainer">  
-                    <input className="radio" type='radio' id='villa-stad' name='boende' value='villa-stad' checked={this.state.boende === 'villa-stad'} onChange={this.handleBoendeChange} />
-                    <div className="check"></div>
-                    <label className="radioLabel" htmlFor='villa-stad'>Villa/radhus i stadsmiljö</label>
-                </div>
-                <div className="inputContainer">  
                     <input className="radio" type='radio' id='villa-landet' name='boende' value='villa-landet' checked={this.state.boende === 'villa-landet'} onChange={this.handleBoendeChange} />
                     <div className="check"></div>
-                    <label className="radioLabel" htmlFor='villa-landet'>Villa på landet</label>
+                    <label className="radioLabel" htmlFor='villa-landet'>Villa utanför stan</label>
+                </div>
+                <div className="inputContainer">  
+                    <input className="radio" type='radio' id='villa-stad' name='boende' value='villa-stad' checked={this.state.boende === 'villa-stad'} onChange={this.handleBoendeChange} />
+                    <div className="check"></div>
+                    <label className="radioLabel" htmlFor='villa-stad'>Villa i stadsmiljö</label>
+                </div>
+                <div className="inputContainer">
+                    <input className="radio" type='radio' id='lgh-landet' name='boende' value='lgh-landet' checked={this.state.boende === 'lgh-landet'} onChange={this.handleBoendeChange} />
+                    <div className="check"></div>
+                    <label className="radioLabel" htmlFor='lgh-landet'>Lägenhet utanför stan</label>
                 </div>
                 <div className="inputContainer">
                     <input className="radio" type='radio' id='lgh-stad' name='boende' value='lgh-stad' checked={this.state.boende === 'lgh-stad'} onChange={this.handleBoendeChange} />
                     <div className="check"></div>
                     <label className="radioLabel" htmlFor='lgh-stad'>Lägenhet i stadsmiljö</label>
                 </div>
-                <div className="inputContainer">
-                    <input className="radio" type='radio' id='lgh-landet' name='boende' value='lgh-landet' checked={this.state.boende === 'lgh-landet'} onChange={this.handleBoendeChange} />
-                    <div className="check"></div>
-                    <label className="radioLabel" htmlFor='lgh-landet'>Lägenhet på landet</label>
-                </div>
             </div>
           </Step>
-          
+
+          {/* Check */}
           <Step title="Hundpassning" description="Hundpassning">
             <div>
                 Hur planerar du att få ihop vardagen med din hund?
@@ -305,10 +342,12 @@ class WizardParent extends React.Component {
             </div>
           </Step>
 
-          {/* <Step title="Aktiviteter" description="Aktiviteter">
+            {/* Check */}
+          <Step title="Aktiviteter" description="Aktiviteter">
             <div>
-                Vilken typ av aktiviteter planerar du att göra med din hund?
+                Vilken typ av aktiviteter vill och planerar du att göra med din hund?
                 <div className="inputContainer">  
+                {/* Ska kunna välja flera */}
                     <input type="checkbox" onClick={this.onClick} value={!this.state.test}></input>
                 </div>
                 <div className="inputContainer">  
@@ -317,11 +356,7 @@ class WizardParent extends React.Component {
                         checked={this.state.aktivitet.sällskap}
                         onChange={this.handleAktivitetSällskapChange}
                     />
-                    <label htmlFor='sällskap'>Hunden kommer primärt gå som sällskapshund och få stimulans via promenader, aktivitetsövningar och massa gos</label>
-                </div>
-                <div className="inputContainer">  
-                    <input type='checkbox' id='jakt' name='aktivitet' value='jakt' checked={this.state.aktivitet === 'jakt'} onChange={this.handleAktivitetChange} />
-                    <label htmlFor='jakt'>Hunden kommer användas till jakt</label>
+                    <label htmlFor='sällskap'>Hunden kommer primärt gå som sällskapshund och ge stimulans via promenader, aktivitetsövningar och massa gos</label>
                 </div>
                 <div className="inputContainer">
                     <input type='checkbox' id='sportkompis' name='aktivitet' value='sportkompis' checked={this.state.aktivitet === 'sportkompis'} onChange={this.handleAktivitetChange} />
@@ -329,34 +364,41 @@ class WizardParent extends React.Component {
                         checked={this.state.aktivitet.sportkompis}
                         onChange={this.handleAktivitetSportkompisChange}
                     />
-                    <label htmlFor='sportkompis'>Hunden kommer användas som sportkompis och följa med på diverse joggingturer och cykelturer</label>
+                    <label htmlFor='sportkompis'>Hunden kommer få följa med på diverse joggingturer, cykelturer, vandringar mm.</label>
                 </div>
                 <div className="inputContainer">
                     <input type='checkbox' id='sök' name='aktivitet' value='sök' checked={this.state.aktivitet === 'sök'} onChange={this.handleAktivitetChange} />
-                    <label htmlFor='sök'>Hunden kommer tränas inom sök</label>
+                    <label htmlFor='sök'>Hunden kommer få tränas inom sök</label>
                 </div>
                 <div className="inputContainer">
                     <input type='checkbox' id='hundsport' name='aktivitet' value='hundsport' checked={this.state.aktivitet === 'hundsport'} onChange={this.handleAktivitetChange} />
-                    <label htmlFor='hundsport'>Hunden kommer tränas och tävlas inom hundsporter så som agility, rallylydnad mm</label>
+                    <label htmlFor='hundsport'>Hunden kommer tränas och tävlas inom hundsporter såsom agility, rallylydnad mm.</label>
+                </div>
+                <div className="inputContainer">  
+                    <input type='checkbox' id='jakt' name='aktivitet' value='jakt' checked={this.state.aktivitet === 'jakt'} onChange={this.handleAktivitetChange} />
+                    <label htmlFor='jakt'>Hunden kommer användas i jakt</label>
                 </div>
                 <div className="inputContainer">
                     <input type='checkbox' id='vakt' name='aktivitet' value='vakt' checked={this.state.aktivitet === 'vakt'} onChange={this.handleAktivitetChange} />
                     <label htmlFor='vakt'>Hunden kommer användas som vakthund</label>
                 </div>
             </div>
-          </Step> */}
+          </Step>
 
+          {/* Check */}
           <Step title="Energi" description="Energi">
             <div>
                 Vilken beskrivning passar bäst in på energin i ditt hem?
                 <div className="inputWrapper">
                     <div className="inputContainer">
                         <input className="radio" type='radio' id='fartfyllt' name='energi' value='fartfyllt' checked={this.state.energi === 'fartfyllt'} onChange={this.handleEnergiChange} />
+                        {/* Matchas med fartfyllt, båda */}
                         <div className="check"></div>
-                        <label className="radioLabel" htmlFor='fartfyllt'>I mitt hem är det full fart och fläkt. Mycket besökare och saker som händer hela tiden</label>
+                        <label className="radioLabel" htmlFor='fartfyllt'>I mitt hem är det fart och fläkt. Mycket besökare och saker som händer hela tiden</label>
                     </div>
                     <div className="inputContainer">
                         <input className="radio" type='radio' id='lugnt' name='energi' value='lugnt' checked={this.state.energi === 'lugnt'} onChange={this.handleEnergiChange} />
+                        {/* Matchas med lugnt, båda */}
                         <div className="check"></div>
                         <label className="radioLabel" htmlFor='lugnt'>I mitt hem är det lugnt, tryggt och sansat</label>
                     </div>
@@ -364,44 +406,60 @@ class WizardParent extends React.Component {
             </div>
           </Step>
 
-          {/* <Step title="Problematik" description="Problematik">
+          {/* Check */}
+          <Step title="Problematik" description="Problematik">
+              {/* Ska kunna välja flera */}
             <div>
                 En del av hundarna vi hjälper att omplacera har med sig viss problematik från sitt förflutna som du som ny ägare kommer att behöva hantera. Vilka av nedanstående utmaningar känner du att du som ägare är villig och kompentent nog att arbeta med?  
-                <div className="inputContainer">  
+                <div className="inputContainer"> 
+                    {/* Matchas med hundaggressivitet, ingen  */}
                     <input type='checkbox' id='hundaggressivitet' name='problematik' value='hundaggressivitet' checked={this.state.problematik === 'hundaggressivitet'} onChange={this.handleProblematikChange} />
                     <label htmlFor='hundaggressivitet'>Hundaggresivitet</label>
                 </div>
-                <div className="inputContainer">  
+                <div className="inputContainer">
+                    {/* Matchas med hoppar, ingen  */}  
                     <input type='checkbox' id='hoppar' name='problematik' value='hoppar' checked={this.state.problematik === 'hoppar'} onChange={this.handleProblematikChange} />
                     <label htmlFor='hoppar'>Hoppar på folk när den hälsar</label>
                 </div>
                 <div className="inputContainer">
+                    {/* Matchas med integritet, ingen  */}
                     <input type='checkbox' id='integritet' name='problematik' value='integritet' checked={this.state.problematik === 'integritet'} onChange={this.handleProblematikChange} />
                     <label htmlFor='integritet'>Hög intigritet</label>
                 </div>
                 <div className="inputContainer">
+                    {/* Matchas med drar, ingen  */}
                     <input type='checkbox' id='drar' name='problematik' value='drar' checked={this.state.problematik === 'drar'} onChange={this.handleProblematikChange} />
                     <label htmlFor='drar'>Drar i kopplet</label>
                 </div>
                 <div className="inputContainer">
+                    {/* Matchas med ensam, ingen  */}
                     <input type='checkbox' id='ensam' name='problematik' value='ensam' checked={this.state.problematik === 'ensam'} onChange={this.handleProblematikChange} />
                     <label htmlFor='ensam'>Kan inte vara ensam hemma</label>
                 </div>
                 <div className="inputContainer">
+                    {/* Matchas med skällig, ingen  */}
                     <input type='checkbox' id='skällig' name='problematik' value='skällig' checked={this.state.problematik === 'skällig'} onChange={this.handleProblematikChange} />
                     <label htmlFor='skällig'>Skällig</label>
                 </div>
                 <div className="inputContainer">
+                    {/* Matchas med resursförsvar, ingen  */}
                     <input type='checkbox' id='resursförsvar' name='problematik' value='resursförsvar' checked={this.state.problematik === 'resursförsvar'} onChange={this.handleProblematikChange} />
                     <label htmlFor='resursförsvar'>Resursförsvar</label>
                 </div>
                 <div className="inputContainer">
+                    {/* Matchas med sjukdom, ingen  */}
                     <input type='checkbox' id='sjukdom' name='problematik' value='sjukdom' checked={this.state.problematik === 'sjukdom'} onChange={this.handleProblematikChange} />
                     <label htmlFor='sjukdom'>Sjukdomstillstånd som kräver regelbunden veterinärvård</label>
                 </div>
+                <div className="inputContainer">
+                    {/* Matchas med sjukdom, ingen  */}
+                    <input type='checkbox' id='ingen' name='problematik' value='ingen' checked={this.state.problematik === 'ingen'} onChange={this.handleProblematikChange} />
+                    <label htmlFor='ingen'>Jag är inte beredd att hantera någon av dessa hundproblem</label>
+                </div>
             </div>
-          </Step> */}
+          </Step>
 
+          {/* Check */}
           <Step title="Katt" description="Katt">
             <div>
                 Finns det katt i hemmet?
@@ -413,6 +471,7 @@ class WizardParent extends React.Component {
                     </div>
                     <div className="inputContainer">
                         <input className="radio" type='radio' id='nej' name='katt' value='nej' checked={this.state.katt === 'nej'} onChange={this.handleKattChange} />
+                        {/* Matchas med nej, ja */}
                         <div className="check"></div>
                         <label className="radioLabel" htmlFor='nej'>Nej</label>
                     </div>
@@ -420,17 +479,20 @@ class WizardParent extends React.Component {
             </div>
           </Step>
 
+          {/* Check */}
           <Step title="Hund" description="Hund">
             <div>
                 Finns det hund i hemmet idag?
                 <div className="inputWrapper">
                     <div className="inputContainer">
                         <input className="radio" type='radio' id='tikar' name='hund' value='tikar' checked={this.state.hund === 'tikar'} onChange={this.handleHundChange} />
+                        {/* Matchas med tikar, båda */}
                         <div className="check"></div>
                         <label className="radioLabel" htmlFor='tikar'>Ja, tik eller tikar</label>
                     </div>
                     <div className="inputContainer">
                         <input className="radio" type='radio' id='hanar' name='hund' value='hanar' checked={this.state.hund === 'hanar'} onChange={this.handleHundChange} />
+                        {/* Matchas med hanar, båda */}
                         <div className="check"></div>
                         <label className="radioLabel" htmlFor='hanar'>Ja, hane eller hanar</label>
                     </div>
@@ -448,33 +510,33 @@ class WizardParent extends React.Component {
             </div>
           </Step>
 
+          {/* Check */}
           <Step title="Ledarskap" description="Ledarskap">
             <div>
                 Vilket av följande alternativ beskriver bäst din person och syn på hunduppfostran?
                 <div className="inputWrapper">
                     <div className="inputContainer">
                         <input className="radio" type='radio' id='mjukt' name='ledarskap' value='mjukt' checked={this.state.ledarskap === 'mjukt'} onChange={this.handleLedarskapChange} />
+                        {/* Matchas med mjukt, båda */}
                         <div className="check"></div>
-                        <label className="radioLabel" htmlFor='mjukt'>Jag är väldigt mjuk och kärleksfull i mitt umgänge med hundar</label>
+                        <label className="radioLabel" htmlFor='mjukt'>Jag är mjuk och kärleksfull i mitt umgänge med hundar</label>
                     </div>
                     <div className="inputContainer">
                         <input className="radio" type='radio' id='tydligt' name='ledarskap' value='tydligt' checked={this.state.ledarskap === 'tydligt'} onChange={this.handleLedarskapChange} />
+                        {/* Matchas med tydligt, båda */}
                         <div className="check"></div>
-                        <label className="radioLabel" htmlFor='tydligt'>Jag är rak och tydlig men bestämd i min hunduppfostran</label>
-                    </div>
-                    <div className="inputContainer">
-                        <input className="radio" type='radio' id='båda' name='ledarskap' value='båda' checked={this.state.ledarskap === 'båda'} onChange={this.handleLedarskapChange} />
-                        <div className="check"></div>
-                        <label className="radioLabel" htmlFor='båda'>Jag är både och</label>
+                        <label className="radioLabel" htmlFor='tydligt'>Jag är rak och konsekvent i min hunduppfostran</label>
                     </div>
                 </div>
             </div>
           </Step>
 
+          {/* Check */}
           <Step title="Storlek" description="Storlek">
             <div>
-                Vilken storlek på hund har du möjlighet att ta hand om? (möjligt att välja flera alternativ)
+                Vilken storlek på hund har du möjlighet att ta hand om?
                 <div className="inputWrapper">
+                    {/* Ska kunna välja flera */}
                     <div className="inputContainer">
                         <input className="radio" type='checkbox' id='liten' name='storlek' value='liten' checked={this.state.storlek === 'liten'} onChange={this.handleStorlekChange} />
                         <div className="check"></div>
@@ -506,7 +568,7 @@ class WizardParent extends React.Component {
               <div className="resultContainer">
                 <h3>Grattis, du har blivit matchad!</h3>
                 <p>Enligt våra algoritmer skulle du passa bäst med nedanstående hundar. Läs på om hunden du matchats med och kontakta deras nuvarande ägare om du seriöst är intresserad av att adoptera deras hund.</p>
-                <button onClick={this.filterDogs}>Visa hundar</button>
+                <button className="button" onClick={this.filterDogs}>Visa hundar</button>
                 
                 {this.state.match && 
                     <>
@@ -520,6 +582,10 @@ class WizardParent extends React.Component {
                                 id={dog._id} />)}
                     </>}
               </div>
+                {this.state.dogsShown && 
+                    <Link to="/adoptera">
+                    <button onClick={this.handleRedoQuiz}>Gör om quizet</button>
+                    </Link>}
           </Step>
 
         </WizardForm>

@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
 import Header from '../../Header/Header';
-import AboutMedium from '../../About/AboutMedium';
-import AboutSmall from '../../About/AboutSmall';
+import AboutStartpage from '../../About/AboutStartpage';
+import AboutOmplacera from '../../About/AboutOmplacera';
 import Navbar from '../../Navbar/Navbar';
 import Footer from '../../Footer/Footer';
 import BannerAgria from '../../Banners/BannerAgria';
@@ -15,14 +14,13 @@ const Start = () => {
         window.scrollTo(0, 0);
     }, [pathname]);
 
-    console.log('localhost', process.env)
     return (
         <>
             <Navbar />
             <Header />
-            <AboutMedium />
+            <AboutStartpage />
             <BannerQuiz />
-            <AboutSmall />
+            <AboutOmplacera />
             <BannerAgria />
             <Footer />
         </>

@@ -1,17 +1,19 @@
 import React from 'react';
 import './Footer.css';
 
-{/* <p>Lägg till din hund</p>
-<form action="/dogs" method="POST">
-    <input type="text" placeholder="name" name="name" />
-    <input type="text" placeholder="quote" name="quote" />
-    <button type="submit">Skicka</button>
-</form> */}
-
 const Footer = () => {
+    const iconWhite = require('../../images/Icon-MatchingPaws-white.png')
+    const email = require('../../images/email.png')
+    const instagram = require('../../images/instagram.png')
     return (
         <div className="footer-wrapper">
-            <p>© Matching Paws</p>
+            <img className="logo" src={iconWhite.default} />
+            <p><strong>Matching Paws</strong></p>
+            <a>hello@matchingpaws.se</a>
+            <div className="footer-icons">
+                <a href="mailto:hello@matchingpaws.se"><img src={email.default} /></a>
+                <a href="www.instagram.com/matchingpaws" target="_blank"><img src={instagram.default} /></a>
+            </div>
         </div>
     )
 }

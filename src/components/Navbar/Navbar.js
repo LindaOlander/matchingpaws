@@ -31,7 +31,7 @@ const Navbar = ({color}) => {
             <div className="header-menu">
                 <Link to="/"><p><b>Matching Paws</b></p></Link>
                 <Link to="/adoptera"><p>Hitta din match</p></Link>
-                <Link to="/omplacera"><li>Omplacera</li></Link>
+                <Link to="/omplacera"><p>Omplacera</p></Link>
                 <Link to="/hund"><p>Livet med hund</p></Link>
                 <Link to="/adoptionsprocessen"><p>Adoptionsprocessen</p></Link>
                 <Link to="/om"><p>Om oss</p></Link>

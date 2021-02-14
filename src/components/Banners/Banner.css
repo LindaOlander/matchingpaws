@@ -8,8 +8,8 @@
     height: 30vh;
     color: #ffffff;
     background-color: #838976;
-    padding: 0 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }

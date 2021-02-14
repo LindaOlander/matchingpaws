@@ -9,7 +9,10 @@ const BannerQuiz = () => {
     }
     return (
         <div className="bannerQuiz">
-            <Link to="/adoptera" onClick={scrollToTop}><h3 style={{color: "#ffffff"}}>Hitta min bästa vän. Testa vårt matchningsverktyg här</h3></Link>
+            <Link to="/adoptera" onClick={scrollToTop}><h3 style={{color: "#ffffff"}}>
+                Hitta din bästa vän.
+                <br />
+                Testa vårt matchningsverktyg.</h3></Link>
         </div>
     )
 };

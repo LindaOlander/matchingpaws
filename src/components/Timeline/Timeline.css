@@ -1,0 +1,34 @@
+.timelineWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+    border: 6px solid #f5baac;
+    border-radius: 50%;
+}
+
+.dashedLine {
+    width: 0;
+    border: 1px dashed #f5baac;
+    min-height: 30px;
+    margin-left: 7.5px;
+}
+
+.time {
+    display: flex;
+    flex-direction: row;
+}
+
+.time button {
+    margin-left: 10px;
+}
+
+.timeContent {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 0 17px;
+}
