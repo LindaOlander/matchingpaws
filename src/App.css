@@ -17,6 +17,10 @@ p {
   margin-top: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 a:hover {
   text-decoration: underline;
 }
@@ -50,6 +54,7 @@ h5 {
 }
 
 .button {
+  font-size: 18px;
   padding: 10px 15px;
   border: none;
   border-radius: 8px;
@@ -64,7 +69,7 @@ h5 {
 
 .buttonBlock {
   width: 100%;
-  font-size: 16px;
+  font-size: 18px;
   padding: 10px 15px;
   border: none;
   border-radius: 8px;
@@ -93,7 +98,7 @@ h5 {
 }
 
 .contentWrapper {
-  padding: 25px;
+  padding: 25px 150px;
 }
 
 .background-lightgrey {
@@ -150,5 +155,9 @@ h5 {
 
   .navbar-wrapper a:hover {
     text-decoration: underline;
+  }
+
+  .contentWrapper {
+    padding: 25px;
   }
 }

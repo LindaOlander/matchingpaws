@@ -195,7 +195,7 @@ class WizardParent extends React.Component {
         {/* Check */}
           <Step title="Erfarenhet" description="Erfarenhet">
             <div>
-                Vilket alternativ beskriver bäst din tidigare hunderfarenhet?
+                <strong>Vilket alternativ beskriver bäst din tidigare hunderfarenhet?</strong>
                 <div>
                     <input type="checkbox" onChange={this.handleErfarenhetMycket} checked={this.state.hunderfarenhet.mycket} />
                     <input type="checkbox" onChange={this.handleErfarenhetGanska} checked={this.state.hunderfarenhet.ganska} />
@@ -223,7 +223,7 @@ class WizardParent extends React.Component {
             {/* Check */}
           <Step title="Fysik" description="Fysik">
             <div>
-                Vilket alternativ beskriver bäst din fysiska förmåga?
+                <strong>Vilket alternativ beskriver bäst din fysiska förmåga?</strong>
                 <div className="inputContainer">
                     <input className="radio" type='radio' id='hög' name='fysik' value='hög' checked={this.state.fysik === 'hög'} onChange={this.handleFysikChange} />
                     {/* Matchas med hög, låg, normal */}
@@ -247,7 +247,7 @@ class WizardParent extends React.Component {
         {/* Check */}
           <Step title="Allergi" description="Allergi">
             <div>
-                Kan du bo med en hund som fäller päls?
+                <strong>Kan du bo med en hund som fäller päls?</strong>
                 <div className="inputContainer">  
                     <input className="radio" type='radio' id='allergiJa' name='allergi' value='ja' checked={this.state.allergi === 'ja'} onChange={this.handleAllergiChange} />
                     <div className="check"></div>
@@ -264,7 +264,7 @@ class WizardParent extends React.Component {
             {/* Check */}
           <Step title="Barn" description="Barn">
             <div>
-                Hur mycket kommer hunden träffa och umgås med barn?
+                <strong>Hur mycket kommer hunden träffa och umgås med barn?</strong>
                 <div className="inputContainer">  
                     <input className="radio" type='radio' id='ofta' name='barn' value='ofta' checked={this.state.barn === 'ofta'} onChange={this.handleBarnChange} />
                     <div className="check"></div>
@@ -291,7 +291,7 @@ class WizardParent extends React.Component {
         {/* Check */}
           <Step title="Boende" description="Boende">
             <div>
-                Hur bor du?
+                <strong>Hur bor du?</strong>
                 <div className="inputContainer">  
                     <input className="radio" type='radio' id='villa-landet' name='boende' value='villa-landet' checked={this.state.boende === 'villa-landet'} onChange={this.handleBoendeChange} />
                     <div className="check"></div>
@@ -318,7 +318,7 @@ class WizardParent extends React.Component {
           {/* Check */}
           <Step title="Hundpassning" description="Hundpassning">
             <div>
-                Hur planerar du att få ihop vardagen med din hund?
+                <strong>Hur planerar du att få ihop vardagen med din hund?</strong>
                 <div className="inputContainer">  
                     <input className="radio" type='radio' id='hunddagis' name='hundpassning' value='hunddagis' checked={this.state.hundpassning === 'hunddagis'} onChange={this.handleHundpassningChange} />
                     <div className="check"></div>
@@ -345,7 +345,7 @@ class WizardParent extends React.Component {
             {/* Check */}
           <Step title="Aktiviteter" description="Aktiviteter">
             <div>
-                Vilken typ av aktiviteter vill och planerar du att göra med din hund?
+                <strong>Vilken typ av aktiviteter vill och planerar du att göra med din hund?</strong>
                 <div className="inputContainer">  
                 {/* Ska kunna välja flera */}
                     <input type="checkbox" onClick={this.onClick} value={!this.state.test}></input>
@@ -388,7 +388,7 @@ class WizardParent extends React.Component {
           {/* Check */}
           <Step title="Energi" description="Energi">
             <div>
-                Vilken beskrivning passar bäst in på energin i ditt hem?
+                <strong>Vilken beskrivning passar bäst in på energin i ditt hem?</strong>
                 <div className="inputWrapper">
                     <div className="inputContainer">
                         <input className="radio" type='radio' id='fartfyllt' name='energi' value='fartfyllt' checked={this.state.energi === 'fartfyllt'} onChange={this.handleEnergiChange} />
@@ -410,7 +410,7 @@ class WizardParent extends React.Component {
           <Step title="Problematik" description="Problematik">
               {/* Ska kunna välja flera */}
             <div>
-                En del av hundarna vi hjälper att omplacera har med sig viss problematik från sitt förflutna som du som ny ägare kommer att behöva hantera. Vilka av nedanstående utmaningar känner du att du som ägare är villig och kompentent nog att arbeta med?  
+                <strong>En del av hundarna vi hjälper att omplacera har med sig viss problematik från sitt förflutna som du som ny ägare kommer att behöva hantera. Vilka av nedanstående utmaningar känner du att du som ägare är villig och kompentent nog att arbeta med?</strong>  
                 <div className="inputContainer"> 
                     {/* Matchas med hundaggressivitet, ingen  */}
                     <input type='checkbox' id='hundaggressivitet' name='problematik' value='hundaggressivitet' checked={this.state.problematik === 'hundaggressivitet'} onChange={this.handleProblematikChange} />
@@ -462,7 +462,7 @@ class WizardParent extends React.Component {
           {/* Check */}
           <Step title="Katt" description="Katt">
             <div>
-                Finns det katt i hemmet?
+                <strong>Finns det katt i hemmet?</strong>
                 <div className="inputWrapper">
                     <div className="inputContainer">
                         <input className="radio" type='radio' id='ja' name='katt' value='ja' checked={this.state.katt === 'ja'} onChange={this.handleKattChange} />
@@ -482,7 +482,7 @@ class WizardParent extends React.Component {
           {/* Check */}
           <Step title="Hund" description="Hund">
             <div>
-                Finns det hund i hemmet idag?
+                <strong>Finns det hund i hemmet idag?</strong>
                 <div className="inputWrapper">
                     <div className="inputContainer">
                         <input className="radio" type='radio' id='tikar' name='hund' value='tikar' checked={this.state.hund === 'tikar'} onChange={this.handleHundChange} />
@@ -513,7 +513,7 @@ class WizardParent extends React.Component {
           {/* Check */}
           <Step title="Ledarskap" description="Ledarskap">
             <div>
-                Vilket av följande alternativ beskriver bäst din person och syn på hunduppfostran?
+                <strong>Vilket av följande alternativ beskriver bäst din person och syn på hunduppfostran?</strong>
                 <div className="inputWrapper">
                     <div className="inputContainer">
                         <input className="radio" type='radio' id='mjukt' name='ledarskap' value='mjukt' checked={this.state.ledarskap === 'mjukt'} onChange={this.handleLedarskapChange} />
@@ -534,7 +534,7 @@ class WizardParent extends React.Component {
           {/* Check */}
           <Step title="Storlek" description="Storlek">
             <div>
-                Vilken storlek på hund har du möjlighet att ta hand om?
+                <strong>Vilken storlek på hund har du möjlighet att ta hand om?</strong>
                 <div className="inputWrapper">
                     {/* Ska kunna välja flera */}
                     <div className="inputContainer">

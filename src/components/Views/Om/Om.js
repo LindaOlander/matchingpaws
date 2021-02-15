@@ -9,10 +9,10 @@ const Om = () => {
         <>
             <Navbar />
             <HeaderAbout />
-            <div className="about-text-medium">
-                <h4>Alla hundar har rätt till ett tryggt hem. Vi har grundat Matching Paws då vi har en dröm om att möjliggöra att ge otrygga hundar ett en ny matte eller husse som har rätt förutsättningar för att ta hand om hunden på allra bästa sätt.</h4>
-                <h4>Vi som driver Matching Paws är vi: Ida, Therese och Linda som alla tre är uppvuxna med hundar och har ett gemensamt intresse om att alltid se till hundens bästa.</h4>
-                <h4>Kontakta oss på <i style={{textDecoration: "underline"}}>hello@matchingpaws.se</i></h4>
+            <div className="contentWrapper">
+                <p>Alla hundar har rätt till ett tryggt hem. Vi har grundat Matching Paws då vi har en dröm om att möjliggöra att ge otrygga hundar ett en ny matte eller husse som har rätt förutsättningar för att ta hand om hunden på allra bästa sätt.</p>
+                <p>Vi som driver Matching Paws är Ida, Therese och Linda, som alla tre är uppvuxna med hundar och har ett gemensamt intresse att alltid se till hundens bästa.</p>
+                <p>Kontakta oss på <i style={{textDecoration: "underline"}}>hello@matchingpaws.se</i></p>
             </div>
             <Footer />
         </>

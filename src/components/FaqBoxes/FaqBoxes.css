@@ -7,7 +7,7 @@
 }
 
 .boxWrapper {
-    width: calc(50% - 10px);
+    width: calc(25% - 10px);
     height: 150px;
     background-color: black;
     color: white;
@@ -37,4 +37,10 @@
 .image4 {
     background-image: url('https://images.unsplash.com/photo-1589924749359-9697080c3577?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDB8fGRvZyUyMHRveXN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60');
     background-size: cover;
+}
+
+@media screen and (max-width: 820px) {
+    .boxWrapper {
+        width: calc(50% - 10px);  
+    } 
 }

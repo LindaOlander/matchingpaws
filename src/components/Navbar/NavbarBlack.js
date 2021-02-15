@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './NavBar.css';
 
-
-const Navbar = ({color}) => {
+const NavbarBlack = ({color}) => {
     const iconBlack = require('../../images/Icon-MatchingPaws-black.png')
     return (
         <header className="navbar">
@@ -13,7 +12,7 @@ const Navbar = ({color}) => {
                     <p className="logoText" style={{color: `${color}`}}>Matching Paws</p>
                 </div>
             </Link>
-            <div id="navbarHamburger">
+            <div id="hamburger">
                 <input type="checkbox" />
                 <span></span>
                 <span></span>
@@ -27,16 +26,8 @@ const Navbar = ({color}) => {
                     <Link to="/om"><li>Om oss</li></Link>
                 </ul>
             </div>
-            <div className="header-menu">
-                <Link to="/"><p><b>Matching Paws</b></p></Link>
-                <Link to="/adoptera"><p>Hitta din match</p></Link>
-                <Link to="/omplacera"><li>Omplacera</li></Link>
-                <Link to="/hund"><p>Livet med hund</p></Link>
-                <Link to="/adoptionsprocessen"><p>Adoptionsprocessen</p></Link>
-                <Link to="/om"><p>Om oss</p></Link>
-            </div>
         </header>
     )
 }
 
-export default Navbar;
+export default NavbarBlack;

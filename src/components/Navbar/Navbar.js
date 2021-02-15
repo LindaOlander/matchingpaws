@@ -14,7 +14,7 @@ const Navbar = ({color}) => {
                     <p className="logoText" style={{color: `${color}`}}>Matching Paws</p>
                 </div>
             </Link>
-            <div id="navbarHamburger">
+            <div id="hamburger">
                 <input type="checkbox" />
                 <span></span>
                 <span></span>
@@ -27,14 +27,6 @@ const Navbar = ({color}) => {
                     <Link to="/adoptionsprocessen"><li>Adoptionsprocessen</li></Link>
                     <Link to="/om"><li>Om oss</li></Link>
                 </ul>
-            </div>
-            <div className="header-menu">
-                <Link to="/"><p><b>Matching Paws</b></p></Link>
-                <Link to="/adoptera"><p>Hitta din match</p></Link>
-                <Link to="/omplacera"><p>Omplacera</p></Link>
-                <Link to="/hund"><p>Livet med hund</p></Link>
-                <Link to="/adoptionsprocessen"><p>Adoptionsprocessen</p></Link>
-                <Link to="/om"><p>Om oss</p></Link>
             </div>
         </header>
     )

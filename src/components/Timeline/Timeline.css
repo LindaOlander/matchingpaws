@@ -31,4 +31,13 @@
     display: flex;
     flex-direction: column;
     margin: 10px 0 0 17px;
+    /* height: 0; */
+    /* animation: slideIn 1s infinite; */
+    transition: ease-in;
+}
+
+@keyframes slideIn {
+    to {
+        height: 100%;
+    }
 }
