@@ -5,17 +5,23 @@
 }
 
 .dot {
-    width: 5px;
-    height: 5px;
-    border: 6px solid #f5baac;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
+    background-color: #f5baac;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .dashedLine {
     width: 0;
     border: 1px dashed #f5baac;
     min-height: 30px;
-    margin-left: 7.5px;
+    margin-left: 15px;
 }
 
 .time {
@@ -30,10 +36,21 @@
 .timeContent {
     display: flex;
     flex-direction: column;
-    margin: 10px 0 0 17px;
-    /* height: 0; */
-    /* animation: slideIn 1s infinite; */
+    margin: 10px 17px;
     transition: ease-in;
+}
+
+.timeContent p {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.timeContent ul {
+    margin: 0 0 16px 0;
+}
+
+.timeContent ul li {
+    margin-bottom: 8px;
 }
 
 @keyframes slideIn {

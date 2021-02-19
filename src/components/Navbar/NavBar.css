@@ -38,6 +38,10 @@
   text-decoration: none;
 }
 
+.navbar-logo a:hover {
+  text-decoration: none;
+}
+
 #hamburger {
   display: block;
   position: fixed;
@@ -119,7 +123,7 @@
   font-size: 22px;
 }
 
-#menu li:active {
+#menu li:active, #menu li:visited {
   font-weight: bold;
 }
 

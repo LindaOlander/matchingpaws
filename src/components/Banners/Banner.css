@@ -17,3 +17,7 @@
 .bannerQuiz h3 {
     margin: 0;
 }
+
+.bannerQuiz a:hover {
+    text-decoration: none;
+}

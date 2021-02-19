@@ -28,25 +28,32 @@ const Omplacera = () => {
             <NavbarBlack color={'#222222'}/>
             <HeaderAdopt />
             <div className="contentWrapper">
-                <p>Ibland blir livet som hundägare inte som man tänkt sig och man kan av olika anledningar behöva omplacera sin hund. Vi förstår att beslutet att omplacera sin hund kan vara mycket tungt och fyllt med olika känslor.</p>
+                <h5>När det inte blev som du tänkt</h5>
+                <p className="smallParagraph">Ibland blir livet som hundägare inte som man tänkt sig och man kan av olika anledningar behöva omplacera sin hund. Vi förstår att beslutet att omplacera sin hund kan vara mycket tungt och fyllt med olika känslor.</p>
                 {!toggle && 
                     <div style={{width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center', marginBottom: '30px'}}>
-                        <a onClick={handleReadmore}>Läs mer</a>
+                        <button className="buttonLinkSecret" onClick={handleReadmore}>Läs mer</button>
                     </div>
                 }
                 {toggle && 
                 <>
-                    <p>Efter att du har laddat upp din hund för matchning kan de individer som matchats med din hund komma att kontakta dig för att ta vidare dialogen. Det är självklart du som ägare som i slutändan väljer vem som ska ta över din hund och du har rätt att ångra dig fram till att avtal är skrivet.</p>
-                    <p>Svara sanningsenligt och noga på formuläret och dubbelkolla att kontaktuppgifter stämmer så att eventuella framtida adoptörer kan komma i kontakt med dig.</p>
-                    <p>Via nedanstående formulär kan du skapa ett konto och lägga in din hund för matchning så att vi kan hjälpa bästa möjliga ägare åt din hund.</p>
+                    <h5>Rubrik</h5>
+                    <p className="smallParagraph">Efter att du har laddat upp din hund för matchning kan de individer som matchats med din hund komma att kontakta dig för att ta vidare dialogen. Det är självklart du som ägare som i slutändan väljer vem som ska ta över din hund och du har rätt att ångra dig fram till att avtal är skrivet.</p>
+                    <h5>Rubrik</h5>
+                    <p className="smallParagraph">Svara sanningsenligt och noga på formuläret och dubbelkolla att kontaktuppgifter stämmer så att eventuella framtida adoptörer kan komma i kontakt med dig.</p>
+                    <h5>Rubrik</h5>
+                    <p className="smallParagraph">Via nedanstående formulär kan du skapa ett konto och lägga in din hund för matchning så att vi kan hjälpa bästa möjliga ägare åt din hund.</p>
                 </>
                 }
                 {toggle && 
                     <div style={{width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center', marginBottom: '30px'}}>
-                        <a onClick={handleReadmore}>Läs mindre</a>
+                        <button className="buttonLink" onClick={handleReadmore}>Läs mindre</button>
                     </div>
                 }
-                {!showForm && <button className="buttonBlock" onClick={handleShowForm}>Lägg in din hund för matchning</button>}
+                {!showForm && 
+                <div className="centerWrapper">
+                    <button className="button" onClick={handleShowForm}>Lägg in din hund för matchning</button>
+                </div>}
             </div>
             {showForm && <div style={{display: 'flex', alignItems: 'center', backgroundColor: '#ededed'}}>
                 <AddDogs />

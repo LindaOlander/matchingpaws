@@ -4,11 +4,6 @@ import axios from 'axios';
 import './DogList.css';
 
 const DogList = () => {
-  const finalprojectServer =
-  process.env.NODE_ENV === "production"
-  ? "https://matchingpaws.herokuapp.com/dogs"
-  : "http://localhost:8080/dogs";
-
   const [data, setData] = useState([{}]);
   const [hunderfarenhet, setHunderfarenhet] = useState('');
   const [catCompatible, setCatCompatible] = useState('ja');
@@ -16,7 +11,8 @@ const DogList = () => {
 
   useEffect(() => {
     const fetchDogs = async () => {
-      const result = await axios('https://test-matchingpaws.herokuapp.com/dogs');
+      // const result = await axios('https://test-matchingpaws.herokuapp.com/dogs');
+      const result = await axios('const herokuUrl = "https://matchingpaws-api.herokuapp.com/dogs";');
       setData(result.data);
     };
  

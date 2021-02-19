@@ -65,6 +65,27 @@
     overflow: hidden;
   }
 
+  .descriptionWrapper {
+      margin: 15px 0;
+  }
+
+  .kravWrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  .successIcon {
+      color: green;
+      /* color: #ea947e; */
+  }
+
+  .declineIcon {
+      color: red;
+      /* color: #cccccc; */
+  }
+
   @media screen and (max-width: 720px) {
     .dogpage-wrapper {
         display: flex;

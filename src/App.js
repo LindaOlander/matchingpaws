@@ -1,6 +1,7 @@
 import React from 'react';
 import Start from './components/Views/Start/Start';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import DogPage from './components/DogPage/DogPage';
 import Quiz from './components/Views/Quiz/Quiz';
 import Adoptera from './components/Views/Adoptera/Adoptera';
@@ -14,7 +15,7 @@ import './App.css';
 function App() {
 
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <Route path="/" exact component={Start} />
       <Route path="/adoptera" exact component={Adoptera} />
       <Route path="/adoptera/:id" component={DogPage} />
@@ -23,7 +24,7 @@ function App() {
       <Route path="/hund" exact component={Hundlivet} />
       <Route path="/om" exact component={Om} />
       <Route path="/hundar" exact component={DogList} />
-    </Router>
+    </HashRouter>
   );
 }
 

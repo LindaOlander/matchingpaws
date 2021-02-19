@@ -5,7 +5,7 @@ const AboutStartpage = () => {
     return (
         <div className="contentWrapper">
             <p>
-                Runt om i världen finns det massvis med hundar som är i behov av ett nytt hem. Runt om i världen finns även massvis med trygga hem som längtar efter en hunds kärlek och glädje. 
+                Det finns alltför många hundar runt om i världen som är i behov av ett tryggt hem. Samtidigt finns det så många varma hem som längtar efter en hunds kärlek och glädje. 
             </p>
             <p>
                 Matching Paws sammanför och matchar hundar som behöver omplaceras med lämpliga hem som önskar adoptera en hund via ett datadrivet matchningsverktyg.

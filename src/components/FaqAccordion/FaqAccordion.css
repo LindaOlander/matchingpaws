@@ -1,11 +1,12 @@
 .accordion__section {
     display: flex;
     flex-direction: column;
+    margin-bottom: 5px;
   }
   
   /* Style the buttons that are used to open and close the accordion panel */
   .accordion {
-    background-color: #eee;
+    background-color: #f5dcd5;
     color: #222;
     cursor: pointer;
     padding: 10px;
@@ -17,12 +18,12 @@
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .accordion:hover,
   .active {
-    background-color: #ccc;
+    background-color: #f0af9f;
   }
   
   /* Style the accordion content title */
   .accordion__title {
-    font-size: 18px;
+    font-size: 16px;
     text-align: left;
     margin-bottom: 0;
   }

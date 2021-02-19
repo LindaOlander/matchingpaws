@@ -3,7 +3,8 @@ import '../Header/Header.css';
 
 const HeaderAbout = () => {
     return (
-        <div className="headerAbout">           
+        <div className="headerAbout"> 
+        {/* <h2>Om oss</h2> */}
         </div>
     )
 };

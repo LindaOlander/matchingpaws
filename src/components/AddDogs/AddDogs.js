@@ -102,7 +102,8 @@ const AddDogs = () => {
         }
 
         // const herokuUrl = "http://localhost:8080/dogs/";
-        const herokuUrl = "https://test-matchingpaws.herokuapp.com/dogs";
+        // const herokuUrl = "https://test-matchingpaws.herokuapp.com/dogs";
+        const herokuUrl = "https://matchingpaws-api.herokuapp.com/dogs";
 
         fetch(herokuUrl, {
                 headers: { "Content-Type": "application/json" },

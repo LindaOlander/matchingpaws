@@ -21,7 +21,7 @@ const Start = () => {
             <AboutStartpage />
             <BannerQuiz />
             <AboutOmplacera />
-            <BannerAgria />
+            {/* <BannerAgria /> */}
             <Footer />
         </>
     )

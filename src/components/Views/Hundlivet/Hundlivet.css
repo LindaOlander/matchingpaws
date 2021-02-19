@@ -1,3 +1,7 @@
 .accordionWrapper {
     margin: 0 0 50px 0;
 }
+
+.accordionWrapper h5 {
+    margin-bottom: 10px;
+}

@@ -25,15 +25,16 @@
     display: flex;
     flex-direction: column;
     padding: 0 25px;
-    padding-top: 150px;
+    padding-top: 60px;
 }
 
 .resultContainer {
     padding-top: 20px;
+    height: 100vh;
 }
 
 .wizardButtonWrapper {
-    margin: 30px 0 0 0;
+    margin: 30px 0;
 }
 
 .wizardButtonWrapper button {
@@ -44,6 +45,98 @@
     display: flex;
     flex-direction: row;
     margin: 20px 0 0 0;
+}
+
+.invisible {
+    color: green;
+    display: none;
+}
+
+/* Radio  */
+
+.radio {
+    position: absolute;
+    visibility: hidden;
+}
+
+.radioLabel {
+    margin-left: 30px;
+}
+
+.check {
+    display: block;
+    position: absolute;
+    border: 2px solid #dbdada;
+    border-radius: 100%;
+    height: 18px;
+    width: 18px;
+    z-index: 5;
+  }
+
+.check::before {
+    transition: all .2s ease-in-out;
+    display: block;
+    position: absolute;
+    content: '';
+    border-radius: 100%;
+    height: 12px;
+    width: 12px;
+    top: 3px;
+    left: 3px;
+    margin: auto;
+  }
+
+.radio:checked ~ .check {
+    border: 2px solid #ea947e;
+}
+
+.radio:checked ~ .check::before{
+    background: #ea947e;
+}
+
+/* Checkbox */
+
+.checkbox {
+    position: relative;
+    top: rem(-6);
+    margin: 4px 16px 0 0 ;
+    cursor: pointer;
+}
+
+.checkbox:before {
+    transition: all .3s ease-in-out;
+    content: "";
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #f2f2f2; 
+}
+
+.checkbox:checked:before {
+    transform: rotate(-45deg);
+    height: .5rem;
+    border-color: #ea947e;
+    border-top-style: none;
+    border-right-style: none;
+} 
+
+.checkbox:after {
+    content: "";
+    position: absolute;
+    top: rem(-2);
+    left: 0;
+    width: 1.1rem;
+    height: 1.1rem;
+    background: #fff;
+    cursor: pointer;
+}
+
+.resultButtonWrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
 @media screen and (max-width: 720px) {

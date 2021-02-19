@@ -13,7 +13,7 @@ const Hundlivet = () => {
             <div className="contentWrapper">
             <p>Att skaffa hund är att bli en till familjemedlem. Det är en hel del som behöver förberedas inför livet med din nya hund.</p>
                 <div id="förberedelser" className="accordionWrapper">
-                    <h3>Förberedelser</h3>
+                    <h5>Förberedelser</h5>
                     <FaqAccordion
                         title="Hur vet jag att jag är redo att skaffa hund?"
                         content="Bara du själv kan avgöra om du är redo att skaffa hund men du bör kunna svara “Ja” på samtliga nedanstående frågor om du är redo att skaffa hund:
@@ -28,7 +28,7 @@ const Hundlivet = () => {
                     />
                 </div>
                 <div id="ekonomi" className="accordionWrapper">
-                    <h3>Ekonomi och försäkringar</h3>
+                    <h5>Ekonomi och försäkringar</h5>
                     <FaqAccordion
                         title="Vad kostar det att ha en hund?"
                         content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
@@ -39,7 +39,7 @@ const Hundlivet = () => {
                     />
                 </div>
                 <div id="första-tiden" className="accordionWrapper">
-                    <h3>Första tiden med din hund</h3>
+                    <h5>Första tiden med din hund</h5>
                     <FaqAccordion
                         title="Vad ska jag ha med mig när jag hämtar hunden?"
                         content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
@@ -50,7 +50,7 @@ const Hundlivet = () => {
                     />
                 </div>
                 <div id="mat-utrustning" className="accordionWrapper">
-                    <h3>Mat och utrustning</h3>
+                    <h5>Mat och utrustning</h5>
                     <FaqAccordion
                         title="Vilken utrustning behöver min hund?"
                         content="MatchingPaws rekommenderar att ha följande grundkit för din hund:
