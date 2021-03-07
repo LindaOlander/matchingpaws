@@ -15,15 +15,14 @@ const Hundlivet = () => {
                 <div id="förberedelser" className="accordionWrapper">
                     <h5>Förberedelser</h5>
                     <FaqAccordion
-                        title="Hur vet jag att jag är redo att skaffa hund?"
-                        content="Bara du själv kan avgöra om du är redo att skaffa hund men du bör kunna svara “Ja” på samtliga nedanstående frågor om du är redo att skaffa hund:
-                        - Har du en lösning för hundpassning under vardagarna när du t.ex. jobbar eller är iväg?
-                        - Klarar din ekonomi av att ta hand om en hund?
-                        - Är du villig att lägga ner tid och energi på att uppfostra och ta hand om din hund?
-                        "
+                        title="Hur vet du om du är redo att skaffa hund?"
+                        content="Det är bara du själv som kan avgöra om du är redo att skaffa hund men du bör kunna svara “Ja” på samtliga frågor nedan om du är redo att skaffa hund:
+                        Har du en lösning för hundpassning under vardagarna när du t.ex. jobbar eller är iväg?
+                        Klarar din ekonomi av att ta hand om en hund?
+                        Är du villig att lägga ner tid och energi på att uppfostra och ta hand om din hund?"                        
                     />
                     <FaqAccordion
-                        title="Vilken typ av hund passar mig?"
+                        title="Vilken typ av hund passar dig?"
                         content="Vi avråder starkt från att välja hund utifrån utseende eller andra exteriöra preferenser då det kan sluta med att både du och din hund blir djupt olyckliga. Låt istället vårt matchningsverktyg avgöra vilken hund som passar bäst för dig."
                     />
                 </div>

@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import FileUploader from '../Wizard/FileUploader';
 import './AddDogs.css';
  
 
@@ -10,41 +9,52 @@ const AddDogs = () => {
         bild: "",
         ras: "",
         alder: "",
+        storlek: "",    
         kastrerad: "",
-        kontaktnamn: "",
-        email: "",
-        lank: "",
         hunderfarenhet: "",
         fysik: "",
         allergi: "",
         barn: "",
         boende: "",
         hundpassning: "",
+        aktivitet: {
+            sällskap: true,
+            jakt: true,
+            sportkompis: true,
+            sök: true,
+            hundsport: true,
+            vakt: true,
+            ingen: false,
+        },
         energi: "",
-        problematik: "",
+        problematik: {
+            hundaggressivitet: true,
+            hoppar: true,
+            integritet: true,
+            drar: true,
+            ensam: true,
+            skällig: true,
+            resursförsvar: true,
+            sjukdom: true,
+            ingen: false,
+        },
         katt: "",
         hund: "",
         ledarskap: "",
-        storlek: "",    
+        kontaktnamn: "",
+        email: "",
+        lank: ""
       })
 
-    const [selectedFile, setSelectedFile] = useState(null);
     const [submitted, setSubmitted] = useState(false);
 
     const handleChange = (event) => {
-        // const value = 
-        //     event.target.type === "checkbox" ? event.target.checked : event.target.value;
-        const value = event.target.value;
+        const value = 
+            event.target.type === "checkbox" ? event.target.checked : event.target.value;
+        // const value = event.target.value;
         setState({
           ...state,
           [event.target.name]: value
-        });
-      }
-
-    const handleFileChange = (event) => {
-        setState({ 
-            ...state,
-            [event.target.name]: event.target.files[0]
         });
       }
 
@@ -57,22 +67,38 @@ const AddDogs = () => {
             bild: state.bild,
             ras: state.ras,
             alder: state.alder,
+            storlek: state.storlek,    
             kastrerad: state.kastrerad,
-            kontaktnamn: state.kontaktnamn,
-            email: state.email,
-            lank: state.lank,
             hunderfarenhet: state.hunderfarenhet,
             fysik: state.fysik,
             allergi: state.allergi,
             barn: state.barn,
             boende: state.boende,
             hundpassning: state.hundpassning,
+            aktivitet: state.aktivitet,
+                sällskap: state.aktivitet.sällskap,
+                jakt: state.aktivitet.jakt,
+                sportkompis: state.aktivitet.sportkompis,
+                sök: state.aktivitet.sök,
+                hundsport: state.aktivitet.hundsport,
+                vakt: state.aktivitet.vakt,
             energi: state.energi,
             problematik: state.problematik,
+                hundaggressivitet: state.problematik.hundaggressivitet,
+                hoppar: state.problematik.hoppar,
+                integritet: state.problematik.integritet,
+                drar: state.problematik.drar,
+                ensam: state.problematik.ensam,
+                skällig: state.problematik.skällig,
+                resursförsvar: state.problematik.resursförsvar,
+                sjukdom: state.problematik.sjukdom,
+                ingen: state.problematik.ingen,
             katt: state.katt,
             hund: state.hund,
             ledarskap: state.ledarskap,
-            storlek: state.storlek,    
+            kontaktnamn: state.kontaktnamn,
+            email: state.email,
+            lank: state.lank
         }
 
         // const herokuUrl = "http://localhost:8080/dogs/";
@@ -100,6 +126,7 @@ const AddDogs = () => {
     }
 
     const submitButtonMessage = `Skicka in ${state.hundnamn} för matchning`;
+    console.log(submitted)
 
     return (
     <div className="addProductContainer">
@@ -122,15 +149,9 @@ const AddDogs = () => {
                     <input value={state.alder} type="text" name="alder" onChange={handleChange}/>  
                 </label>    
             </div> 
-
             {/* Storlek */}
             <div className="questionContainer">
                 <p className="questionHeading">Hur stor är din hund?</p>
-                {/* <div className="inputContainer">
-                <input className="radio" type='radio' id='liten' name='storlek' value='liten' checked={state.storlek === 'liten'} onChange={handleChange} />
-                    <div className="check"></div>
-                    <label className="radioLabel" htmlFor='mycket'>Liten- eller mellanstor hund (upp till 55 cm mankhöjd).</label>
-                </div> */}
                 <div className="inputRadioWrapper">
                     <label className="inputRadioLabel">
                         <input
@@ -140,7 +161,18 @@ const AddDogs = () => {
                             checked={state.storlek === "liten"}
                             onChange={handleChange}
                         />
-                        <span>Liten- eller mellanstor hund (upp till 55 cm mankhöjd).</span>
+                        <span>Liten hund (mindre än 45 cm mankhöjd).</span>
+                        <span className="checkmark"></span>
+                    </label>
+                    <label className="inputRadioLabel">
+                        <input
+                            type="radio"
+                            name="storlek"
+                            value="mellan"
+                            checked={state.storlek === "mellan"}
+                            onChange={handleChange}
+                            />
+                        <span>Mellanstor hund (ca 45-55 cm mankhöjd)</span>
                         <span className="checkmark"></span>
                     </label>
                     <label className="inputRadioLabel">
@@ -156,7 +188,6 @@ const AddDogs = () => {
                     </label>
                 </div>
             </div>
-
             {/* Kastrerad */}
             <div className="questionContainer">
                 <p className="questionHeading">Är din hund kastrerad?</p>
@@ -186,7 +217,7 @@ const AddDogs = () => {
 
             {/* Hunderfarenhet */}
             <div className="questionContainer">
-                <p className="questionHeading">Vilken typ av hunderfarenhet av hundar anser du att den som adopterar din hund behöver?</p>
+                <p className="questionHeading">Vilken typ av erfarenhet av hundar anser du att den som adopterar din hund behöver?</p>
                 <div className="inputRadioWrapper">
                     <label>
                         <input
@@ -202,11 +233,21 @@ const AddDogs = () => {
                         <input
                             type="radio"
                             name="hunderfarenhet"
+                            value="ganska"
+                            checked={state.hunderfarenhet === "ganska"}
+                            onChange={handleChange}
+                        />
+                        <span>Adoptören bör ha haft hund tidigare</span>
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="hunderfarenhet"
                             value="lite"
                             checked={state.hunderfarenhet === "lite"}
                             onChange={handleChange}
                         />
-                        <span>Ingen större hunderfarenhet krävs men bra om man umgåtts med hundar tidigare</span>
+                        <span>Ingen större erfarenhet krävs men bra om man umgåtts med hundar tidigare</span>
                     </label>
                 </div>
             </div>
@@ -219,11 +260,21 @@ const AddDogs = () => {
                         <input
                             type="radio"
                             name="fysik"
+                            value="hög"
+                            checked={state.fysik === "hög"}
+                            onChange={handleChange}
+                        />
+                        <span>..kan bli väldigt stark och tung att hålla emot i vissa situationer</span>
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="fysik"
                             value="normal"
                             checked={state.fysik === "normal"}
                             onChange={handleChange}
                         />
-                        <span>Kan en person med normal eller hög fysisk förmåga hålla emot och hantera</span>
+                        <span>Bör en person med normal fysisk förmåga kunna hålla emot och hantera</span>
                     </label>
                     <label>
                         <input
@@ -237,7 +288,6 @@ const AddDogs = () => {
                     </label>
                 </div>
             </div>
-
             {/* Allergi */}
             <div className="questionContainer">
                 <p className="questionHeading">Fäller din hund päls?</p>
@@ -246,92 +296,141 @@ const AddDogs = () => {
                         <input
                             type="radio"
                             name="allergi"
-                            value="nej"
-                            checked={state.allergi === "nej"}
+                            value="ja"
+                            checked={state.allergi === "ja"}
                             onChange={handleChange}
                         />
-                        <span>Min hund fäller päls</span>
+                        <span>Ja</span>
                     </label>
                     <label>
                         <input
                             type="radio"
                             name="allergi"
-                            value="ja"
-                            checked={state.allergi === "ja"}
+                            value="nej"
+                            checked={state.allergi === "nej"}
                             onChange={handleChange}
                         />
-                        <span>Min hund fäller inte päls</span>
+                        <span>Nej</span>
                     </label>
                 </div>
             </div>
-
             {/* Barn */}
             <div className="questionContainer">
-                <p className="questionHeading">Vilket alternativ stämmer för din hund och dess kompatiblitet med barn?</p>
+                <p className="questionHeading">Vilket alternativ stämmer för din hund och dess möjlighet att leva med barn?</p>
                 <div className="inputRadioWrapper">
                     <label>
                         <input
                             type="radio"
                             name="barn"
-                            value="ja"
-                            checked={state.barn === "ja"} 
+                            value="ofta"
+                            checked={state.barn === "ofta"} 
                             onChange={handleChange}
                         />
-                        <span>Min hund kan bo och umgås med barn</span>
+                        <span>Min hund kan bo med barn</span>
                     </label>
                     <label>
                         <input
                             type="radio"
                             name="barn"
-                            value="nej"
-                            checked={state.barn === "nej"}
+                            value="ibland"
+                            checked={state.barn === "ibland"}
+                            onChange={handleChange}
+                        />
+                        <span>Min hund ska bör inte bo med barn men det går bra för min hund att socialisera med barn</span>
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="barn"
+                            value="aldrig"
+                            checked={state.barn === "aldrig"}
                             onChange={handleChange}
                         />
                         <span>Min hund bör inte vara runt barn</span>
                     </label>
                 </div>
             </div>
-
             {/* Boende */}
             <div className="questionContainer">
                 <p className="questionHeading">Vilka boendeformer kan din hund bo i?</p>
+                {/* Ska kunna klicka i flera */}
                 <div className="inputRadioWrapper">
                     <label>
                         <input
                             type="radio"
                             name="boende"
-                            value="stadsmiljö"
-                            checked={state.boende === "stadsmiljö"}
+                            value="lgh-stad"
+                            checked={state.boende === "lgh-stad"}
                             onChange={handleChange}
                         />
-                        <span>I stadsmiljö och på landet</span>
+                        <span>I lägenhet i stadsmiljö</span>
                     </label>
                     <label>
                         <input
                             type="radio"
                             name="boende"
-                            value="landet"
-                            checked={state.boende === "landet"}
+                            value="villa-stad"
+                            checked={state.boende === "villa-stad"}
                             onChange={handleChange}
                         />
-                        <span>Endast på landet</span>
+                        <span>I villa/radhus i stadsmiljö</span>
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="boende"
+                            value="lgh-landet"
+                            checked={state.boende === "lgh-landet"}
+                            onChange={handleChange}
+                        />
+                        <span>I lägenhet utanför stadsmiljö</span>
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="boende"
+                            value="villa-landet"
+                            checked={state.boende === "villa-landet"}
+                            onChange={handleChange}
+                        />
+                        <span>I villa/radhus utanför stadsmiljö</span>
                     </label>
                 </div>
             </div>
-
             {/* Hundpassning */}
             <div className="questionContainer">
-                <p className="questionHeading">Kan din hund gå på hunddagis?</p>
+                <p className="questionHeading">Vilka hundpassningslösningar är lämpliga för din hund?</p>
+                {/* Ska kunna skicka in flera */}
                 <div className="inputRadioWrapper">
                     <label>
                         <input
                             type="radio"
                             name="hundpassning"
-                            value="hunddagis"
-                            checked={state.hundpassning === "hunddagis"}
+                            value="dagis"
+                            checked={state.hundpassning === "dagis"}
                             onChange={handleChange}
                         />
                         <span>Min hund kan gå på hunddagis</span>
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="hundpassning"
+                            value="kontor"
+                            checked={state.hundpassning === "kontor"}
+                            onChange={handleChange}
+                        />
+                        <span>Min hund kan följa med sin ägare till kontoret om dagarna</span>
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="hundpassning"
+                            value="ensam"
+                            checked={state.hundpassning === "ensam"}
+                            onChange={handleChange}
+                        />
+                        <span>Min hund kan vara ensam ett par timmar om dagarna</span>
                     </label>
                     <label>
                         <input
@@ -346,6 +445,67 @@ const AddDogs = () => {
                 </div>
             </div>
 
+            {/* Aktiviteter */}
+            <div className="questionContainer">
+                <p className="questionHeading">Vilken eller vilka typer av aktiviteter och livsstil lämpar för sig din hund?</p>
+                <div className="inputRadioWrapper">
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="sällskap"
+                            checked={state.aktivitet.sällskap}
+                            onChange={handleChange}
+                        />
+                        <span>Min hund vore lycklig som ren sällskapshund</span>
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="jakt"
+                            checked={state.aktivitet.jakt}
+                            onChange={handleChange}
+                        />
+                        <span>Min hund vore lämplig att användas i jakt</span>
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="sportkompis"
+                            checked={state.aktivitet.sportkompis}
+                            onChange={handleChange}
+                        />
+                        <span>Min hund lämpar sig som sportkompis och vore lycklig av att följa med på diverse jogg-och cykelturer</span>
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="sök"
+                            checked={state.aktivitet.sök}
+                            onChange={handleChange}
+                        />
+                        <span>Min hund vore lämplig att användas inom sök</span>
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="hundsport"
+                            checked={state.aktivitet.hundsport}
+                            onChange={handleChange}
+                        />
+                        <span>Min hund vore lämplig att användas till hundsporter såsom agility, rallylydnad mm</span>
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="vakt"
+                            checked={state.aktivitet.vakt}
+                            onChange={handleChange}
+                        />
+                        <span>Min hund vore lämplig att användas som vakthund</span>
+                    </label>
+                </div>
+            </div>
+            
             {/* Energi */}
             <div className="questionContainer">
                 <p className="questionHeading">Min hund behöver bo i hem där det är:</p>
@@ -370,9 +530,106 @@ const AddDogs = () => {
                         />
                         <span>Lugnt och sansat</span>
                     </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="energi"
+                            value="båda"
+                            checked={state.energi === "båda"}
+                            onChange={handleChange}
+                        />
+                        <span>Min hund kan trivas i både lugnare och mer fartfyllda hem</span>
+                    </label>
                 </div>
             </div>
 
+            {/* Problematik */}
+            <div className="questionContainer">
+                <p className="questionHeading">Besitter din hund någon känd hundproblematik? Du kan välja fler alternativ.</p>
+                <div className="inputRadioWrapper">
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="hundaggressivitet"
+                            checked={state.problematik.hundaggressivitet}
+                            onChange={handleChange}
+                        />
+                        <span>Hundaggressivitet</span>
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="hoppar"
+                            checked={state.problematik.hoppar}
+                            onChange={handleChange}
+                        />
+                        <span>Hoppar på folk när den hälsar</span>
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="integritet"
+                            checked={state.problematik.integritet}
+                            onChange={handleChange}
+                        />
+                        <span>Hög integritet</span>
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="drar"
+                            checked={state.problematik.drar}
+                            onChange={handleChange}
+                        />
+                        <span>Drar i kopplet</span>
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="ensam"
+                            checked={state.problematik.ensam}
+                            onChange={handleChange}
+                        />
+                        <span>Kan inte vara ensam hemma</span>
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="skällig"
+                            checked={state.problematik.skällig}
+                            onChange={handleChange}
+                        />
+                        <span>Skällig</span>
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="resursförsvar"
+                            checked={state.problematik.resursförsvar}
+                            onChange={handleChange}
+                        />
+                        <span>Resursförsvar</span>
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="sjukdom"
+                            checked={state.problematik.sjukdom}
+                            onChange={handleChange}
+                        />
+                        <span>Sjukdomstillstånd som kräver regelbunden veterinärvård</span>
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="ingen"
+                            checked={state.problematik.ingen}
+                            onChange={handleChange}
+                        />
+                        <span>Min hund har ingen nämnd problematik</span>
+                    </label>
+                </div>
+            </div>
             {/* Katt */}
             <div className="questionContainer">
                 <p className="questionHeading">Kan din hund bo med katt?</p>
@@ -393,33 +650,6 @@ const AddDogs = () => {
                             name="katt"
                             value="nej"
                             checked={state.katt === "nej"}
-                            onChange={handleChange}
-                        />
-                        <span>Nej</span>
-                    </label>
-                </div>
-            </div>
-
-            {/* Problematik */}
-            <div className="questionContainer">
-                <p className="questionHeading">Besitter din hund någon känd hundproblematik, t.ex. aggressivitet, resursförsvar eller långvarigt sjukdomstillstånd som kräver regelbunden veterinärvård?</p>
-                <div className="inputRadioWrapper">
-                    <label>
-                        <input
-                            type="radio"
-                            name="problematik"
-                            value="ja"
-                            checked={state.problematik === "ja"}
-                            onChange={handleChange}
-                        />
-                        <span>Ja</span>
-                    </label>
-                    <label>
-                        <input
-                            type="radio"
-                            name="problematik"
-                            value="nej"
-                            checked={state.problematik === "nej"}
                             onChange={handleChange}
                         />
                         <span>Nej</span>
@@ -473,7 +703,6 @@ const AddDogs = () => {
                     </label>
                 </div>
             </div>
-
             {/* Ledarskap */}
             <div className="questionContainer">
                 <p className="questionHeading">Vilket typ av ledarskap passar din hund bäst?</p>
@@ -498,17 +727,25 @@ const AddDogs = () => {
                         />
                         <span>Tydligt, rakt och bestämt ledarskap</span>
                     </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="ledarskap"
+                            value="båda"
+                            checked={state.ledarskap === "båda"}
+                            onChange={handleChange}
+                        />
+                        <span>Båda ledarskapsstilarna kan passa min hund</span>
+                    </label>
                 </div>
             </div>
-
             {/* Beskrivning */}
             <div className="questionContainer">
                 <label className="labelText">
                     <p className="questionHeading">Beskriv din hund med egna ord och förklara kort bakgrunden till omplaceringen</p>
-                    <textarea value={state.beskrivning} type="text" name="beskrivning" onChange={handleChange} style={{height: '100px', fontSize: '20px', fontFamily: 'Arial'}}></textarea>
+                    <input value={state.beskrivning} type="text" name="beskrivning" onChange={handleChange}/>
                 </label>
             </div>
-
             {/* Bild */}
             <div className="questionContainer">
                 <label className="labelText">
@@ -516,7 +753,6 @@ const AddDogs = () => {
                     <input value={state.bild} type="text" name="bild" onChange={handleChange}/>
                 </label>
             </div>
-
             {/* Ditt namn */}
             <div className="questionContainer">
                 <label className="labelText">
@@ -524,7 +760,6 @@ const AddDogs = () => {
                     <input value={state.kontaktnamn} type="text" name="kontaktnamn" onChange={handleChange}/>
                 </label>
             </div>
-
             {/* Din mailadress */}
             <div className="questionContainer">
                 <label className="labelText">
@@ -532,7 +767,6 @@ const AddDogs = () => {
                     <input value={state.email} type="text" name="email" onChange={handleChange}/>
                 </label>
             </div>
-
             {/* Länk */}
             <div className="questionContainer">
                 <label className="labelText">

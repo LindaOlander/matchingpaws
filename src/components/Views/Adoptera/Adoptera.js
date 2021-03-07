@@ -1,8 +1,7 @@
 import React from 'react';
 import NavbarBlack from '../../Navbar/NavbarBlack';
-import WizardParent from '../../StepWizard/Wizard/WizardParent';
-import { HashLink as Link } from 'react-router-hash-link';
-import WizardNew from '../../StepWizard/WizardNew';
+import WizardParent from '../../Wizard/WizardParent';
+import StepWizard from '../../StepWizard/StepWizard';
 
 const Adoptera = () => {
 
@@ -22,8 +21,8 @@ const Adoptera = () => {
                 <p>Var noga med att svara sanningsenligt på testet, <br />för dig och din framtida hunds skull!</p>
                 <button onClick={scrollDown} className="button">Starta testet</button>
             </div>
-            {/* <WizardNew /> */}
             <WizardParent />
+            {/* <StepWizard /> */}
         </>
     )
 }

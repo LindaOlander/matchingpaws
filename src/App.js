@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Start from './components/Views/Start/Start';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { HashRouter } from 'react-router-dom';
 import DogPage from './components/DogPage/DogPage';
-import Quiz from './components/Views/Quiz/Quiz';
 import Adoptera from './components/Views/Adoptera/Adoptera';
 import Om from './components/Views/Om/Om';
 import Omplacera from './components/Views/Omplacera/Omplacera';
 import Hundlivet from './components/Views/Hundlivet/Hundlivet';
 import Adoptionsprocessen from './components/Views/Adoptionsprocessen/Adoptionsprocessen';
 import DogList from './components/DogList/DogList';
+import { PageView, initGA } from '../src/components/Tracking/index';
 import './App.css';
 
 function App() {
+
+  useEffect(() => {
+    initGA('G-SH3XSQV8Z7');
+    PageView();
+  })
 
   return (
     <HashRouter basename={process.env.PUBLIC_URL}>

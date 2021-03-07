@@ -61,9 +61,9 @@ const Wizard = () => {
                 isHashEnabled
                 transitions={state.transitions} // comment out for default transitions
             >
-                <First hashKey={'FirstStep'} update={updateForm} />
-                <Second hashKey={'SecondStep'} update={updateForm} />
-                <Third hashKey={'ThirdStep'} update={updateForm} />
+                <First hashKey={'/matchingpaws/adoptera/step1'} update={updateForm} />
+                <Second hashKey={'/matchingpaws/adoptera/step2'} update={updateForm} />
+                <Third hashKey={'/matchingpaws/adoptera/step3'} update={updateForm} />
                 {/* <Progress /> */}
                 <Last hashKey={'TheEnd!'} form={state.form}/>
             </StepWizard>
@@ -105,7 +105,7 @@ const Stats = ({
         { step < totalSteps ?
             <button className='btn btn-primary btn-block' onClick={nextStep}>Fortsätt</button>
             :
-            <button className='btn btn-success btn-block' onClick={nextStep}>Skicka in</button>
+            <button className='btn btn-success btn-block' onClick={lastStep}>Skicka in</button>
         }
     </>
 );

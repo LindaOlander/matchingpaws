@@ -10,8 +10,8 @@ const Adoptionsprocessen = () => {
             <NavbarBlack color='black' />
             <HeaderAdoptionsprocessen />
             <div className="contentWrapper">
-                <p>Matching Paws arbetar för att sammanföra privatpersoner och föreningar som behöver omplacera hundar med lämpliga hem och familjer som önskar adoptera en hund.</p>
-                <h3>Vår adoptionsprocess</h3>
+                <p>Matching Paws arbetar för att sammanföra privatpersoner och föreningar - med trygga familjer och lämpliga hem som önskar adoptera en hund.</p>
+                <br />
                 <Timeline />
             </div>
             <Footer />

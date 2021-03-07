@@ -7,6 +7,7 @@ import Navbar from '../../Navbar/Navbar';
 import Footer from '../../Footer/Footer';
 import BannerAgria from '../../Banners/BannerAgria';
 import BannerQuiz from '../../Banners/BannerQuiz';
+import {Event} from '../../Tracking/index';
 
 const Start = () => {
     const { pathname } = useLocation();
@@ -22,6 +23,10 @@ const Start = () => {
             <BannerQuiz />
             <AboutOmplacera />
             {/* <BannerAgria /> */}
+            <button
+                onClick={()=> 
+                    Event("PRODUCT", "Product added to cart", "PRODUCT_PAGE")
+                } >Add to Cart</button>
             <Footer />
         </>
     )

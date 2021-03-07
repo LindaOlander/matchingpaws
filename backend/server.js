@@ -19,7 +19,8 @@ const Dog = mongoose.model("Dog", {
     type: String,
   },
   bild: {
-    type: String,
+    data: Buffer,
+    contentType: String,
   },
   ras: {
     type: String,
@@ -50,15 +51,6 @@ const Dog = mongoose.model("Dog", {
   },
   hundpassning: {
     type: String,
-  },
-  aktivitet: {
-    sällskap: Boolean,
-    jakt: Boolean,
-    sportkompis: Boolean,
-    sök: Boolean,
-    hundsport: Boolean,
-    vakt: Boolean,
-    inget: Boolean,
   },
   energi: {
     type: String,
@@ -94,6 +86,89 @@ const Dog = mongoose.model("Dog", {
   }
 })
 
+// const DogOrg = mongoose.model("DogOrg", {
+//   hundnamn: {
+//     type: String,
+//   },
+//   beskrivning: {
+//     type: String,
+//   },
+//   bild: {
+//     type: String,
+//   },
+//   ras: {
+//     type: String,
+//   },
+//   alder: {
+//     type: String,
+//   },
+//   storlek: {
+//     type: String,
+//   },
+//   kastrerad: {
+//     type: String,
+//   },
+//   hunderfarenhet: {
+//     type: String,
+//   },
+//   fysik: {
+//     type: String,
+//   },
+//   allergi: {
+//     type: String,
+//   },
+//   barn: {
+//     type: String,
+//   },
+//   boende: {
+//     type: String,
+//   },
+//   hundpassning: {
+//     type: String,
+//   },
+//   aktivitet: {
+//     sällskap: Boolean,
+//     jakt: Boolean,
+//     sportkompis: Boolean,
+//     sök: Boolean,
+//     hundsport: Boolean,
+//     vakt: Boolean,
+//     inget: Boolean,
+//   },
+//   energi: {
+//     type: String,
+//   }, 
+//   problematik: {
+//     hundaggressivitet: Boolean,
+//     hoppar: Boolean,
+//     integritet: Boolean,
+//     drar: Boolean,
+//     ensam: Boolean,
+//     skällig: Boolean,
+//     resursförsvar: Boolean,
+//     sjukdom: Boolean,
+//     ingen: Boolean,
+//   }, 
+//   katt: {
+//     type: String,
+//   }, 
+//   hund: {
+//     type: String,
+//   }, 
+//   ledarskap: {
+//     type: String,
+//   }, 
+//   kontaktnamn: {
+//     type: String,
+//   },
+//   email: {
+//     type: String,
+//   }, 
+//   lank: {
+//     type: String,
+//   }
+// })
+
 // Defines the port the app will run on. Defaults to 8080, but can be 
 // overridden when starting the server. For example:
 //
@@ -107,7 +182,7 @@ app.use(bodyParser.json())
 
 // Start defining your routes here
 app.get('/', (req, res) => {
-  res.send('Hello world')
+  res.send('Matching Paws Api')
 })
 
 app.get('/dogs', (req, res) => {

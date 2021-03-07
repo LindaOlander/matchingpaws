@@ -34,7 +34,8 @@ const Timeline = () => {
                 {openMatch && 
                         <>
                         <p>Via vårt noga framtagna matchningsverktyg kan privatpersoner enkelt identifiera hundar som passar deras befintliga livsstil och tidigare förmåga.</p>
-                        <p>Matching Paws matchningsverktyg utgår ifrån information som den nuvarande hundägaren har lämnat om sin hund och grundas enbart på hundens behov och egenskaper. Vårt mål är att säkerställa hög kvalificerade matchningar där både den som adopterar och den som omplacerar kan känna sig trygg med adoptionen.</p>
+                        <p>Matching Paws matchningsverktyg utgår ifrån information som den nuvarande hundägaren har lämnat om sin hund och grundas enbart på hundens behov och egenskaper.</p>
+                        <p>Vårt mål är att säkerställa högkvalificerade matchningar där både den som adopterar och den som omplacerar kan känna sig trygg med adoptionen.</p>
                         </>
                     }
                     </div>
@@ -72,7 +73,7 @@ const Timeline = () => {
                     <p>När du och och den nuvarande ägaren är överens om att du ska adoptera deras hund behöver ni skriva ett köpeavtal samt registrera ägarbyte via jordbruksverket.se</p>
                 {openSign && 
                     <>
-                    <p>När ni skriver avtal kan ni utgå ifrån denna mall - men kom ihåg att avtalet ska bli korrekt utifrån ditt specifika fall och att du därför kan behöva anpassa mallen för att alla bestämmelser som ni kommit överens om finns med.</p>
+                    <p>När ni skriver avtal kan ni utgå ifrån <a href="https://www.if.se/globalassets/se/dokument/privat/kopeavtal-hund.pdf" target="_blank">denna mall</a> - men kom ihåg att avtalet ska bli korrekt utifrån ditt specifika fall och att du därför kan behöva anpassa mallen för att alla bestämmelser som ni kommit överens om finns med.</p>
                     <p>Exempel på särskilda bestämmelser kan vara:</p>
                     <ul>
                         <li>När hunden ska överlåtas</li>
@@ -83,7 +84,7 @@ const Timeline = () => {
                         <li>Överlåtelse av försäkring</li>
                         <li>Överlåtelse av utrustning</li>
                     </ul>
-                    <p>Det är förståeligt att man kan vilja skynda på saker i detta skede men vi rekommenderar starkt att man gått igenom allt praktiskt i lugn och ro innan man tar över eller överlåter hunden för att undvika framtida komplikationer.</p>
+                    <p>Det är förståeligt att du i detta skede vill skynda på processen, men vi rekommenderar starkt att gå igenom allt praktiskt i lugn och ro innan du tar över eller överlåter hunden, för att undvika framtida komplikationer.</p>
                     </>}
                 </div>
             </div>

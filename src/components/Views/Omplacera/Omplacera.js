@@ -29,7 +29,7 @@ const Omplacera = () => {
             <HeaderAdopt />
             <div className="contentWrapper">
                 <h5>När det inte blev som du tänkt</h5>
-                <p className="smallParagraph">Ibland blir livet som hundägare inte som man tänkt sig och man kan av olika anledningar behöva omplacera sin hund. Vi förstår att beslutet att omplacera sin hund kan vara mycket tungt och fyllt med olika känslor.</p>
+                <p className="smallParagraph">Ibland blir livet som hundägare inte som man tänkt sig och av olika anledningar kan man behöva omplacera sin hund. Vi förstår att det beslutet kan vara mycket tungt och fyllt av känslor.</p>
                 {!toggle && 
                     <div style={{width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center', marginBottom: '30px'}}>
                         <button className="buttonLinkSecret" onClick={handleReadmore}>Läs mer</button>
@@ -37,21 +37,18 @@ const Omplacera = () => {
                 }
                 {toggle && 
                 <>
-                    <h5>Rubrik</h5>
+                    <h5>Matchningsprocessen</h5>
                     <p className="smallParagraph">Efter att du har laddat upp din hund för matchning kan de individer som matchats med din hund komma att kontakta dig för att ta vidare dialogen. Det är självklart du som ägare som i slutändan väljer vem som ska ta över din hund och du har rätt att ångra dig fram till att avtal är skrivet.</p>
-                    <h5>Rubrik</h5>
-                    <p className="smallParagraph">Svara sanningsenligt och noga på formuläret och dubbelkolla att kontaktuppgifter stämmer så att eventuella framtida adoptörer kan komma i kontakt med dig.</p>
-                    <h5>Rubrik</h5>
-                    <p className="smallParagraph">Via nedanstående formulär kan du skapa ett konto och lägga in din hund för matchning så att vi kan hjälpa bästa möjliga ägare åt din hund.</p>
+                    <p className="smallParagraph">Svara sanningsenligt på formuläret och kontrollera dina kontaktuppgifter, så att eventuella adoptörer kan komma i kontakt med dig. Viktigast av allt, vi förstår att det är tungt och vi håller dig i handen genom processen.</p>
                 </>
                 }
-                {toggle && 
+                {/* {toggle && 
                     <div style={{width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center', marginBottom: '30px'}}>
                         <button className="buttonLink" onClick={handleReadmore}>Läs mindre</button>
                     </div>
-                }
+                } */}
                 {!showForm && 
-                <div className="centerWrapper">
+                <div className="centerWrapper buttonWrapper">
                     <button className="button" onClick={handleShowForm}>Lägg in din hund för matchning</button>
                 </div>}
             </div>

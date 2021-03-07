@@ -14,7 +14,7 @@ const BannerQuiz = () => {
                 Hitta din bästa vän.
                 <br />
                 Testa vårt matchningsverktyg.</h5></Link>
-                <img className="logo bannerLogo" src={iconWhite.default} />
+                {/* <img className="logo bannerLogo" src={iconWhite.default} /> */}
         </div>
     )
 };
