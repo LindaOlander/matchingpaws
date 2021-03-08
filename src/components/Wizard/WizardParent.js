@@ -44,8 +44,13 @@ const WizardParent = () => {
     const filterDogs = () => {
         setMatch(true);
         setDogsShown(true);
+        const ownerCapabilities = {
+            'mycket': ['mycket', 'ganska', 'lite'],
+            'ganska': ['ganska', 'lite'],
+            'lite': ['lite'],
+        };
         const copyDogs = [...data];
-        const filterOnErfarenhet = copyDogs.filter(dog => dog.hunderfarenhet === state.hunderfarenhet)
+        const filterOnErfarenhet = copyDogs.filter(dog => ownerCapabilities[state.hunderfarenhet].indexOf(dog.hunderfarenhet) <= 1)
         const filterOnFysik = filterOnErfarenhet.filter(dog => dog.fysik === state.fysik)
         const filterOnAllergi = filterOnFysik.filter(dog => dog.allergi === state.allergi)
         const filterOnBarn = filterOnAllergi.filter(dog => dog.barn === state.barn)
