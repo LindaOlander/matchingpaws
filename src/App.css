@@ -163,6 +163,20 @@ h5 {
   justify-content: space-between;
 }
 
+.rowDesktop {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: row;
+}
+
+.paddedDesktop {
+  padding: 30px 150px;
+}
+
 .back {
   margin: 5px 10px 0 10px;
 }
@@ -207,5 +221,14 @@ h5 {
 
   .contentWrapper {
     padding: 25px;
+  }
+
+  .rowDesktop {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .paddedDesktop {
+    padding: 0;
   }
 }

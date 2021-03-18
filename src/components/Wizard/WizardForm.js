@@ -8,12 +8,12 @@ export const WizardForm = ({ step: currentIndex, ...props }) => {
   const lastQuestion = currentIndex >= 11;
 
   return (
-    <div>
+    <div className="stepContainer">
       <div>
         {!lastQuestion && <p>Fråga {currentIndex + 1} av {steps.length - 1}</p>}
       </div>
       {steps[currentIndex]}
-      <div className="wizardButtonWrapper">
+      {nextStep && <div className="wizardButtonWrapper">
         <Button
           visible={prevStep && !lastQuestion}
           onClick={() => props.onChange(currentIndex - 1)}
@@ -28,16 +28,12 @@ export const WizardForm = ({ step: currentIndex, ...props }) => {
         >
           Nästa
         </Button>
-      </div>
+      </div>}
     </div>
   );
 };
 
 export const Step = ({ children }) => children;
-
-function getClsNavBtn(active) {
-  return "btn btn-primary flex-fill" + (active ? " active" : "");
-}
 
 function Button({ visible, ...props }) {
   return (

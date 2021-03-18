@@ -55,6 +55,15 @@ const Dog = mongoose.model("Dog", {
   energi: {
     type: String,
   }, 
+  aktivitet: {
+    sällskap: Boolean,
+    jakt: Boolean,
+    sportkompis: Boolean,
+    sök: Boolean,
+    hundsport: Boolean,
+    vakt: Boolean,
+    inget: Boolean,
+  },
   problematik: {
     hundaggressivitet: Boolean,
     hoppar: Boolean,

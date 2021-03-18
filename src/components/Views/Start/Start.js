@@ -23,10 +23,10 @@ const Start = () => {
             <BannerQuiz />
             <AboutOmplacera />
             {/* <BannerAgria /> */}
-            <button
+            {/* <button
                 onClick={()=> 
                     Event("PRODUCT", "Product added to cart", "PRODUCT_PAGE")
-                } >Add to Cart</button>
+                } >Add to Cart</button> */}
             <Footer />
         </>
     )

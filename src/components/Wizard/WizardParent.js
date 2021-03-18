@@ -44,21 +44,60 @@ const WizardParent = () => {
     const filterDogs = () => {
         setMatch(true);
         setDogsShown(true);
+        const ownerCapabilities = {
+            'mycket': ['mycket', 'ganska', 'lite'],
+            'ganska': ['ganska', 'lite'],
+            'lite': ['lite'],
+        };
+        const ownerPhysics = {
+            'hög': ['hög', 'normal', 'låg'],
+            'normal': ['normal', 'låg'],
+            'låg': ['låg']
+        }
+        const ownerEnergy = {
+            'fartfyllt': ['fartfyllt', 'båda'],
+            'lugnt': ['lugnt', 'båda']
+        }
+        const ownerCatsInHome = {
+            'ja': ['ja'],
+            'nej': ['nej', 'ja']
+        }
+        const ownerDogsInHome = {
+            'nej': ['nej'],
+            'båda': ['båda'],
+            'tikar': ['tikar', 'båda'],
+            'hanar': ['hanar', 'båda']
+        }
+        const ownerLedarskap = {
+            'mjukt': ['mjukt', 'båda'],
+            'tydligt': ['tydligt', 'båda'],
+            'båda': ['båda', 'mjukt', 'tydligt']
+        }
+        const ownerProblems = {
+            'hundagressivitet': ['hundaggressivitet', 'ingen'],
+            'hoppar': ['hoppar', 'ingen'],
+            'integritet': ['integritet', 'ingen'],
+            'drar': ['drar', 'ingen'],
+            'ensam': ['ensam', 'ingen'],
+            'skällig': ['skällig', 'ingen'],
+            'resursförsvar': ['resursförsvar', 'ingen'],
+            'sjukdom': ['sjukdom', 'ingen'],
+        }
         const copyDogs = [...data];
-        const filterOnErfarenhet = copyDogs.filter(dog => dog.hunderfarenhet === state.hunderfarenhet)
-        const filterOnFysik = filterOnErfarenhet.filter(dog => dog.fysik === state.fysik)
+        const filterOnErfarenhet = copyDogs.filter(dog => ownerCapabilities[state.hunderfarenhet].indexOf(dog.hunderfarenhet) > -1)
+        const filterOnFysik = filterOnErfarenhet.filter(dog => ownerPhysics[state.fysik].indexOf(dog.fysik) > -1)
         const filterOnAllergi = filterOnFysik.filter(dog => dog.allergi === state.allergi)
         const filterOnBarn = filterOnAllergi.filter(dog => dog.barn === state.barn)
         const filterOnBoende = filterOnBarn.filter(dog => dog.boende === state.boende)
         const filterOnHundpassning = filterOnBoende.filter(dog => dog.hundpassning === state.hundpassning)
-        const filterOnEnergi = filterOnHundpassning.filter(dog => dog.energi === state.energi)
-        const filterOnKatt = filterOnEnergi.filter(dog => dog.katt === state.katt)
-        const filterOnHund = filterOnKatt.filter(dog => dog.hund === state.hund)
-        const filterOnLedarskap = filterOnHund.filter(dog => dog.ledarskap === state.ledarskap)
+        const filterOnEnergi = filterOnHundpassning.filter(dog => ownerEnergy[state.energi].indexOf(dog.energi) > -1)
+        const filterOnKatt = filterOnEnergi.filter(dog => ownerCatsInHome[state.katt].indexOf(dog.katt) > -1)
+        const filterOnHund = filterOnKatt.filter(dog => ownerDogsInHome[state.hund].indexOf(dog.hund) > -1)
+        const filterOnLedarskap = filterOnHund.filter(dog => ownerLedarskap[state.ledarskap].indexOf(dog.ledarskap) > -1)
         const filterOnStorlek = filterOnLedarskap.filter(dog => dog.storlek === state.storlek)
         setData(filterOnStorlek); 
     }
-    
+
     useEffect(() => {
         const fetchData = async () => {
           const result = await axios(
@@ -238,6 +277,36 @@ const WizardParent = () => {
             </div>
         </Step>
 
+        <Step title="Aktiviteter" description="Aktiviteter">
+            <div>
+                <strong>Vilken typ av aktiviteter vill och planerar du att göra med din hund?</strong>
+                <div className="inputContainerCheckbox">  
+                    <input className="checkbox" type='checkbox' id='sällskap' name='aktivitet' value='sällskap' onChange={handleChange} />
+                    <label htmlFor='sällskap'>Hunden kommer primärt gå som sällskapshund och ge stimulans via promenader, aktivitetsövningar och massa gos</label>
+                </div>
+                <div className="inputContainerCheckbox">
+                    <input className="checkbox" type='checkbox' id='sportkompis' name='aktivitet' value='sportkompis' onChange={handleChange} />
+                    <label htmlFor='sportkompis'>Hunden kommer få följa med på diverse joggingturer, cykelturer, vandringar mm.</label>
+                </div>
+                <div className="inputContainerCheckbox">
+                    <input className="checkbox" type='checkbox' id='sök' name='aktivitet' value='sök'  onChange={handleChange} />
+                    <label htmlFor='sök'>Hunden kommer få tränas inom sök</label>
+                </div>
+                <div className="inputContainerCheckbox">
+                    <input className="checkbox" type='checkbox' id='hundsport' name='aktivitet' value='hundsport'  onChange={handleChange} />
+                    <label htmlFor='hundsport'>Hunden kommer tränas och tävlas inom hundsporter såsom agility, rallylydnad mm.</label>
+                </div>
+                <div className="inputContainerCheckbox">  
+                    <input className="checkbox" type='checkbox' id='jakt' name='aktivitet' value='jakt' onChange={handleChange} />
+                    <label htmlFor='jakt'>Hunden kommer användas i jakt</label>
+                </div>
+                <div className="inputContainerCheckbox">
+                    <input className="checkbox" type='checkbox' id='vakt' name='aktivitet' value='vakt' onChange={handleChange} />
+                    <label htmlFor='vakt'>Hunden kommer användas som vakthund</label>
+                </div>
+            </div>
+          </Step>
+
         <Step title="Storlek" description="Storlek">
             <div>
                 <strong>Vilken storlek på hund har du möjlighet att ta hand om?</strong>
@@ -269,7 +338,7 @@ const WizardParent = () => {
                     <>
                         <h3>Grattis, du har blivit matchad!</h3>
                         <p>Enligt våra algoritmer skulle du passa bäst med nedanstående hundar. Läs på om hunden du matchats med och kontakta deras nuvarande ägare om du seriöst är intresserad av att adoptera deras hund.</p>
-                        <div id="dogResult">
+                        <div id="dogResult" className="dogResult">
                             {data.map(dog =>
                                 <DogBox
                                 key={dog._id}

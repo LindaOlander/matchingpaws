@@ -1,0 +1,64 @@
+.addProductContainer {
+    padding: 20px 400px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputContainer input, textarea {
+    margin: 5px 0;
+}
+
+.inputRadioWrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.inputRadioWrapper input {
+    margin: 0;
+    margin-right: 10px;
+}
+
+.inputRadioWrapper label {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.labelText {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+.labelText input {
+    font-size: 20px;
+}
+
+.inputRadioWrapper input[type="radio"]:checked ~ * { 
+    text-decoration: underline;
+}
+
+.questionHeading {
+    padding-top: 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.questionContainer {
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 820px) {
+    .addProductContainer {
+        padding: 20px 25px 0 25px;
+    }
+}

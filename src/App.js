@@ -3,6 +3,7 @@ import Start from './components/Views/Start/Start';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { HashRouter } from 'react-router-dom';
 import DogPage from './components/DogPage/DogPage';
+import AddDogs from './components/AddDogs/AddDogs';
 import Adoptera from './components/Views/Adoptera/Adoptera';
 import Om from './components/Views/Om/Om';
 import Omplacera from './components/Views/Omplacera/Omplacera';
@@ -25,6 +26,7 @@ function App() {
       <Route path="/adoptera" exact component={Adoptera} />
       <Route path="/adoptera/:id" component={DogPage} />
       <Route path="/omplacera" exact component={Omplacera} />
+      <Route path="/laggtill" exact component={AddDogs} />
       <Route path="/adoptionsprocessen" exact component={Adoptionsprocessen} />
       <Route path="/hund" exact component={Hundlivet} />
       <Route path="/om" exact component={Om} />

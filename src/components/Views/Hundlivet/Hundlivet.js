@@ -11,7 +11,7 @@ const Hundlivet = () => {
             <NavbarBlack color="black"/>
             <HeaderHundlivet />
             <div className="contentWrapper">
-            <p>Att skaffa hund är att bli en till familjemedlem. Det är en hel del som behöver förberedas inför livet med din nya hund.</p>
+            <p className="paddedDesktop">Att skaffa hund är att bli en till familjemedlem. Det är en hel del som behöver förberedas inför livet med din nya hund.</p>
                 <div id="förberedelser" className="accordionWrapper">
                     <h5>Förberedelser</h5>
                     <FaqAccordion
