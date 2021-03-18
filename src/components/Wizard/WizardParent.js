@@ -18,7 +18,26 @@ const WizardParent = () => {
         boende: '',
         hundpassning: '', 
         energi: '',
-        problematik: '',
+        problematik: {
+            hundaggressivitet: false,
+            hoppar: false,
+            integritet: false,
+            drar: false,
+            ensam: false,
+            skällig: false,
+            resursförsvar: false,
+            sjukdom: false,
+            ingen: false,
+        },
+        aktivitet: {
+            sällskap: false,
+            jakt: false,
+            sportkompis: false,
+            sök: false,
+            hundsport: false,
+            vakt: false,
+            inget: false,
+        },
         katt: '',
         hund: '',
         ledarskap: '',
@@ -39,7 +58,27 @@ const WizardParent = () => {
             ...state,
           [event.target.name]: value
         });
-      }
+    }
+
+    const handleChangeAktivitet = (event) => {
+        setState({
+            ...state,
+            aktivitet: {
+                ...state.aktivitet,
+                [event.target.name]: event.target.checked
+            }
+        })
+    }
+    
+    const handleChangeProblematik = (event) => {
+        setState({
+            ...state,
+            problematik: {
+                ...state.problematik,
+                [event.target.name]: event.target.checked
+            }
+        })
+    }
 
     const filterDogs = () => {
         setMatch(true);
@@ -74,7 +113,7 @@ const WizardParent = () => {
             'båda': ['båda', 'mjukt', 'tydligt']
         }
         const ownerProblems = {
-            'hundagressivitet': ['hundaggressivitet', 'ingen'],
+            'hundaggressivitet': ['hundaggressivitet', 'ingen'],
             'hoppar': ['hoppar', 'ingen'],
             'integritet': ['integritet', 'ingen'],
             'drar': ['drar', 'ingen'],
@@ -82,6 +121,16 @@ const WizardParent = () => {
             'skällig': ['skällig', 'ingen'],
             'resursförsvar': ['resursförsvar', 'ingen'],
             'sjukdom': ['sjukdom', 'ingen'],
+        }
+        const ownerActivities = {
+            'sällskap': ['sällskap'],
+            'jakt': ['jakt'],
+            'sportkompis': ['sportkompis'],
+            'sök': ['sök'],
+            'hundsport': ['hundsport'],
+            'vakt': ['vakt'],
+            'inget': ['inget'],
+            
         }
         const copyDogs = [...data];
         const filterOnErfarenhet = copyDogs.filter(dog => ownerCapabilities[state.hunderfarenhet].indexOf(dog.hunderfarenhet) > -1)
@@ -94,6 +143,7 @@ const WizardParent = () => {
         const filterOnKatt = filterOnEnergi.filter(dog => ownerCatsInHome[state.katt].indexOf(dog.katt) > -1)
         const filterOnHund = filterOnKatt.filter(dog => ownerDogsInHome[state.hund].indexOf(dog.hund) > -1)
         const filterOnLedarskap = filterOnHund.filter(dog => ownerLedarskap[state.ledarskap].indexOf(dog.ledarskap) > -1)
+        // const filterOnAktivitetJakt = filterOnLedarskap.filter(dog => dog.aktivitet.jakt === true)    
         const filterOnStorlek = filterOnLedarskap.filter(dog => dog.storlek === state.storlek)
         setData(filterOnStorlek); 
     }
@@ -108,6 +158,9 @@ const WizardParent = () => {
         };
         fetchData();
     }, []);
+
+    console.log('state', state)
+    console.log('data', data)
 
     return (
 
@@ -261,6 +314,48 @@ const WizardParent = () => {
             </div>
         </Step>
 
+        <Step title="Problematik" description="Problematik">
+            <div>
+                <strong>En del av hundarna vi hjälper att omplacera har med sig viss problematik från sitt förflutna som du som ny ägare kommer att behöva hantera. Vilka av nedanstående utmaningar känner du att du som ägare är villig och kompentent nog att arbeta med?</strong>  
+                <div className="inputContainerCheckbox">  
+                    <input className="checkbox" type='checkbox' id='hundaggressivitet' name='hundaggressivitet' value='hundaggressivitet' checked={state.problematik.hundaggressivitet} onChange={handleChangeProblematik} />
+                    <label htmlFor='hundaggressivitet'>Hundaggressivitet</label>
+                </div>
+                <div className="inputContainerCheckbox">
+                    <input className="checkbox" type='checkbox' id='hoppar' name='hoppar' value='hoppar' checked={state.problematik.hoppar} onChange={handleChangeProblematik} />
+                    <label htmlFor='hoppar'>Hoppar mot folk när den hälsar</label>
+                </div>
+                <div className="inputContainerCheckbox">
+                    <input className="checkbox" type='checkbox' id='integritet' name='integritet' value='integritet' checked={state.problematik.integritet} onChange={handleChangeProblematik} />
+                    <label htmlFor='integritet'>Hög integritet</label>
+                </div>
+                <div className="inputContainerCheckbox">
+                    <input className="checkbox" type='checkbox' id='drar' name='drar' value='drar' checked={state.problematik.drar} onChange={handleChangeProblematik} />
+                    <label htmlFor='drar'>Drar i kopplet</label>
+                </div>
+                <div className="inputContainerCheckbox">  
+                    <input className="checkbox" type='checkbox' id='ensam' name='ensam' value='ensam' checked={state.problematik.ensam} onChange={handleChangeProblematik} />
+                    <label htmlFor='ensam'>Kan inte vara ensam hemma</label>
+                </div>
+                <div className="inputContainerCheckbox">
+                    <input className="checkbox" type='checkbox' id='skällig' name='skällig' value='skällig' checked={state.problematik.skällig} onChange={handleChangeProblematik} />
+                    <label htmlFor='skällig'>Skällig</label>
+                </div>
+                <div className="inputContainerCheckbox">
+                    <input className="checkbox" type='checkbox' id='resursförsvar' name='resursförsvar' value='resursförsvar' checked={state.problematik.resursförsvar} onChange={handleChangeProblematik} />
+                    <label htmlFor='resursförsvar'>Resursförsvar</label>
+                </div>
+                <div className="inputContainerCheckbox">
+                    <input className="checkbox" type='checkbox' id='sjukdom' name='sjukdom' value='sjukdom' checked={state.problematik.sjukdom} onChange={handleChangeProblematik} />
+                    <label htmlFor='sjukdom'>Sjukdomstillstånd som kräver regelbunden veterinärvård</label>
+                </div>
+                <div className="inputContainerCheckbox">
+                    <input className="checkbox" type='checkbox' id='ingen' name='ingen' value='ingen' checked={state.problematik.ingen} onChange={handleChangeProblematik} />
+                    <label htmlFor='ingen'>Jag är inte beredd att hantera någon av dessa hundproblem</label>
+                </div>
+            </div>
+          </Step>
+
         <Step title="Ledarskap" description="Ledarskap">
             <strong>Vilket av följande alternativ beskriver bäst din person och syn på hunduppfostran?</strong>
             <div className="inputWrapper">
@@ -281,28 +376,32 @@ const WizardParent = () => {
             <div>
                 <strong>Vilken typ av aktiviteter vill och planerar du att göra med din hund?</strong>
                 <div className="inputContainerCheckbox">  
-                    <input className="checkbox" type='checkbox' id='sällskap' name='aktivitet' value='sällskap' onChange={handleChange} />
+                    <input className="checkbox" type='checkbox' id='sällskap' name='sällskap' value='sällskap' checked={state.aktivitet.sällskap} onChange={handleChangeAktivitet} />
                     <label htmlFor='sällskap'>Hunden kommer primärt gå som sällskapshund och ge stimulans via promenader, aktivitetsövningar och massa gos</label>
                 </div>
                 <div className="inputContainerCheckbox">
-                    <input className="checkbox" type='checkbox' id='sportkompis' name='aktivitet' value='sportkompis' onChange={handleChange} />
+                    <input className="checkbox" type='checkbox' id='sportkompis' name='sportkompis' value='sportkompis' checked={state.aktivitet.sportkompis} onChange={handleChangeAktivitet} />
                     <label htmlFor='sportkompis'>Hunden kommer få följa med på diverse joggingturer, cykelturer, vandringar mm.</label>
                 </div>
                 <div className="inputContainerCheckbox">
-                    <input className="checkbox" type='checkbox' id='sök' name='aktivitet' value='sök'  onChange={handleChange} />
+                    <input className="checkbox" type='checkbox' id='sök' name='sök' value='sök' checked={state.aktivitet.sök} onChange={handleChangeAktivitet} />
                     <label htmlFor='sök'>Hunden kommer få tränas inom sök</label>
                 </div>
                 <div className="inputContainerCheckbox">
-                    <input className="checkbox" type='checkbox' id='hundsport' name='aktivitet' value='hundsport'  onChange={handleChange} />
+                    <input className="checkbox" type='checkbox' id='hundsport' name='hundsport' value='hundsport' checked={state.aktivitet.hundsport} onChange={handleChangeAktivitet} />
                     <label htmlFor='hundsport'>Hunden kommer tränas och tävlas inom hundsporter såsom agility, rallylydnad mm.</label>
                 </div>
                 <div className="inputContainerCheckbox">  
-                    <input className="checkbox" type='checkbox' id='jakt' name='aktivitet' value='jakt' onChange={handleChange} />
+                    <input className="checkbox" type='checkbox' id='jakt' name='jakt' value='jakt' checked={state.aktivitet.jakt} onChange={handleChangeAktivitet} />
                     <label htmlFor='jakt'>Hunden kommer användas i jakt</label>
                 </div>
                 <div className="inputContainerCheckbox">
-                    <input className="checkbox" type='checkbox' id='vakt' name='aktivitet' value='vakt' onChange={handleChange} />
+                    <input className="checkbox" type='checkbox' id='vakt' name='vakt' value='vakt' checked={state.aktivitet.vakt} onChange={handleChangeAktivitet} />
                     <label htmlFor='vakt'>Hunden kommer användas som vakthund</label>
+                </div>
+                <div className="inputContainerCheckbox">
+                    <input className="checkbox" type='checkbox' id='inget' name='inget' value='inget' checked={state.aktivitet.inget} onChange={handleChangeAktivitet} />
+                    <label htmlFor='inget'>Ingen av ovan aktiviteter</label>
                 </div>
             </div>
           </Step>
