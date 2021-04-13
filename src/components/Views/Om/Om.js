@@ -3,6 +3,7 @@ import HeaderAbout from '../../Header/HeaderAbout';
 import Navbar from '../../Navbar/Navbar';
 import Footer from '../../Footer/Footer';
 import './Om.css'
+import AboutCorona from '../../About/AboutCorona';
 
 const Om = () => {
     window.scrollTo(0, 0);
@@ -11,6 +12,7 @@ const Om = () => {
         <>
             <Navbar />
             <HeaderAbout />
+            <AboutCorona />
             <div className="contentWrapper">
                 <h5>Ett Coronaintiativ</h5>
                 <p className="smallParagraph">Matching Paws skapades i pandemins spår. Grundarna av initiativet oroades av den kraftiga upptrappningen av antalet registrerade hundar som ökade avsevärt under pandemin.</p>

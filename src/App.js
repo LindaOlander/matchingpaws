@@ -12,6 +12,7 @@ import Adoptionsprocessen from './components/Views/Adoptionsprocessen/Adoptionsp
 import DogList from './components/DogList/DogList';
 import { PageView, initGA } from '../src/components/Tracking/index';
 import './App.css';
+import AllDogsList from './components/DogList/AllDogsList';
 
 function App() {
 
@@ -30,7 +31,7 @@ function App() {
       <Route path="/adoptionsprocessen" exact component={Adoptionsprocessen} />
       <Route path="/hund" exact component={Hundlivet} />
       <Route path="/om" exact component={Om} />
-      <Route path="/hundar" exact component={DogList} />
+      <Route path="/hundar" exact component={AllDogsList} />
     </HashRouter>
   );
 }

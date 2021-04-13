@@ -1,13 +1,12 @@
 import React from 'react';
 import NavbarBlack from '../../Navbar/NavbarBlack';
 import WizardParent from '../../Wizard/WizardParent';
-import StepWizard from '../../StepWizard/StepWizard';
 
 const Adoptera = () => {
 
     const scrollDown = () => {
         window.scrollTo({
-            top: 550,
+            top: 650,
             left: 0,
             behavior: 'smooth'
           });
@@ -22,7 +21,6 @@ const Adoptera = () => {
                 <button onClick={scrollDown} className="button">Starta testet</button>
             </div>
             <WizardParent />
-            {/* <StepWizard /> */}
         </>
     )
 }

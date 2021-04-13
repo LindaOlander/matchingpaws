@@ -9,7 +9,7 @@
     background-position: center;
 }
 
-.header h2 {
+.header h1 {
     font-size: 45px;
     color: #ffffff;
     margin-top: 250px;
@@ -57,7 +57,8 @@
 
 @media screen and (max-width: 820px) {
     .header {
-        height: 80vh;
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
         background: url(../../images/bordercollie.jpg);
         background-size: cover;
         display: flex;
@@ -66,7 +67,7 @@
         background-size: cover;
     }
 
-    .header h2 {
+    .header h1 {
         font-size: 32px;
         color: #ffffff;
     }

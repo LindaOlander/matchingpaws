@@ -9,12 +9,15 @@ const BannerQuiz = () => {
         window.scrollTo(0, 0);
     }
     return (
-        <div className="bannerQuiz" style={{position: 'relative'}}>
-            <Link to="/adoptera" onClick={scrollToTop}><h5 style={{color: "#ffffff"}}>
-                Hitta din bästa vän.
-                <br />
-                Testa vårt matchningsverktyg.</h5></Link>
-                {/* <img className="logo bannerLogo" src={iconWhite.default} /> */}
+        <div className="bannerQuiz" style={{position: 'relative', color: "#ffffff"}}>
+            <h5>
+            Hitta din bästa vän
+            </h5>
+            <Link to="/adoptera" onClick={scrollToTop}>
+                <h2 style={{color: "#ffffff"}}>
+                    Testa vårt matchningsverktyg
+                </h2>
+            </Link>
         </div>
     )
 };

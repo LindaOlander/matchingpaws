@@ -24,7 +24,8 @@
     background-color: #e8e7e7;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
+    /* justify-content: center; */
     padding: 0 25px;
     padding-top: 60px;
 }
@@ -155,7 +156,8 @@
 
 @media screen and (max-width: 720px) {
     .headerWizard {
-        height: 90vh;
+        height: 100vh;
+        min-height: -webkit-fill-available;
         padding: 0 95px 0 25px;
         display: flex;
         flex-direction: column;

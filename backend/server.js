@@ -47,10 +47,17 @@ const Dog = mongoose.model("Dog", {
     type: String,
   },
   boende: {
-    type: String,
+    centralt: Boolean,
+    lägenhet: Boolean,
+    villaområde: Boolean,
+    landet: Boolean,
   },
+  
   hundpassning: {
-    type: String,
+    hunddagis: Boolean,
+    kontoret: Boolean,
+    ensam: Boolean,
+    hemma: Boolean,
   },
   energi: {
     type: String,

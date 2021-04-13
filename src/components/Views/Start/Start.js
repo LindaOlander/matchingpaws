@@ -8,6 +8,7 @@ import Footer from '../../Footer/Footer';
 import BannerAgria from '../../Banners/BannerAgria';
 import BannerQuiz from '../../Banners/BannerQuiz';
 import {Event} from '../../Tracking/index';
+import AboutCorona from '../../About/AboutCorona';
 
 const Start = () => {
     const { pathname } = useLocation();
@@ -20,6 +21,7 @@ const Start = () => {
             <Navbar />
             <Header />
             <AboutStartpage />
+            <AboutCorona />
             <BannerQuiz />
             <AboutOmplacera />
             {/* <BannerAgria /> */}

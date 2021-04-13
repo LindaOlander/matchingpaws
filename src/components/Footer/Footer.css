@@ -1,12 +1,40 @@
-.footer-wrapper {
-    height: 200px;
+.footerWrapper {
+    width: 100%;
     background-color: #222222;
     color: #ffffff;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 50px 50px 30px 50px;
+}
+
+.footerLogoWrapper {
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    width: 100%;
+    margin-bottom: 45px;
+}
+
+.footerLogoWrapper span {
+    font-weight: bold;
+}
+
+.footerLogo {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.logoEmail {
+    color: #ffffff;
+}
+
+.logoEmail:hover {
+    text-decoration: underline;
+}
+
+.footerInfoWrapper {
+    margin: 30px 0;
 }
 
 .footer-wrapper p {

@@ -20,8 +20,18 @@ const AddDogs = () => {
         fysik: "",
         allergi: "",
         barn: "",
-        boende: "",
-        hundpassning: "",
+        boende: {
+            centralt: false,
+            lägenhet: false,
+            villaområde: false,
+            landet: false,
+        },
+        hundpassning: {
+            hunddagis: false,
+            kontoret: false,
+            ensam: false,
+            hemma: false,
+        },
         energi: "",
         problematik: {
             hundaggressivitet: false,
@@ -46,7 +56,8 @@ const AddDogs = () => {
         katt: "",
         hund: "",
         ledarskap: "",
-        storlek: "",    
+        storlek: "",
+        kön: "",    
       })
 
     const handleChange = (event) => {
@@ -72,6 +83,24 @@ const AddDogs = () => {
             ...state,
             aktivitet: {
                 ...state.aktivitet,
+                [event.target.name]: event.target.checked
+            }
+        }) 
+    }; 
+    const handleChangeBoende = (event) => {
+        setState({
+            ...state,
+            boende: {
+                ...state.boende,
+                [event.target.name]: event.target.checked
+            }
+        }) 
+    }; 
+    const handleChangeHundpassning = (event) => {
+        setState({
+            ...state,
+            hundpassning: {
+                ...state.hundpassning,
                 [event.target.name]: event.target.checked
             }
         }) 
@@ -105,8 +134,18 @@ const AddDogs = () => {
             fysik: state.fysik,
             allergi: state.allergi,
             barn: state.barn,
-            boende: state.boende,
-            hundpassning: state.hundpassning,
+            boende: {
+                centralt: state.boende.centralt,
+                lägenhet: state.boende.lägenhet,
+                villaområde: state.boende.villaområde,
+                landet: state.boende.landet,
+            },
+            hundpassning: {
+                hunddagis: state.hundpassning.hunddagis,
+                kontoret: state.hundpassning.kontoret,
+                ensam: state.hundpassning.ensam,
+                hemma: state.hundpassning.hemma,
+            },
             energi: state.energi,
             problematik: {
                 hundaggressivitet: state.problematik.hundaggressivitet,
@@ -131,7 +170,8 @@ const AddDogs = () => {
             katt: state.katt,
             hund: state.hund,
             ledarskap: state.ledarskap,
-            storlek: state.storlek,    
+            storlek: state.storlek, 
+            kön: state.kön,   
         }
 
         const herokuUrl = "https://matchingpaws-api.herokuapp.com/dogs";
@@ -157,6 +197,8 @@ const AddDogs = () => {
     return (
     <div className="addProductContainer">
         <form id="postingForm" className="postingForm" onSubmit={submitForm}>
+            <h5>Lägg till hund</h5>
+            <hr />
             <div className="questionContainer">
                 <label className="labelText">
                     Vad heter din hund?
@@ -176,14 +218,38 @@ const AddDogs = () => {
                 </label>    
             </div> 
 
+            {/* Kön */}
+            <div className="questionContainer">
+                <p className="questionHeading">Vilket kön är din hund?</p>
+                <div className="inputRadioWrapper">
+                    <label className="inputRadioLabel">
+                        <input
+                            type="radio"
+                            name="kön"
+                            value="tik"
+                            checked={state.kön === "tik"}
+                            onChange={handleChange}
+                        />
+                        <span>Tik</span>
+                        <span className="checkmark"></span>
+                    </label>
+                    <label className="inputRadioLabel">
+                        <input
+                            type="radio"
+                            name="kön"
+                            value="hane"
+                            checked={state.kön === "hane"}
+                            onChange={handleChange}
+                        />
+                        <span>Hane</span>
+                        <span className="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+
             {/* Storlek */}
             <div className="questionContainer">
                 <p className="questionHeading">Hur stor är din hund?</p>
-                {/* <div className="inputContainer">
-                <input className="radio" type='radio' id='liten' name='storlek' value='liten' checked={state.storlek === 'liten'} onChange={handleChange} />
-                    <div className="check"></div>
-                    <label className="radioLabel" htmlFor='mycket'>Liten- eller mellanstor hund (upp till 55 cm mankhöjd).</label>
-                </div> */}
                 <div className="inputRadioWrapper">
                     <label className="inputRadioLabel">
                         <input
@@ -193,7 +259,18 @@ const AddDogs = () => {
                             checked={state.storlek === "liten"}
                             onChange={handleChange}
                         />
-                        <span>Liten- eller mellanstor hund (upp till 55 cm mankhöjd).</span>
+                        <span>Liten hund (mindre än 45 cm mankhöjd)</span>
+                        <span className="checkmark"></span>
+                    </label>
+                    <label className="inputRadioLabel">
+                        <input
+                            type="radio"
+                            name="storlek"
+                            value="mellan"
+                            checked={state.storlek === "mellan"}
+                            onChange={handleChange}
+                        />
+                        <span>Mellanstor hund (ca 45-55 cm mankhöjd)</span>
                         <span className="checkmark"></span>
                     </label>
                     <label className="inputRadioLabel">
@@ -255,6 +332,16 @@ const AddDogs = () => {
                         <input
                             type="radio"
                             name="hunderfarenhet"
+                            value="ganska"
+                            checked={state.hunderfarenhet === "ganska"}
+                            onChange={handleChange}
+                        />
+                        <span>Adoptören bör ha haft hund tidigare</span>
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="hunderfarenhet"
                             value="lite"
                             checked={state.hunderfarenhet === "lite"}
                             onChange={handleChange}
@@ -268,6 +355,16 @@ const AddDogs = () => {
             <div className="questionContainer">
                 <p className="questionHeading">Min hund..</p>
                 <div className="inputRadioWrapper">
+                    <label>
+                        <input
+                            type="radio"
+                            name="fysik"
+                            value="hög"
+                            checked={state.fysik === "hög"}
+                            onChange={handleChange}
+                        />
+                        <span>Kan bli väldigt stark och tung att hålla emot i vissa situationer</span>
+                    </label>
                     <label>
                         <input
                             type="radio"
@@ -350,50 +447,42 @@ const AddDogs = () => {
                 <p className="questionHeading">Vilka boendeformer kan din hund bo i?</p>
                 <div className="inputRadioWrapper">
                     <label>
-                        <input
-                            type="radio"
-                            name="boende"
-                            value="stadsmiljö"
-                            checked={state.boende === "stadsmiljö"}
-                            onChange={handleChange}
-                        />
-                        <span>I stadsmiljö och på landet</span>
+                        <input type="checkbox" onClick={handleChangeBoende} value={state.boende.centralt} name="centralt"/>
+                        <span>Lägenhet centralt i område med mycket människor och trafik</span>
                     </label>
                     <label>
-                        <input
-                            type="radio"
-                            name="boende"
-                            value="landet"
-                            checked={state.boende === "landet"}
-                            onChange={handleChange}
-                        />
-                        <span>Endast på landet</span>
+                        <input type="checkbox" onClick={handleChangeBoende} value={state.boende.lägenhet} name="lägenhet"/>
+                        <span>Lägenhet i lugnt lägenhetsområde</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" onClick={handleChangeBoende} value={state.boende.villaområde} name="villaområde"/>
+                        <span>Hus eller radhus i villaområde</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" onClick={handleChangeBoende} value={state.boende.landet} name="landet"/>
+                        <span>Enskilt hus eller gård på landet</span>
                     </label>
                 </div>
             </div>
 
             {/* Hundpassning */}
             <div className="questionContainer">
-                <p className="questionHeading">Kan din hund gå på hunddagis?</p>
+                <p className="questionHeading">Vilka lösningar är för att få ihop hundpassningen och vardagen är lämplig för din hund?</p>
                 <div className="inputRadioWrapper">
                     <label>
-                        <input
-                            type="radio"
-                            name="hundpassning"
-                            value="hunddagis"
-                            checked={state.hundpassning === "hunddagis"}
-                            onChange={handleChange}
-                        />
+                        <input type="checkbox" onClick={handleChangeHundpassning} value={state.hundpassning.hunddagis} name="hunddagis"/>
                         <span>Min hund kan gå på hunddagis</span>
                     </label>
                     <label>
-                        <input
-                            type="radio"
-                            name="hundpassning"
-                            value="hemma"
-                            checked={state.hundpassning === "hemma"}
-                            onChange={handleChange}
-                        />
+                        <input type="checkbox" onClick={handleChangeHundpassning} value={state.hundpassning.kontoret} name="kontoret"/>
+                        <span>Min hund kan följa med sin ägare till kontoret om dagarna</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" onClick={handleChangeHundpassning} value={state.hundpassning.ensam} name="ensam"/>
+                        <span>Min hund kan vara ensam ett par timmar om dagarna</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" onClick={handleChangeHundpassning} value={state.hundpassning.hemma} name="hemma"/>
                         <span>Min hund måste bo med en adoptör som kan vara hemma med hunden om dagarna</span>
                     </label>
                 </div>
@@ -457,6 +546,16 @@ const AddDogs = () => {
                             onChange={handleChange}
                         />
                         <span>Lugnt och sansat</span>
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="energi"
+                            value="båda"
+                            checked={state.energi === "båda"}
+                            onChange={handleChange}
+                        />
+                        <span>Min hund kan trivas i både lugnare och mer fartfyllda hem</span>
                     </label>
                 </div>
             </div>
@@ -603,6 +702,16 @@ const AddDogs = () => {
                         />
                         <span>Tydligt, rakt och bestämt ledarskap</span>
                     </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="ledarskap"
+                            value="båda"
+                            checked={state.ledarskap === "båda"}
+                            onChange={handleChange}
+                        />
+                        <span>Båda ledarskapsstilarna kan passa min hund</span>
+                    </label>
                 </div>
             </div>
 
@@ -653,7 +762,7 @@ const AddDogs = () => {
             {submitted && 
                 <div className="submitMessage">
                     <p>
-                        Din hund är inlagd för matchning.
+                        {state.hundnamn && `${state.hundnamn} är inlagd ♥`}
                     </p>
                 </div>
             }
