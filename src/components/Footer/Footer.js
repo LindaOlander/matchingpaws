@@ -8,7 +8,6 @@ const Footer = () => {
     const fb = require('../../images/fb.png')
     return (
         <div className="footerWrapper">
-            <div>
                 <div className="footerLogoWrapper">
                     <img className="footerLogo" src={iconWhite.default} />
                     <span>Matching Paws</span>
@@ -18,11 +17,10 @@ const Footer = () => {
                     <h6 style={{margin: '0px'}}>Postort</h6>
                     <h6 style={{margin: '0px'}}>Stockholm</h6>
                 </div> */}
-                <h6>
+                {/* <h6>
                     Hör av dig! Vi nås på:
                 </h6>
-                <a className="logoEmail" href="mailto:hello@matchingpaws.se"><h4>hello@matchingpaws.se</h4></a>
-            </div>
+                <a className="logoEmail" href="mailto:hello@matchingpaws.se"><h4>hello@matchingpaws.se</h4></a> */}
             <div className="footer-icons">
                 {/* <a href="mailto:hello@matchingpaws.se"><img src={email.default} /></a> */}
                 <a href="https://www.instagram.com/matchingpaws.se" target="_blank"><img src={instagram.default} /></a>

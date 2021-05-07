@@ -90,6 +90,16 @@ const WizardParent = () => {
         })
     }
 
+    const handleChangeHundpassning = (event) => {
+        setState({
+            ...state,
+            hundpassning: {
+                ...state.hundpassning,
+                [event.target.name]: event.target.checked
+            }
+        })
+    }
+
     const filterDogs = () => {
         setMatch(true);
         setDogsShown(true);
@@ -103,11 +113,13 @@ const WizardParent = () => {
             'normal': ['normal', 'låg'],
             'låg': ['låg']
         }
-        const ownerLiving = {
-            'centralt': ['centralt'], 
-            'lägenhet': ['lägenhet', 'centralt'], 
-            'villaområde': ['lägenhet', 'centralt', 'villaområde'],
-            'landet': ['lägenhet', 'centralt', 'villaområde', 'landet']
+        const ownerAllergy = {
+            'ja': ['nej', 'ja'],
+            'nej': ['ja']
+        }
+        const ownerChildren = {
+            'ja': ['ja'],
+            'nej': ['ja', 'nej']
         }
         const ownerEnergy = {
             'fartfyllt': ['fartfyllt', 'båda'],
@@ -118,7 +130,7 @@ const WizardParent = () => {
             'nej': ['nej', 'ja']
         }
         const ownerDogsInHome = {
-            'nej': ['nej'],
+            'nej': ['nej', 'båda', 'tikar', 'hanar'],
             'båda': ['båda'],
             'tikar': ['tikar', 'båda'],
             'hanar': ['hanar', 'båda']
@@ -132,20 +144,31 @@ const WizardParent = () => {
             'mellan': ['mellan', 'liten'],
             'stor': ['stor', 'mellan', 'liten'],
         }
+        const inabilities = Object.entries(state.problematik)
+            .filter(capability => !capability[1] && capability[0] !== "ingen")
+            .map(capability => capability[0])
+        const ownerLiving = Object.entries(state.boende).filter(([key, value]) => Boolean(value))[0][0];
+        const ownerHundpassning = Object.entries(state.hundpassning).filter(([key, value]) => Boolean(value))[0][0];
+        const ownerAktivitet = Object.entries(state.aktivitet).filter(([key, value]) => Boolean(value))[0][0];
+
         const copyDogs = [...data];
         const filterOnErfarenhet = copyDogs.filter(dog => ownerCapabilities[state.hunderfarenhet].indexOf(dog.hunderfarenhet) > -1)
         const filterOnFysik = filterOnErfarenhet.filter(dog => ownerPhysics[state.fysik].indexOf(dog.fysik) > -1)
-        const filterOnAllergi = filterOnFysik.filter(dog => dog.allergi === state.allergi)
-        const filterOnBarn = filterOnAllergi.filter(dog => dog.barn === state.barn)
+        const filterOnAllergi = filterOnFysik.filter(dog => ownerAllergy[state.allergi].indexOf(dog.allergi) > -1)
+        const filterOnBarn = filterOnAllergi.filter(dog => ownerChildren[state.barn].indexOf(dog.barn) > -1)
         const filterOnEnergi = filterOnBarn.filter(dog => ownerEnergy[state.energi].indexOf(dog.energi) > -1)
         const filterOnKatt = filterOnEnergi.filter(dog => ownerCatsInHome[state.katt].indexOf(dog.katt) > -1)
         const filterOnHund = filterOnKatt.filter(dog => ownerDogsInHome[state.hund].indexOf(dog.hund) > -1)
         const filterOnLedarskap = filterOnHund.filter(dog => ownerLedarskap[state.ledarskap].indexOf(dog.ledarskap) > -1)
         const filterOnStorlek = filterOnLedarskap.filter(dog => ownerSizes[state.storlek].indexOf(dog.storlek) > -1)
-        
-        // const filterAktivitet = copyDogs.filter(dog => dog.aktivitet.sällskap === true)
-        
-        setData(filterOnStorlek);
+        const filterOnBoende = filterOnStorlek.filter(dog => dog.boende[ownerLiving])
+        const filterOnHundpassning = filterOnBoende.filter(dog => dog.hundpassning[ownerHundpassning]);
+        const filterAktivitet = filterOnHundpassning.filter(dog => dog.aktivitet[ownerAktivitet])
+        const filterProblematik = filterAktivitet.filter(dog => {
+            return inabilities.filter(ability => (dog.problematik[ability])).length == 0
+        })
+
+        setData(filterProblematik);
     }
 
 
@@ -160,13 +183,40 @@ const WizardParent = () => {
         fetchData();
     }, []);
 
+    // Den här funktionen sätter parametern till true
+    const handleChangeStorlek = (event) => {
+        const value = event.target.value;
+        setState({
+            ...state,
+            [event.target.name]: event.target.checked
+        });
+    }
+
+    const handleChangeBoende = (event) => {
+        setState({
+            ...state,
+            boende: {
+                ...state.boende,
+                [event.target.name]: event.target.checked
+            }
+        });
+    }
+
+    console.log('state', state)
+    console.log('data', data)
+
+    let transitions = {
+        enterRight: 'your custom css transition classes',
+        enterLeft : 'your custom css transition classes',
+    }
+
     return (
 
         <div className="wizardContainer" id="/matchingpaws/quiz">
-        <WizardForm step={step} onChange={handleStep}>
+        <WizardForm step={step} transitions={transitions} onChange={handleStep}>
 
         <Step title="Erfarenhet" description="Erfarenhet">
-            <strong>Vilket alternativ beskriver bäst din tidigare hunderfarenhet?</strong>
+            <p className="stepTitle">Vilket alternativ beskriver bäst din tidigare hunderfarenhet?</p>
             <div className="inputContainer">
                 <input className="radio" type='radio' id='mycket' name='hunderfarenhet' value='mycket' checked={state.hunderfarenhet === 'mycket'} onChange={handleChange} />
                 <div className="check"></div>
@@ -185,7 +235,7 @@ const WizardParent = () => {
         </Step>
 
         <Step title="Fysik" description="Fysik">
-            <strong>Vilket alternativ beskriver bäst din fysiska förmåga?</strong>
+            <p className="stepTitle">Vilket alternativ beskriver bäst din fysiska förmåga?</p>
             <div className="inputContainer">
                 <input className="radio" type='radio' id='hög' name='fysik' value='hög' checked={state.fysik === 'hög'} onChange={handleChange} />
                 <div className="check"></div>
@@ -204,7 +254,7 @@ const WizardParent = () => {
         </Step>
 
         <Step title="Allergi" description="Allergi">
-            <strong>Kan du bo med en hund som fäller päls?</strong>
+            <p className="stepTitle">Kan du bo med en hund som fäller päls?</p>
             <div className="inputContainer">  
                 <input className="radio" type='radio' id='allergiJa' name='allergi' value='ja' checked={state.allergi === 'ja'} onChange={handleChange} />
                 <div className="check"></div>
@@ -218,7 +268,7 @@ const WizardParent = () => {
         </Step>
 
         <Step title="Barn" description="Barn">
-            <strong>Kommer hunden träffa barn vardagligen?</strong>
+            <p className="stepTitle">Kommer hunden träffa barn vardagligen?</p>
             <div className="inputContainer">  
                 <input className="radio" type='radio' id='ja' name='barn' value='ja' checked={state.barn === 'ja'} onChange={handleChange} />
                 <div className="check"></div>
@@ -231,56 +281,56 @@ const WizardParent = () => {
             </div>
         </Step>
 
-        {/* <Step title="Boende" description="Boende">
-            <strong>Hur bor du idag?</strong>
+        <Step title="Boende" description="Boende">
+            <p className="stepTitle">Hur bor du idag?</p>
             <div className="inputContainer">  
-                <input className="radio" type='radio' id='centralt' name='boende' value='centralt' checked={state.boende.centralt} onChange={handleChange} />
+                <input className="radio" type='radio' id='centralt' name='centralt' value='centralt' checked={state.boende.centralt} onChange={handleChangeBoende} />
                 <div className="check"></div>
-                <label className="radioLabel" htmlFor='centralt'>Centralt</label>
+                <label className="radioLabel" htmlFor='centralt'>Lägenhet centralt i område med mycket människor och trafik</label>
             </div>
             <div className="inputContainer">  
-                <input className="radio" type='radio' id='lägenhet' name='boende' value='lägenhet' checked={state.boende.lägenhet} onChange={handleChange} />
+                <input className="radio" type='radio' id='lägenhet' name='lägenhet' value='lägenhet' checked={state.boende.lägenhet} onChange={handleChangeBoende} />
                 <div className="check"></div>
-                <label className="radioLabel" htmlFor='lägenhet'>Lägenhet</label>
+                <label className="radioLabel" htmlFor='lägenhet'>Lägenhet i lugnt lägenhetsområde</label>
             </div>
             <div className="inputContainer">  
-                <input className="radio" type='radio' id='villaområde' name='boende' value='villaområde' checked={state.boende.villaområde} onChange={handleChange} />
+                <input className="radio" type='radio' id='villaområde' name='villaområde' value='villaområde' checked={state.boende.villaområde} onChange={handleChangeBoende} />
                 <div className="check"></div>
-                <label className="radioLabel" htmlFor='villaområde'>Villaområde</label>
+                <label className="radioLabel" htmlFor='villaområde'>Hus eller radhus i villaområde</label>
             </div>
             <div className="inputContainer">  
-                <input className="radio" type='radio' id='landet' name='boende' value='landet' checked={state.boende.landet} onChange={handleChange} />
+                <input className="radio" type='radio' id='landet' name='landet' value='landet' checked={state.boende.landet} onChange={handleChangeBoende} />
                 <div className="check"></div>
-                <label className="radioLabel" htmlFor='landet'>Landet</label>
+                <label className="radioLabel" htmlFor='landet'>Enskilt hus eller gård på landet</label>
             </div>
-        </Step> */}
+        </Step>
 
-        {/* <Step title="Hundpassning" description="Hundpassning">
-            <strong>Hur planerar du att få ihop vardagen med din hund? *Utgå från vardagen efter pandemin</strong>
-            <div className="inputContainer">  
-                <input className="radio" type='radio' id='hunddagis' name='hundpassning' value='hunddagis' checked={state.hundpassning.hunddagis} onChange={handleChange} />
-                <div className="check" onChange={handleChange}></div>
+        <Step title="Hundpassning" description="Hundpassning">
+            <p className="stepTitle">Hur planerar du att få ihop vardagen med din hund? *Utgå från vardagen efter pandemin</p>
+            <div className="inputContainerCheckbox">  
+                <input className="radio" type='radio' id='hunddagis' name='hunddagis' value='hunddagis' checked={state.hundpassning.hunddagis} onChange={handleChangeHundpassning} />
+                <div className="check"></div>
                 <label className="radioLabel" htmlFor='hunddagis'>Hunden kommer gå på hunddagis</label>
             </div>
-            <div className="inputContainer">  
-                <input className="radio" type='radio' id='kontoret' name='hundpassning' value='kontoret' checked={state.hundpassning.kontoret} onChange={handleChange} />
-                <div className="check" onChange={handleChange}></div>
+            <div className="inputContainerCheckbox">  
+                <input className="radio" type='radio' id='kontoret' name='kontoret' value='kontoret' checked={state.hundpassning.kontoret} onChange={handleChangeHundpassning} />
+                <div className="check"></div>
                 <label className="radioLabel" htmlFor='kontoret'>Hunden kan följa med mig till kontoret på dagarna</label>
             </div>
-            <div className="inputContainer">  
-                <input className="radio" type='radio' id='ensam' name='hundpassning' value='ensam' checked={state.hundpassning.ensam} onChange={handleChange} />
-                <div className="check" onChange={handleChange}></div>
+            <div className="inputContainerCheckbox">  
+                <input className="radio" type='radio' id='ensam' name='ensam' value='ensam' checked={state.hundpassning.ensam} onChange={handleChangeHundpassning} />
+                <div className="check"></div>
                 <label className="radioLabel" htmlFor='ensam'>Hunden kommer behöva vara hemma ensam max 6 timmar per dag</label>
             </div>
-            <div className="inputContainer">
-                <input className="radio" type='radio' id='hemma' name='hundpassning' value='hemma' checked={state.hundpassning.hemma} onChange={handleChange} />
+            <div className="inputContainerCheckbox">
+                <input className="radio" type='radio' id='hemma' name='hemma' value='hemma' checked={state.hundpassning.hemma} onChange={handleChangeHundpassning} />
                 <div className="check"></div>
                 <label className="radioLabel" htmlFor='hemma'>Hunden kommer kunna vara hemma med mig eller annan närstående om dagarna</label>
             </div>
-        </Step> */}
+        </Step>
 
         <Step title="Energi" description="Energi">
-            <strong>Vilken beskrivning passar bäst in på energin i ditt hem?</strong>
+            <p className="stepTitle">Vilken beskrivning passar bäst in på energin i ditt hem?</p>
             <div className="inputWrapper">
                 <div className="inputContainer">
                     <input className="radio" type='radio' id='fartfyllt' name='energi' value='fartfyllt' checked={state.energi === 'fartfyllt'} onChange={handleChange} />
@@ -296,7 +346,7 @@ const WizardParent = () => {
         </Step>
 
         <Step title="Katt" description="Katt">
-            <strong>Finns det katt i hemmet?</strong>
+            <p className="stepTitle">Finns det katt i hemmet?</p>
             <div className="inputWrapper">
                 <div className="inputContainer">
                     <input className="radio" type='radio' id='ja' name='katt' value='ja' checked={state.katt === 'ja'} onChange={handleChange} />
@@ -312,7 +362,7 @@ const WizardParent = () => {
         </Step>
 
         <Step title="Hund" description="Hund">
-            <strong>Finns det hund i hemmet idag?</strong>
+            <p className="stepTitle">Finns det hund i hemmet idag?</p>
             <div className="inputWrapper">
                 <div className="inputContainer">
                     <input className="radio" type='radio' id='tikar' name='hund' value='tikar' checked={state.hund === 'tikar'} onChange={handleChange} />
@@ -337,15 +387,85 @@ const WizardParent = () => {
             </div>
         </Step>
 
-        {/* <Step title="Problematik" description="Problematik">
+        <Step title="Ledarskap" description="Ledarskap">
+            <p className="stepTitle">Vilket av följande alternativ beskriver bäst din person och syn på hunduppfostran?</p>
+            <div className="inputWrapper">
+                <div className="inputContainer">
+                    <input className="radio" type='radio' id='mjukt' name='ledarskap' value='mjukt' checked={state.ledarskap === 'mjukt'} onChange={handleChange} />
+                    <div className="check"></div>
+                    <label className="radioLabel" htmlFor='mjukt'>Jag är mjuk och kärleksfull i mitt umgänge med hundar</label>
+                </div>
+                <div className="inputContainer">
+                    <input className="radio" type='radio' id='tydligt' name='ledarskap' value='tydligt' checked={state.ledarskap === 'tydligt'} onChange={handleChange} />
+                    <div className="check"></div>
+                    <label className="radioLabel" htmlFor='tydligt'>Jag är rak och konsekvent i min hunduppfostran</label>
+                </div>
+            </div>
+        </Step> 
+        
+         <Step title="Storlek" description="Storlek">
             <div>
-                <strong>En del av hundarna vi hjälper att omplacera har med sig viss problematik från sitt förflutna som du som ny ägare kommer att behöva hantera. Vilka av nedanstående utmaningar känner du att du som ägare är villig och kompentent nog att arbeta med?</strong>  
+                <p className="stepTitle">Vilka storlekar på hund har du möjlighet att ta hand om?</p>
+                <div className="inputWrapper">
+                    <div className="inputContainer">
+                        <input className="radio" type='checkbox' id='liten' name='storlek' value='liten' checked={state.storlek === 'liten'} onChange={handleChange} />
+                        <div className="check"></div>
+                        <label className="radioLabel" htmlFor='liten'>Enbart liten hund (mindre än 45 cm mankhöjd)</label>
+                    </div>
+                    <div className="inputContainer">
+                        <input className="radio" type='checkbox' id='mellan' name='storlek' value='mellan' checked={state.storlek === 'mellan'} onChange={handleChange} />
+                        <div className="check"></div>
+                        <label className="radioLabel" htmlFor='mellan'>Liten - mellanstor hund (ca 45-55 cm mankhöjd)</label>
+                    </div>
+                    <div className="inputContainer">
+                        <input className="radio" type='checkbox' id='stor' name='storlek' value='stor' checked={state.storlek === 'stor'} onChange={handleChange} />
+                        <div className="check"></div>
+                        <label className="radioLabel" htmlFor='stor'>Liten - stor hund (över 55 cm mankhöjd)</label>
+                    </div>
+                </div>
+            </div>
+        </Step>  
+
+
+        <Step title="Aktiviteter" description="Aktiviteter">
+            <div>
+                <p className="stepTitle">Vilken typ av aktiviteter vill och planerar du att göra med din hund?</p>
                 <div className="inputContainerCheckbox">  
-                    <input className="checkbox" type='checkbox' id='hundaggressivitet' name='hundaggressivitet' value='hundaggressivitet' checked={state.problematik.hundaggressivitet} onChange={handleChangeProblematik} />
+                    <input className="checkbox" type='checkbox' id='sällskap' name='sällskap' value='sällskap' checked={state.aktivitet.sällskap} onChange={handleChangeAktivitet} />
+                    <label htmlFor='sällskap'>Hunden kommer primärt gå som sällskapshund och ge stimulans via promenader, aktivitetsövningar och massa gos</label>
+                </div>
+                <div className="inputContainerCheckbox">
+                    <input className="checkbox" type='checkbox' id='sportkompis' name='sportkompis' value='sportkompis' checked={state.aktivitet.sportkompis} onChange={handleChangeAktivitet} />
+                    <label htmlFor='sportkompis'>Hunden kommer få följa med på diverse joggingturer, cykelturer, vandringar mm.</label>
+                </div>
+                <div className="inputContainerCheckbox">
+                    <input className="checkbox" type='checkbox' id='sök' name='sök' value='sök' checked={state.aktivitet.sök} onChange={handleChangeAktivitet} />
+                    <label htmlFor='sök'>Hunden kommer få tränas inom sök</label>
+                </div>
+                <div className="inputContainerCheckbox">
+                    <input className="checkbox" type='checkbox' id='hundsport' name='hundsport' value='hundsport' checked={state.aktivitet.hundsport} onChange={handleChangeAktivitet} />
+                    <label htmlFor='hundsport'>Hunden kommer tränas och tävlas inom hundsporter såsom agility, rallylydnad mm.</label>
+                </div>
+                <div className="inputContainerCheckbox">  
+                    <input className="checkbox" type='checkbox' id='jakt' name='jakt' value='jakt' checked={state.aktivitet.jakt} onChange={handleChangeAktivitet} />
+                    <label htmlFor='jakt'>Hunden kommer användas i jakt</label>
+                </div>
+                <div className="inputContainerCheckbox">
+                    <input className="checkbox" type='checkbox' id='vakt' name='vakt' value='vakt' checked={state.aktivitet.vakt} onChange={handleChangeAktivitet} />
+                    <label htmlFor='vakt'>Hunden kommer användas som vakthund</label>
+                </div>
+            </div>
+        </Step>
+
+        <Step title="Problematik" description="Problematik">
+            <div>
+                <p className="stepTitle">En del av hundarna vi hjälper att omplacera har med sig viss problematik från sitt förflutna som du som ny ägare kommer att behöva hantera. <br /><br />Vilka av nedanstående utmaningar känner du att du som ägare är villig och kompentent nog att arbeta med?</p>  
+                <div className="inputContainerCheckbox">  
+                    <input className="checkbox" type='checkbox' id='hundaggressivitet' name="hundaggressivitet" value='hundaggressivitet' checked={state.problematik.hundaggressivitet} onChange={handleChangeProblematik} />
                     <label htmlFor='hundaggressivitet'>Hundaggressivitet</label>
                 </div>
                 <div className="inputContainerCheckbox">
-                    <input className="checkbox" type='checkbox' id='hoppar' name='hoppar' value='hoppar' checked={state.problematik.hoppar} onChange={handleChangeProblematik} />
+                    <input className="checkbox" type='checkbox' id='hoppar' name="hoppar" value='hoppar' checked={state.problematik.hoppar} onChange={handleChangeProblematik} />
                     <label htmlFor='hoppar'>Hoppar mot folk när den hälsar</label>
                 </div>
                 <div className="inputContainerCheckbox">
@@ -372,85 +492,8 @@ const WizardParent = () => {
                     <input className="checkbox" type='checkbox' id='sjukdom' name='sjukdom' value='sjukdom' checked={state.problematik.sjukdom} onChange={handleChangeProblematik} />
                     <label htmlFor='sjukdom'>Sjukdomstillstånd som kräver regelbunden veterinärvård</label>
                 </div>
-                <div className="inputContainerCheckbox">
-                    <input className="checkbox" type='checkbox' id='ingen' name='ingen' value='ingen' checked={state.problematik.ingen} onChange={handleChangeProblematik} />
-                    <label htmlFor='ingen'>Jag är inte beredd att hantera någon av dessa hundproblem</label>
-                </div>
             </div>
-          </Step> */}
-
-        <Step title="Ledarskap" description="Ledarskap">
-            <strong>Vilket av följande alternativ beskriver bäst din person och syn på hunduppfostran?</strong>
-            <div className="inputWrapper">
-                <div className="inputContainer">
-                    <input className="radio" type='radio' id='mjukt' name='ledarskap' value='mjukt' checked={state.ledarskap === 'mjukt'} onChange={handleChange} />
-                    <div className="check"></div>
-                    <label className="radioLabel" htmlFor='mjukt'>Jag är mjuk och kärleksfull i mitt umgänge med hundar</label>
-                </div>
-                <div className="inputContainer">
-                    <input className="radio" type='radio' id='tydligt' name='ledarskap' value='tydligt' checked={state.ledarskap === 'tydligt'} onChange={handleChange} />
-                    <div className="check"></div>
-                    <label className="radioLabel" htmlFor='tydligt'>Jag är rak och konsekvent i min hunduppfostran</label>
-                </div>
-            </div>
-        </Step>
-
-        {/* <Step title="Aktiviteter" description="Aktiviteter">
-            <div>
-                <strong>Vilken typ av aktiviteter vill och planerar du att göra med din hund?</strong>
-                <div className="inputContainerCheckbox">  
-                    <input className="checkbox" type='checkbox' id='sällskap' name='sällskap' value='sällskap' checked={state.aktivitet.sällskap} onChange={handleChangeAktivitet} />
-                    <label htmlFor='sällskap'>Hunden kommer primärt gå som sällskapshund och ge stimulans via promenader, aktivitetsövningar och massa gos</label>
-                </div>
-                <div className="inputContainerCheckbox">
-                    <input className="checkbox" type='checkbox' id='sportkompis' name='sportkompis' value='sportkompis' checked={state.aktivitet.sportkompis} onChange={handleChangeAktivitet} />
-                    <label htmlFor='sportkompis'>Hunden kommer få följa med på diverse joggingturer, cykelturer, vandringar mm.</label>
-                </div>
-                <div className="inputContainerCheckbox">
-                    <input className="checkbox" type='checkbox' id='sök' name='sök' value='sök' checked={state.aktivitet.sök} onChange={handleChangeAktivitet} />
-                    <label htmlFor='sök'>Hunden kommer få tränas inom sök</label>
-                </div>
-                <div className="inputContainerCheckbox">
-                    <input className="checkbox" type='checkbox' id='hundsport' name='hundsport' value='hundsport' checked={state.aktivitet.hundsport} onChange={handleChangeAktivitet} />
-                    <label htmlFor='hundsport'>Hunden kommer tränas och tävlas inom hundsporter såsom agility, rallylydnad mm.</label>
-                </div>
-                <div className="inputContainerCheckbox">  
-                    <input className="checkbox" type='checkbox' id='jakt' name='jakt' value='jakt' checked={state.aktivitet.jakt} onChange={handleChangeAktivitet} />
-                    <label htmlFor='jakt'>Hunden kommer användas i jakt</label>
-                </div>
-                <div className="inputContainerCheckbox">
-                    <input className="checkbox" type='checkbox' id='vakt' name='vakt' value='vakt' checked={state.aktivitet.vakt} onChange={handleChangeAktivitet} />
-                    <label htmlFor='vakt'>Hunden kommer användas som vakthund</label>
-                </div>
-                <div className="inputContainerCheckbox">
-                    <input className="checkbox" type='checkbox' id='inget' name='inget' value='inget' checked={state.aktivitet.inget} onChange={handleChangeAktivitet} />
-                    <label htmlFor='inget'>Ingen av ovan aktiviteter</label>
-                </div>
-            </div>
-          </Step> */}
-
-        <Step title="Storlek" description="Storlek">
-            <div>
-                <strong>Vilken storlek på hund har du möjlighet att ta hand om?</strong>
-                <div className="inputWrapper">
-                    <div className="inputContainer">
-                        <input className="radio" type='checkbox' id='liten' name='storlek' value='liten' checked={state.storlek === 'liten'} onChange={handleChange} />
-                        <div className="check"></div>
-                        <label className="radioLabel" htmlFor='liten'>Liten hund (mindre än 45 cm mankhöjd)</label>
-                    </div>
-                    <div className="inputContainer">
-                        <input className="radio" type='checkbox' id='mellan' name='storlek' value='mellan' checked={state.storlek === 'mellan'} onChange={handleChange} />
-                        <div className="check"></div>
-                        <label className="radioLabel" htmlFor='mellan'>Mellanstor hund (ca 45-55 cm mankhöjd)</label>
-                    </div>
-                    <div className="inputContainer">
-                        <input className="radio" type='checkbox' id='stor' name='storlek' value='stor' checked={state.storlek === 'stor'} onChange={handleChange} />
-                        <div className="check"></div>
-                        <label className="radioLabel" htmlFor='stor'>Stor hund (över 55 cm mankhöjd)</label>
-                    </div>
-                </div>
-            </div>
-        </Step>
+          </Step>
 
         <Step>
             <div className="resultStep">

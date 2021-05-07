@@ -5,7 +5,9 @@ export const WizardForm = ({ step: currentIndex, ...props }) => {
   const steps = React.Children.toArray(props.children);
   const prevStep = currentIndex !== 0 && steps[currentIndex - 1].props;
   const nextStep = currentIndex !== steps.length - 1 && steps[currentIndex + 1].props;
-  const lastQuestion = currentIndex >= 11;
+  const lastQuestion = currentIndex >= 13;
+
+  console.log('currentIndex', currentIndex)
 
   return (
     <div className="stepContainer">

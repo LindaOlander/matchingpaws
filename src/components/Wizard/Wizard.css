@@ -45,6 +45,13 @@
     margin-right: 10px;
 }
 
+.stepTitle {
+    font-family: neuzeit-grotesk, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+
 .inputContainer {
     display: flex;
     flex-direction: row;

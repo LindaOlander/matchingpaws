@@ -119,6 +119,8 @@
 }
 
 #menu li {
+    font-family: neuzeit-grotesk, sans-serif;
+    font-weight: 700;
   padding: 10px 0;
   font-size: 22px;
 }

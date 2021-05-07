@@ -396,8 +396,8 @@ const AddDogs = () => {
                         <input
                             type="radio"
                             name="allergi"
-                            value="nej"
-                            checked={state.allergi === "nej"}
+                            value="ja"
+                            checked={state.allergi === "ja"}
                             onChange={handleChange}
                         />
                         <span>Min hund fäller päls</span>
@@ -406,8 +406,8 @@ const AddDogs = () => {
                         <input
                             type="radio"
                             name="allergi"
-                            value="ja"
-                            checked={state.allergi === "ja"}
+                            value="nej"
+                            checked={state.allergi === "nej"}
                             onChange={handleChange}
                         />
                         <span>Min hund fäller inte päls</span>

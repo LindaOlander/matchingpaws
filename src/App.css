@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url("https://use.typekit.net/tbj8rjm.css");
 
 #root {
   box-sizing: border-box;
@@ -7,7 +9,8 @@
 
 html {
   /* font-family: 'Roboto', sans-serif; */
-  font-family: 'Lato', sans-serif;
+  /* font-family: 'Lato', sans-serif; */
+  font-family: neuzeit-grotesk, sans-serif;
   scroll-behavior: smooth;
   height: -webkit-fill-available;
 }
@@ -16,6 +19,7 @@ body {
   box-sizing: border-box;
   min-height: 100vh;
   min-height: -webkit-fill-available;
+  /* font-family: neuzeit-grotesk, sans-serif; */
 }
 
 p {
@@ -32,9 +36,24 @@ p {
   line-height: 24px;
 }
 
+.boldParagraph {
+  font-family: neuzeit-grotesk, sans-serif;
+  font-size: 21px;
+  line-height: 28px;
+}
+
+
 a {
   color: #ea947e;
   text-decoration: none;
+}
+
+.anchorNoColor {
+  color: black;
+}
+
+.anchorNoColor:hover {
+  text-decoration: underline;
 }
 
 /* a:hover {
@@ -44,6 +63,7 @@ a {
 
 h2 {
   font-family: 'Lato', sans-serif;
+  font-family: neuzeit-grotesk, sans-serif;
   font-weight: 700;
   font-size: 42px;
   line-height: 52px;
@@ -52,7 +72,8 @@ h2 {
 }
 
 h3 {
-  font-family: 'Lato', sans-serif;
+  /* font-family: 'Lato', sans-serif; */
+  font-family: neuzeit-grotesk, sans-serif;
   font-weight: 700;
   font-size: 32px;
   line-height: 42px;
@@ -60,7 +81,8 @@ h3 {
 }
 
 h4 {
-  font-family: 'Lato', sans-serif;
+  /* font-family: 'Lato', sans-serif; */
+  font-family: neuzeit-grotesk, sans-serif;
   font-weight: 700;
   font-size: 22px;
   line-height: 30px;
@@ -68,7 +90,8 @@ h4 {
 }
 
 h5 {
-  font-family: 'Lato', sans-serif;
+  /* font-family: 'Lato', sans-serif; */
+  font-family: neuzeit-grotesk, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 300;
@@ -78,7 +101,7 @@ h5 {
 }
 
 h6 {
-  font-family: 'Lato', sans-serif;
+  /* font-family: 'Lato', sans-serif; */
   font-weight: 300;
   font-size: 17px;
   line-height: 27px;
@@ -86,10 +109,11 @@ h6 {
 }
 
 .button {
-  font-family: 'Lato', sans-serif;
+  /* font-family: 'Lato', sans-serif; */
+  font-family: neuzeit-grotesk, sans-serif;
   font-weight: 400;
   /* font-family: 'Roboto', sans-serif; */
-  font-size: 16px;
+  font-size: 18px;
   color: white;
   padding: 0 16px;
   height: 56px;
@@ -229,13 +253,13 @@ h6 {
 
 @media screen and (max-width: 820px) {
   h2 {
-    font-size: 24px;
-    line-height: 34px;
+    font-size: 34px;
+    line-height: 38px;
   }
 
   h3 {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 24px;
+    line-height: 28px;
   }
 
   .navbar-wrapper {
