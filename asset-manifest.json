@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/matchingpaws/static/css/main.34eb4c53.chunk.css",
-    "main.js": "/matchingpaws/static/js/main.f945e8f9.chunk.js",
-    "main.js.map": "/matchingpaws/static/js/main.f945e8f9.chunk.js.map",
-    "runtime-main.js": "/matchingpaws/static/js/runtime-main.5ce184c4.js",
-    "runtime-main.js.map": "/matchingpaws/static/js/runtime-main.5ce184c4.js.map",
-    "static/js/2.a90ead92.chunk.js": "/matchingpaws/static/js/2.a90ead92.chunk.js",
-    "static/js/2.a90ead92.chunk.js.map": "/matchingpaws/static/js/2.a90ead92.chunk.js.map",
-    "static/js/3.5d2e2c0d.chunk.js": "/matchingpaws/static/js/3.5d2e2c0d.chunk.js",
-    "static/js/3.5d2e2c0d.chunk.js.map": "/matchingpaws/static/js/3.5d2e2c0d.chunk.js.map",
+    "main.css": "/matchingpaws/static/css/main.c1fd5b5e.chunk.css",
+    "main.js": "/matchingpaws/static/js/main.61ac408e.chunk.js",
+    "main.js.map": "/matchingpaws/static/js/main.61ac408e.chunk.js.map",
+    "runtime-main.js": "/matchingpaws/static/js/runtime-main.54462fa7.js",
+    "runtime-main.js.map": "/matchingpaws/static/js/runtime-main.54462fa7.js.map",
+    "static/js/2.00087326.chunk.js": "/matchingpaws/static/js/2.00087326.chunk.js",
+    "static/js/2.00087326.chunk.js.map": "/matchingpaws/static/js/2.00087326.chunk.js.map",
+    "static/js/3.c2829599.chunk.js": "/matchingpaws/static/js/3.c2829599.chunk.js",
+    "static/js/3.c2829599.chunk.js.map": "/matchingpaws/static/js/3.c2829599.chunk.js.map",
     "index.html": "/matchingpaws/index.html",
-    "static/css/main.34eb4c53.chunk.css.map": "/matchingpaws/static/css/main.34eb4c53.chunk.css.map",
-    "static/js/2.a90ead92.chunk.js.LICENSE.txt": "/matchingpaws/static/js/2.a90ead92.chunk.js.LICENSE.txt",
+    "static/css/main.c1fd5b5e.chunk.css.map": "/matchingpaws/static/css/main.c1fd5b5e.chunk.css.map",
+    "static/js/2.00087326.chunk.js.LICENSE.txt": "/matchingpaws/static/js/2.00087326.chunk.js.LICENSE.txt",
     "static/media/Icon-MatchingPaws-black.png": "/matchingpaws/static/media/Icon-MatchingPaws-black.be6c19b1.png",
     "static/media/Header.css": "/matchingpaws/static/media/poodle.27956449.jpg",
     "static/media/instagram.png": "/matchingpaws/static/media/instagram.0c9ad99d.png",
     "static/media/Wizard.css": "/matchingpaws/static/media/paw.fb0fe0f2.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.5ce184c4.js",
-    "static/js/2.a90ead92.chunk.js",
-    "static/css/main.34eb4c53.chunk.css",
-    "static/js/main.f945e8f9.chunk.js"
+    "static/js/runtime-main.54462fa7.js",
+    "static/js/2.00087326.chunk.js",
+    "static/css/main.c1fd5b5e.chunk.css",
+    "static/js/main.61ac408e.chunk.js"
   ]
 }
