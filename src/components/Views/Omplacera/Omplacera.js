@@ -27,27 +27,34 @@ const Omplacera = () => {
         <>
             <NavbarBlack color={'#222222'}/>
             <HeaderAdopt />
-            <div className="contentWrapper">
+            <div>
                 <div>
-                    <p className="paddedDesktop">Ibland blir livet som hundägare inte som man tänkt sig och av olika anledningar kan man behöva omplacera sin hund. Vi förstår att det beslutet kan vara mycket tungt och fyllt av känslor.</p>
-                    {!toggle && 
-                        <div style={{width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center', marginBottom: '30px'}}>
-                            <button className="buttonLinkSecret" onClick={handleReadmore}>Läs mer</button>
+                    <div style={{backgroundColor: '#f0af9f', marginTop: '20px', color: '#ffffff', textAlign: 'center'}}>
+
+                    <p className="paddedDesktop">
+                    Ibland blir livet som hundägare inte som man tänkt sig och av olika anledningar kan man behöva omplacera sin hund. Vi förstår att det är ett beslut som är mycket svårt att ta och är känslofyllt.                        </p>
+                    </div>
+                    <div style={{padding: '30px 270px', display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                        <div style={{width: '300px', marginRight: '40px'}}>
+                            <img style={{width: '300px'}} src="https://images.unsplash.com/photo-1551730459-92db2a308d6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80" />
                         </div>
-                    }
-                    {toggle && 
-                    <>
-                        <h5>Matchningsprocessen</h5>
-                        <p className="smallParagraph">Efter att du har laddat upp din hund för matchning kan de individer som matchats med din hund komma att kontakta dig för att ta vidare dialogen. Det är självklart du som ägare som i slutändan väljer vem som ska ta över din hund och du har rätt att ångra dig fram till att avtal är skrivet.</p>
-                        <p className="smallParagraph">Svara sanningsenligt på formuläret och kontrollera dina kontaktuppgifter, så att eventuella adoptörer kan komma i kontakt med dig. Viktigast av allt, vi förstår att det är tungt och vi håller dig i handen genom processen.</p>
-                    </>
-                    }
+                        <div>
+                            <h3>Få hjälp med omplacering</h3>
+                            <br />
+                            <p className="smallParagraph">
+                            Vi är med dig i processen och utgår alltid ifrån hundens bästa. Via vårt matchningsverktyg kommer lämpliga adoptörer som passar med din hund och dess behov kunna att matchas med din hund. Dessa individer kan därefter komma att kontakta dig för vidare dialog. 
+                            </p>
+                            <p className="smallParagraph">
+                            Det är självklart du som ägare som i slutändan väljer vem som ska ta över din hund och du har rätt att ångra dig fram till att avtalet är skrivet.                        </p>
+                            {!showForm && 
+                            <div className="centerWrapper buttonWrapper">
+                                <button className="button" onClick={handleShowForm}>Lägg in din hund för matchning</button>
+                            </div>}
+                        </div>
+                    </div>
                 </div>
                 <div>
-                    {!showForm && 
-                    <div className="centerWrapper buttonWrapper">
-                        <button className="button" onClick={handleShowForm}>Lägg in din hund för matchning</button>
-                    </div>}
+                    
                 </div>
             </div>
             {showForm && <div style={{backgroundColor: '#ededed'}}>

@@ -5,7 +5,7 @@
 }
 
 .bannerQuiz {
-    height: 550px;
+    height: 300px;
     color: #ffffff;
     background-color: #838976;
     display: flex;
@@ -22,4 +22,29 @@
 .bannerQuiz a:hover {
     text-decoration: underline;
     color: #ffffff;
+}
+
+.aboutMatchingPawsBanner {
+    padding: 24px 170px;
+    background-color: rgb(225, 234, 244);
+    /* color: #222222; */
+    color: #ffffff;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url('https://images.unsplash.com/photo-1497993950456-cdb57afd1cf1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2000&q=80'); */
+    background-image: url('https://images.unsplash.com/photo-1529764002524-49fd6db4130f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2773&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+@media screen and (max-width: 820px) {
+    .aboutMatchingPawsBanner {
+        padding: 25px;
+        margin-bottom: 10px;
+    }
 }

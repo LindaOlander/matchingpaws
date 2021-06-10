@@ -78,12 +78,35 @@ export default function ContactUs() {
 	});
   }
 
+  const handleChangeBoende = (event) => {
+	setState({
+		...state,
+		boende: {
+			...state.boende,
+			[event.target.name]: event.target.checked
+		}
+	}) 
+}; 
+
+const handleChangeHundpassning = (event) => {
+	setState({
+		...state,
+		hundpassning: {
+			...state.hundpassning,
+			[event.target.name]: event.target.checked
+		}
+	}) 
+};
+
   const handleSubmit = () => {
 	setSubmit(true);
   }
 
   return (
 <div className="addProductContainer">
+	<h2>Omplaceringsformulär</h2>
+<p className="smallParagraph">Kom ihåg att svara sanningsenligt på formuläret och kontrollera dina kontaktuppgifter, så att eventuella adoptörer kan komma i kontakt med dig.</p>
+
     <form className="contact-form" onSubmit={sendEmail}>
 		{/* Ditt namn */}
 		<div className="questionContainer">
@@ -110,6 +133,7 @@ export default function ContactUs() {
 		<div className="questionContainer">
 			<label className="labelText">
 				<p className="questionHeading">Var kommer din hund ifrån?</p>
+				<p className="smallParagraph">Beskriv hur det gick till när du blev ägare till din hund, t.ex. om den kommer från en hunduppfödare registrerad i SKK, tidigare adoption etc.</p>
 				<input value={state.ursprung} type="text" name="ursprung" onChange={handleChange}/>
 			</label>
 		</div>
@@ -199,7 +223,7 @@ export default function ContactUs() {
 
 		{/* Hunderfarenhet */}
 		<div className="questionContainer">
-			<p className="questionHeading">Vilken typ av erfarenhet av hundar anser du att den som adopterar din hund behöver?</p>
+			<p className="questionHeading">Vilken typ av erfarenhet av hundar anser du att den som adopterar din hund <i>minst</i> behöver?</p>
 			<div className="inputRadioWrapper">
 				<label>
 					<input
@@ -246,7 +270,7 @@ export default function ContactUs() {
 						checked={state.fysik === "hög"}
 						onChange={handleChange}
 					/>
-					<span>..kan bli väldigt stark och tung att hålla emot i vissa situationer</span>
+					<span>Kan bli väldigt stark och tung att hålla emot i vissa situationer</span>
 				</label>
 				<label>
 					<input
@@ -337,46 +361,22 @@ export default function ContactUs() {
 			<p className="questionHeading">Vilka boendeformer kan din hund bo i?</p>
 			{/* Ska kunna klicka i flera */}
 			<div className="inputRadioWrapper">
-				<label>
-					<input
-						type="checkbox"
-						name="boende"
-						value="lgh-stad"
-						checked={state.boende.lghStad === true}
-						onChange={handleChange}
-					/>
-					<span>I lägenhet i stadsmiljö</span>
-				</label>
 					<label>
-					<input
-						type="checkbox"
-						name="boende"
-						value="villa-stad"
-						checked={state.boende.villaStad === true}
-						onChange={handleChange}
-					/>
-					<span>I villa/radhus i stadsmiljö</span>
-				</label>
-				<label>
-					<input
-						type="checkbox"
-						name="boende"
-						value="lgh-landet"
-						checked={state.boende.lghLandet === true}
-						onChange={handleChange}
-					/>
-					<span>I lägenhet utanför stadsmiljö</span>
-				</label>
-				<label>
-				<input
-						type="checkbox"
-						name="boende"
-						value="villa-landet"
-						checked={state.boende.villaLandet === true}
-						onChange={handleChange}
-					/>
-					<span>I villa/radhus utanför stadsmiljö</span>
-				</label>
+                        <input type="checkbox" onClick={handleChangeBoende} value={state.boende.centralt} name="centralt"/>
+                        <span>Lägenhet centralt i område med mycket människor och trafik</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" onClick={handleChangeBoende} value={state.boende.lägenhet} name="lägenhet"/>
+                        <span>Lägenhet i lugnt lägenhetsområde</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" onClick={handleChangeBoende} value={state.boende.villaområde} name="villaområde"/>
+                        <span>Hus eller radhus i villaområde</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" onClick={handleChangeBoende} value={state.boende.landet} name="landet"/>
+                        <span>Enskilt hus eller gård på landet</span>
+                    </label>
 			</div>
 		</div>
 		{/* Hundpassning */}
@@ -384,46 +384,22 @@ export default function ContactUs() {
 			<p className="questionHeading">Vilka hundpassningslösningar är lämpliga för din hund?</p>
 			{/* Ska kunna skicka in flera */}
 			<div className="inputRadioWrapper">
-				<label>
-					<input
-						type="radio"
-						name="hundpassning"
-						value="dagis"
-						checked={state.hundpassning === "dagis"}
-						onChange={handleChange}
-					/>
-					<span>Min hund kan gå på hunddagis</span>
-				</label>
-				<label>
-					<input
-						type="radio"
-						name="hundpassning"
-						value="kontor"
-						checked={state.hundpassning === "kontor"}
-						onChange={handleChange}
-					/>
-					<span>Min hund kan följa med sin ägare till kontoret om dagarna</span>
-				</label>
-				<label>
-					<input
-						type="radio"
-						name="hundpassning"
-						value="ensam"
-						checked={state.hundpassning === "ensam"}
-						onChange={handleChange}
-					/>
-					<span>Min hund kan vara ensam ett par timmar om dagarna</span>
-				</label>
-				<label>
-					<input
-						type="radio"
-						name="hundpassning"
-						value="hemma"
-						checked={state.hundpassning === "hemma"}
-						onChange={handleChange}
-					/>
-					<span>Min hund måste bo med en adoptör som kan vara hemma med hunden om dagarna</span>
-				</label>
+			<label>
+                        <input type="checkbox" onClick={handleChangeHundpassning} value={state.hundpassning.hunddagis} name="hunddagis"/>
+                        <span>Min hund kan gå på hunddagis</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" onClick={handleChangeHundpassning} value={state.hundpassning.kontoret} name="kontoret"/>
+                        <span>Min hund kan följa med sin ägare till kontoret om dagarna</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" onClick={handleChangeHundpassning} value={state.hundpassning.ensam} name="ensam"/>
+                        <span>Min hund kan vara ensam ett par timmar om dagarna</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" onClick={handleChangeHundpassning} value={state.hundpassning.hemma} name="hemma"/>
+                        <span>Min hund måste bo med en adoptör som kan vara hemma med hunden om dagarna</span>
+                    </label>
 			</div>
 		</div>
 
@@ -576,7 +552,8 @@ export default function ContactUs() {
 		{/* Beskrivning */}
 		<div className="questionContainer">
 			<label className="labelText">
-				<p className="questionHeading">Beskriv din hund med egna ord din hund</p>
+				<p className="questionHeading">Beskriv din hund med egna ord</p>
+				<p className="smallParagraph">Denna beskrivning kommer att delas med eventuella adoptörer, varpå det är viktigt att du beskriver din hunds person och behov utförligt.</p>
 				<input value={state.beskrivning} type="text" name="beskrivning" onChange={handleChange}/>
 			</label>
 		</div>
@@ -587,6 +564,7 @@ export default function ContactUs() {
 				<input value={state.lank} type="text" name="lank" onChange={handleChange}/>
 			</label>
 		</div>
+		Du kommer att få möjlighet att komplettera med bilder på din hund när din omplaceringsannons är godkänd.
 		{/* GDPR */}
 		<div className="questionContainer">
 			<div className="inputRadioWrapper">
@@ -606,7 +584,7 @@ export default function ContactUs() {
 			<input className="button" type="submit" value="Skicka in förfrågan" onClick={handleSubmit} />
 		</div>
 		<div className="center" style={{textAlign: 'center'}}>
-			{submit && <p>Förfrågan om att lägga in {state.hundnamn} har skickats ♥️</p>}
+			{submit && <p>Tack! Din förfrågan om att lägga in {state.hundnamn} har skickats ♥️</p>}
 		</div>
     </form>
 </div>

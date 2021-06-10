@@ -6,12 +6,14 @@ const AboutOmplacera = () => {
     return (
         <>
         <div className="contentWrapper centerWrapper paddingWrapper">
-            <h3>
-                Livet med hund kanske inte blev som du tänkt dig           
-            </h3>
-            <h6>
-                Därför finns Matching Paws. Hos oss kan du lägga in din hund för matchning med en ny potentiell ägare.
-            </h6>
+            <div style={{marginRight: '60px', textAlign: 'left', width: '430px'}}>
+                <h3>
+                    Livet med hund kanske inte blev som du tänkt dig           
+                </h3>
+                <h6>
+                    Hos oss kan du lägga in din hund för matchning med en ny potentiell ägare.
+                </h6>
+            </div>
             <div className="centerWrapper buttonWrapper">
                 <Link to="/omplacera"><button className="button">Hitta ett nytt hem</button></Link>
             </div>

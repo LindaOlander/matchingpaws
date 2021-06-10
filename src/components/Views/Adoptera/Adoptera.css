@@ -1,0 +1,15 @@
+.headerWizardDisclaimer {
+    font-size: 15px;
+    line-height: 20px;
+    margin-right: 60px;
+}
+
+@media screen and (min-width: 820px) {
+    .headerWizardDisclaimer {
+        width: 350px;
+    }
+
+    .headerWizardHeading {
+        width: 400px;
+    }
+}

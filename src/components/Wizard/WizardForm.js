@@ -6,13 +6,15 @@ export const WizardForm = ({ step: currentIndex, ...props }) => {
   const prevStep = currentIndex !== 0 && steps[currentIndex - 1].props;
   const nextStep = currentIndex !== steps.length - 1 && steps[currentIndex + 1].props;
   const lastQuestion = currentIndex >= 13;
-
+  const questionAnswered = ''
+  
+  console.log('props', props)
   console.log('currentIndex', currentIndex)
 
   return (
     <div className="stepContainer">
       <div>
-        {!lastQuestion && <p>Fråga {currentIndex + 1} av {steps.length - 1}</p>}
+        {!lastQuestion && <p className="stepQuestionNumber">Fråga {currentIndex + 1} av {steps.length - 1}</p>}
       </div>
       {steps[currentIndex]}
       {nextStep && <div className="wizardButtonWrapper">

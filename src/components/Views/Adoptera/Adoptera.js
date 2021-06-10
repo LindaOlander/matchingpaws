@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavbarBlack from '../../Navbar/NavbarBlack';
 import WizardParent from '../../Wizard/WizardParent';
+import './Adoptera.css'
+
 
 const Adoptera = () => {
+    const [showQuiz, setShowQuiz] = useState(false)
+    const [showHeader, setShowHeader] = useState(true)
 
     const scrollDown = () => {
         window.scrollTo({
@@ -11,16 +15,22 @@ const Adoptera = () => {
             behavior: 'smooth'
           });
     }
+
+    const startQuiz = () => {
+        setShowQuiz(true)
+        setShowHeader(false)
+    }
     return (
         <>
             <NavbarBlack color="black" />
+            {showHeader && 
             <div className="headerWizard">
                 <h2>Hitta din match</h2>
-                <p>Låt vårt matchnings-verktyg identifiera <br /> lämpliga matchningar <br /> till dig.</p>
-                <p>Var noga med att svara sanningsenligt på testet, <br />för dig och din framtida hunds skull!</p>
-                <button onClick={scrollDown} className="button">Starta testet</button>
-            </div>
-            <WizardParent />
+                <p className="headerWizardHeading">Låt vårt matchningsverktyg identifiera lämpliga matchningar till dig.</p>
+                <p className="headerWizardDisclaimer">Psst! Var noga med att svara sanningsenligt på testet, för dig och din framtida hunds skull!</p>
+                <button onClick={startQuiz} className="button">Starta testet</button>
+            </div>}
+            {showQuiz && <WizardParent />}
         </>
     )
 }

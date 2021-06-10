@@ -3,6 +3,7 @@ import NavbarBlack from '../../Navbar/NavbarBlack';
 import HeaderAdoptionsprocessen from '../../Header/HeaderAdoptionsprocessen';
 import Timeline from '../../Timeline/Timeline';
 import Footer from '../../Footer/Footer';
+import { TimelineNew } from '../../Timeline/TimelineNew';
 
 const Adoptionsprocessen = () => {
     return (
@@ -10,7 +11,9 @@ const Adoptionsprocessen = () => {
             <NavbarBlack color='black' />
             <HeaderAdoptionsprocessen />
             <div className="contentWrapper">
-                <p className="paddedDesktop">Matching Paws arbetar för att sammanföra privatpersoner och föreningar - med trygga familjer och lämpliga hem som önskar adoptera en hund.</p>
+                <p className="paddedDesktop">
+                    Vi utgår alltid ifrån hundens behov i vår matchning- och adoptionsprocess. På det sättet säkerställer vi att både hund och ägare får ett fungerande och lyckligt liv tillsammans.
+                </p>
                 <br />
                 <Timeline />
             </div>

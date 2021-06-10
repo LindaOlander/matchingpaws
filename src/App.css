@@ -38,8 +38,8 @@ p {
 
 .boldParagraph {
   font-family: neuzeit-grotesk, sans-serif;
-  font-size: 21px;
-  line-height: 28px;
+  font-size: 30px;
+  line-height: 34px;
 }
 
 
@@ -127,6 +127,10 @@ h6 {
 
 .button:hover {
   background-color: #ea947e;
+}
+
+.wizardButtonWrapper .button:hover {
+  background-color: #f0af9f;
 }
 
 .buttonBlock {
@@ -226,7 +230,7 @@ h6 {
 }
 
 .paddedDesktop {
-  padding: 30px 150px;
+  padding: 30px 130px;
 }
 
 .back {
@@ -296,5 +300,11 @@ h6 {
     font-weight: 300;
     font-size: 17px;
     line-height: 27px;
+  }
+
+  .boldParagraph {
+    font-family: neuzeit-grotesk, sans-serif;
+    font-size: 21px;
+    line-height: 28px;
   }
 }

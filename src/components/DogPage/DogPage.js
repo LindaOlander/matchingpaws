@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react';
+import { useHistory } from "react-router-dom";
+
 import axios from 'axios';
 
 import { Link } from "react-router-dom";
@@ -7,6 +9,7 @@ import './DogPage.css';
 const DogPage = ({ match }) => {
   const [data, setData] = useState([{}]);
   const [seeEmail, setSeeEmail] = useState(false);
+  let history = useHistory();
 
   let params = match.params;
   const id = params.id
@@ -31,11 +34,11 @@ const DogPage = ({ match }) => {
       }
     })
     
-
     return (
       <>
         <div className="contentWrapper">
-      <Link to="/adoptera"><button className="buttonLink">Gå tillbaka</button></Link>
+      {/* <Link to="/adoptera"><button className="buttonLink">Gå tillbaka</button></Link> */}
+      <button onClick={history.goBack}>Go back</button>
         <div className="dogpage-container">
           <div className="dogpage-image-wrapper">
             <img alt="dog" src={data.bild} className="dogpage-image"/>
@@ -58,7 +61,7 @@ const DogPage = ({ match }) => {
             <div className="kravWrapper">
               <p>Tidigare hunderfarenhet:</p>
               {data.hunderfarenhet === 'mycket' && <span className="successIcon"><i class="fas fa-check"></i></span>}
-              {data.hunderfarenhet === 'ganska' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
+              {data.hunderfarenhet === 'ganska' && <span className="successIcon"><i class="fas fa-check"></i></span>}
               {data.hunderfarenhet === 'lite' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
             </div>
             <div className="kravWrapper">
@@ -68,9 +71,8 @@ const DogPage = ({ match }) => {
               {data.fysik === 'låg' && <span className="kravText">Låg</span>}
             </div>
             <div className="kravWrapper">
-              <p>Går ihop med allergiker:</p>
+              <p>Fäller päls</p>
               {data.allergi === 'ja' && <span className="successIcon"><i class="fas fa-check"></i></span>}
-              {data.allergi === 'lite' && <span className="successIcon"><i class="fas fa-check"></i></span>}
               {data.allergi === 'nej' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
             </div>
             <div className="kravWrapper">
@@ -93,11 +95,9 @@ const DogPage = ({ match }) => {
             <div className="kravWrapper">
               <p>Kan bo i stadsmiljö:</p>
               {data.boende === 'landet' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
-              {data.boende === 'stadsmiljö' && <span className="successIcon"><i class="fas fa-check"></i></span>}
-              {data.boende === 'villa-stad' && <span className="successIcon"><i class="fas fa-check"></i></span>}
-              {data.boende === 'lgh-stad' && <span className="successIcon"><i class="fas fa-check"></i></span>}
-              {data.boende === 'villa-landet' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
-              {data.boende === 'lgh-landet' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
+              {data.boende === 'villaområde' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
+              {data.boende === 'lägenhet' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
+              {data.boende === 'centralt' && <span className="successIcon"><i class="fas fa-check"></i></span>}
             </div>
             <div className="kravWrapper">
               <p>Kan gå på hunddagis:</p>
