@@ -1,27 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.af8d6f18.chunk.css",
-    "main.js": "/static/js/main.e4a5eb9a.chunk.js",
-    "main.js.map": "/static/js/main.e4a5eb9a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.1d220de9.js",
-    "runtime-main.js.map": "/static/js/runtime-main.1d220de9.js.map",
-    "static/js/2.15c50979.chunk.js": "/static/js/2.15c50979.chunk.js",
-    "static/js/2.15c50979.chunk.js.map": "/static/js/2.15c50979.chunk.js.map",
-    "static/js/3.b3ce3909.chunk.js": "/static/js/3.b3ce3909.chunk.js",
-    "static/js/3.b3ce3909.chunk.js.map": "/static/js/3.b3ce3909.chunk.js.map",
+    "main.css": "/static/css/main.556b414e.chunk.css",
+    "main.js": "/static/js/main.a1acbf32.chunk.js",
+    "main.js.map": "/static/js/main.a1acbf32.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.e9c7eeb2.js",
+    "runtime-main.js.map": "/static/js/runtime-main.e9c7eeb2.js.map",
+    "static/js/2.e66dfdb4.chunk.js": "/static/js/2.e66dfdb4.chunk.js",
+    "static/js/2.e66dfdb4.chunk.js.map": "/static/js/2.e66dfdb4.chunk.js.map",
+    "static/js/3.0d23a7d1.chunk.js": "/static/js/3.0d23a7d1.chunk.js",
+    "static/js/3.0d23a7d1.chunk.js.map": "/static/js/3.0d23a7d1.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.af8d6f18.chunk.css.map": "/static/css/main.af8d6f18.chunk.css.map",
-    "static/js/2.15c50979.chunk.js.LICENSE.txt": "/static/js/2.15c50979.chunk.js.LICENSE.txt",
+    "static/css/main.556b414e.chunk.css.map": "/static/css/main.556b414e.chunk.css.map",
+    "static/js/2.e66dfdb4.chunk.js.LICENSE.txt": "/static/js/2.e66dfdb4.chunk.js.LICENSE.txt",
     "static/media/Icon-MatchingPaws-black.png": "/static/media/Icon-MatchingPaws-black.be6c19b1.png",
     "static/media/Om.css": "/static/media/therese.011b49d0.jpeg",
+    "static/media/boltHistory.png": "/static/media/boltHistory.781aea73.png",
     "static/media/Header.css": "/static/media/poodle.27956449.jpg",
     "static/media/instagram.png": "/static/media/instagram.0c9ad99d.png",
-    "static/media/Wizard.css": "/static/media/paw.fb0fe0f2.png"
+    "static/media/Wizard.css": "/static/media/paw.fb0fe0f2.png",
+    "static/media/rupertHistory.png": "/static/media/rupertHistory.6ea7b33c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.1d220de9.js",
-    "static/js/2.15c50979.chunk.js",
-    "static/css/main.af8d6f18.chunk.css",
-    "static/js/main.e4a5eb9a.chunk.js"
+    "static/js/runtime-main.e9c7eeb2.js",
+    "static/js/2.e66dfdb4.chunk.js",
+    "static/css/main.556b414e.chunk.css",
+    "static/js/main.a1acbf32.chunk.js"
   ]
 }
