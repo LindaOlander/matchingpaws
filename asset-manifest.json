@@ -1,28 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.8f5f4617.chunk.css",
-    "main.js": "/static/js/main.3c3bc7ad.chunk.js",
-    "main.js.map": "/static/js/main.3c3bc7ad.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.62b42010.js",
-    "runtime-main.js.map": "/static/js/runtime-main.62b42010.js.map",
-    "static/js/2.47f47c6a.chunk.js": "/static/js/2.47f47c6a.chunk.js",
-    "static/js/2.47f47c6a.chunk.js.map": "/static/js/2.47f47c6a.chunk.js.map",
-    "static/js/3.8e2a4675.chunk.js": "/static/js/3.8e2a4675.chunk.js",
-    "static/js/3.8e2a4675.chunk.js.map": "/static/js/3.8e2a4675.chunk.js.map",
+    "main.css": "/static/css/main.05acc4dd.chunk.css",
+    "main.js": "/static/js/main.28ed91be.chunk.js",
+    "main.js.map": "/static/js/main.28ed91be.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.e2d97e39.js",
+    "runtime-main.js.map": "/static/js/runtime-main.e2d97e39.js.map",
+    "static/js/2.761d32d2.chunk.js": "/static/js/2.761d32d2.chunk.js",
+    "static/js/2.761d32d2.chunk.js.map": "/static/js/2.761d32d2.chunk.js.map",
+    "static/js/3.5cc90455.chunk.js": "/static/js/3.5cc90455.chunk.js",
+    "static/js/3.5cc90455.chunk.js.map": "/static/js/3.5cc90455.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.8f5f4617.chunk.css.map": "/static/css/main.8f5f4617.chunk.css.map",
-    "static/js/2.47f47c6a.chunk.js.LICENSE.txt": "/static/js/2.47f47c6a.chunk.js.LICENSE.txt",
+    "static/css/main.05acc4dd.chunk.css.map": "/static/css/main.05acc4dd.chunk.css.map",
+    "static/js/2.761d32d2.chunk.js.LICENSE.txt": "/static/js/2.761d32d2.chunk.js.LICENSE.txt",
     "static/media/Alma.png": "/static/media/Alma.c0cd6e95.png",
     "static/media/Icon-MatchingPaws-black.png": "/static/media/Icon-MatchingPaws-black.be6c19b1.png",
     "static/media/Om.css": "/static/media/therese.011b49d0.jpeg",
+    "static/media/MatchingPaws-smuggel-logo.png": "/static/media/MatchingPaws-smuggel-logo.7d915a03.png",
     "static/media/Header.css": "/static/media/poodle.27956449.jpg",
     "static/media/instagram.png": "/static/media/instagram.0c9ad99d.png",
     "static/media/Wizard.css": "/static/media/paw.fb0fe0f2.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.62b42010.js",
-    "static/js/2.47f47c6a.chunk.js",
-    "static/css/main.8f5f4617.chunk.css",
-    "static/js/main.3c3bc7ad.chunk.js"
+    "static/js/runtime-main.e2d97e39.js",
+    "static/js/2.761d32d2.chunk.js",
+    "static/css/main.05acc4dd.chunk.css",
+    "static/js/main.28ed91be.chunk.js"
   ]
 }
