@@ -259,7 +259,7 @@ const WizardParent = () => {
         const filterOnHundpassning = filterOnBoende.filter(dog => dog.hundpassning[ownerHundpassning]);
         const filterAktivitet = filterOnHundpassning.filter(dog => dog.aktivitet[ownerAktivitet])
         const filterProblematik = filterAktivitet.filter(dog => {
-            return inabilities.filter(ability => (dog.problematik[ability])).length == 0
+            return inabilities.filter(ability => (dog.problematik[ability])).length === 0
         })
 
         setData(filterProblematik);

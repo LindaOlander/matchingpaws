@@ -1,10 +1,9 @@
 import React, { useState } from "react"
-import FileUploader from '../Wizard/FileUploader';
+// import FileUploader from '../Wizard/FileUploader';
 import './AddDogs.css';
  
 
 const AddDogs = () => {
-    const [selectedFile, setSelectedFile] = useState(null);
     const [submitted, setSubmitted] = useState(false);
     const [state, setState] = useState({
         hundnamn: "",
@@ -110,12 +109,12 @@ const AddDogs = () => {
         setSubmitted(true);
     }
 
-    const handleFileChange = (event) => {
-        setState({ 
-            ...state,
-            [event.target.name]: event.target.files[0]
-        });
-      }
+    // const handleFileChange = (event) => {
+    //     setState({ 
+    //         ...state,
+    //         [event.target.name]: event.target.files[0]
+    //     });
+    //   }
 
     const submitForm = (event) => {
         event.preventDefault()

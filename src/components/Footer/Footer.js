@@ -14,7 +14,7 @@ const Footer = () => {
             <div className="footer-icons">
                 <a href="mailto:hello@matchingpaws.se" target="_blank" rel="noreferrer">
                     <span style={{fontSize: '18px', color: 'white'}}>
-                        <i class="far fa-envelope"></i>
+                        <i className="far fa-envelope"></i>
                     </span>
                 </a>
                 <a href="https://www.instagram.com/matchingpaws.se" target="_blank" rel="noreferrer"><img alt="Instagram" src={instagram.default} /></a>

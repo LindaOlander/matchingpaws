@@ -1,6 +1,5 @@
 import React from 'react';
-import WizardResults from '../../Wizard/WizardResults';
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import WizardLoader from '../../Wizard/WizardLoader';
 
 const Adoptionsresultat = ({state, data, filterDogs, ...props}) => {
