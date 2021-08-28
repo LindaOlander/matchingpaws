@@ -120,17 +120,26 @@
 
 #menu li {
     font-family: neuzeit-grotesk, sans-serif;
-    font-weight: 700;
+    /* font-weight: 700; */
   padding: 10px 0;
   font-size: 22px;
 }
 
-#menu li:active, #menu li:visited {
+#menu li:active {
   font-weight: bold;
+  text-decoration: underline;
+}
+
+#menu a li:visited {
+  text-decoration: underline;
 }
 
 #hamburger input:checked ~ ul {
   transform: none;
+}
+
+.navbar #hamburger a .active {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 720px) {

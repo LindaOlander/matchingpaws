@@ -1,15 +1,13 @@
 import React, {useState, useEffect} from 'react';
-import { useHistory } from "react-router-dom";
-
+// import { useHistory } from "react-router-dom";
 import axios from 'axios';
-
-import { Link } from "react-router-dom";
 import './DogPage.css';
+import NavbarBlack from '../Navbar/NavbarBlack';
 
 const DogPage = ({ match }) => {
   const [data, setData] = useState([{}]);
   const [seeEmail, setSeeEmail] = useState(false);
-  let history = useHistory();
+  // let history = useHistory();
 
   let params = match.params;
   const id = params.id
@@ -24,7 +22,7 @@ const DogPage = ({ match }) => {
         setData(result.data);
       };
       fetchDogs();
-    }, []);
+    }, [id]);
 
     console.log(data);
   
@@ -36,9 +34,10 @@ const DogPage = ({ match }) => {
     
     return (
       <>
+      <NavbarBlack color="black" />
         <div className="contentWrapper">
       {/* <Link to="/adoptera"><button className="buttonLink">Gå tillbaka</button></Link> */}
-      <button onClick={history.goBack}>Go back</button>
+      {/* <button onClick={history.goBack}>Go back</button> */}
         <div className="dogpage-container">
           <div className="dogpage-image-wrapper">
             <img alt="dog" src={data.bild} className="dogpage-image"/>
@@ -56,13 +55,13 @@ const DogPage = ({ match }) => {
             </div>
           </div>
         </div>
-          <div className="kravContainer">
+          {/* <div className="kravContainer">
             <h5>Krav</h5>
             <div className="kravWrapper">
-              <p>Tidigare hunderfarenhet:</p>
-              {data.hunderfarenhet === 'mycket' && <span className="successIcon"><i class="fas fa-check"></i></span>}
-              {data.hunderfarenhet === 'ganska' && <span className="successIcon"><i class="fas fa-check"></i></span>}
-              {data.hunderfarenhet === 'lite' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
+              <p>Tidigare hunderfarenhetskrav:</p>
+              {data.hunderfarenhet === 'mycket' && <span className="kravText">Mycket</span>}
+              {data.hunderfarenhet === 'ganska' && <span className="kravText">Lite</span>}
+              {data.hunderfarenhet === 'lite' && <span className="kravText">Ingen</span>}
             </div>
             <div className="kravWrapper">
               <p>Fysisk förmåga:</p>
@@ -121,7 +120,7 @@ const DogPage = ({ match }) => {
               {data.ledarskap === 'tydligt' && <span className="successIcon"><i class="fas fa-check"></i></span>}
               {data.ledarskap === 'mjukt' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
             </div>
-          </div>
+          </div> */}
           <div className="descriptionWrapper">
           <h5>Kontakt</h5>
           <p>För att påbörja en kontakt med ägaren till {data.hundnamn}, kontakta <i>{data.kontaktnamn}</i>.</p>

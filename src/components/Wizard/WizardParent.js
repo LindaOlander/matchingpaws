@@ -2,11 +2,10 @@ import React, {useState, useEffect} from "react";
 import { Step, WizardForm } from "./WizardForm";
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import DogBox from "../DogBox/DogBox";
 import WizardResults from "./WizardResults";
-import './Wizard.css';
 import { WizardLoader } from "./WizardLoader";
-import Adoptionsresultat from "../Views/Adoptionsresultat/Adoptionsresultat";
+import {Event} from '../Tracking/index';
+import './Wizard.css';
 
 const WizardParent = () => {
     const [data, setData] = useState({ dogs: [] });
@@ -264,8 +263,8 @@ const WizardParent = () => {
         })
 
         setData(filterProblematik);
+        Event("QUIZ", "Avslutade quizet", "QUIZ-avslutat")
     }
-
 
     useEffect(() => {
         const fetchData = async () => {
@@ -279,26 +278,21 @@ const WizardParent = () => {
     }, []);
 
     // Den här funktionen sätter parametern till true
-    const handleChangeStorlek = (event) => {
-        const value = event.target.value;
-        setState({
-            ...state,
-            [event.target.name]: event.target.checked
-        });
-    }
+    // const handleChangeStorlek = (event) => {
+    //     const value = event.target.value;
+    //     setState({
+    //         ...state,
+    //         [event.target.name]: event.target.checked
+    //     });
+    // }
 
     console.log('state', state)
     console.log('data', data)
 
-    let transitions = {
-        enterRight: 'your custom css transition classes',
-        enterLeft : 'your custom css transition classes',
-    }
-
     return (
 
         <div className="wizardContainer" id="/matchingpaws/quiz">
-        <WizardForm step={step} transitions={transitions} onChange={handleStep} state={state}>
+        <WizardForm step={step} onChange={handleStep} state={state}>
 
         <Step title="Erfarenhet" description="Erfarenhet">
             <p className="stepTitle">Vilket alternativ beskriver bäst din tidigare hunderfarenhet?</p>
@@ -353,7 +347,7 @@ const WizardParent = () => {
         </Step>
 
         <Step title="Barn" description="Barn">
-            <p className="stepTitle">Kommer hunden träffa barn vardagligen?</p>
+            <p className="stepTitle">Kommer hunden träffa barn dagligen?</p>
             <div className="inputContainer">  
                 <input className="radio" type='radio' id='ja' name='barn' value='ja' checked={state.barn === 'ja'} onChange={handleChange} />
                 <div className="border"></div>
@@ -400,7 +394,7 @@ const WizardParent = () => {
             <div className="inputContainer">  
                 <input className="radio" type='radio' id='kontoret' name='kontoret' value='kontoret' checked={state.hundpassning.kontoret} onChange={handleChangeHundpassningKontoret} />
                 <div className="border"></div>
-                <label className="radioLabelWizard" htmlFor='kontoret'>Hunden kan följa med mig till kontoret på dagarna</label>
+                <label className="radioLabelWizard" htmlFor='kontoret'>Hunden kan följa med mig till arbetet på dagarna</label>
             </div>
             <div className="inputContainer">  
                 <input className="radio" type='radio' id='ensam' name='ensam' value='ensam' checked={state.hundpassning.ensam} onChange={handleChangeHundpassningEnsam} />
@@ -626,6 +620,13 @@ const WizardParent = () => {
             {!match &&
                     <div className="resultButtonWrapper">
                         <WizardLoader />
+                        {/* <Link to={{
+                            pathname: "/resultat",
+                            data: {
+                                filterDogs: this.filterDogs
+                             }
+                            }}>
+                                Resultat</Link> */}
                         <button className="button wizardResultButton" onClick={filterDogs}>Visa resultat</button>
                     </div>
             }
@@ -633,7 +634,7 @@ const WizardParent = () => {
                 {/* Vid matchning */}
                 {(match && data.length) && 
                     <>
-                        <h3>Grattis, du har blivit matchad!</h3>
+                        <h3>Du har blivit matchad!</h3>
                         <p>Enligt våra algoritmer skulle du passa bäst med nedanstående hundar. Läs på om hunden du matchats med och kontakta deras nuvarande ägare om du seriöst är intresserad av att adoptera deras hund.</p>
                         <div id="dogResult" className="dogResult">
                             <WizardResults state={state} data={data}/>

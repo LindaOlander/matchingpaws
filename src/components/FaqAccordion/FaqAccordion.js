@@ -1,10 +1,11 @@
 import React, { useState, useRef } from 'react';
+import { Link } from "react-router-dom";
+
 import './FaqAccordion.css';
 
-const FaqAccordion = ({title, content}) => {
+const FaqAccordion = ({title, content, link, linkText}) => {
     const [setActive, setActiveState] = useState("");
     const [setHeight, setHeightState] = useState("0px");
-    const [setRotate, setRotateState] = useState("accordion__icon");
 
     const c = useRef(null);
 
@@ -13,10 +14,8 @@ const FaqAccordion = ({title, content}) => {
         setHeightState(
             setActive === "active" ? "0px" : `${c.current.scrollHeight}px`
         );
-        setRotateState(
-            setActive === "active" ? "accordion__icon" : "accordion__icon rotate"
-        );
     }
+
     return (
         <>
             <div className="accordion__section">
@@ -28,6 +27,7 @@ const FaqAccordion = ({title, content}) => {
                         className="accordion__text"
                         dangerouslySetInnerHTML={{ __html: content }}
                     />
+                    {link && linkText && <Link to={`${link}`}>{linkText}</Link>}
                 </div>
             </div>
         </>

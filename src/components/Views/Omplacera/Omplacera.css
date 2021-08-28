@@ -1,0 +1,45 @@
+.reassignWrapper {
+    /* background-color: #f0af9f; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #000000;
+    padding: 25px 170px;
+}
+
+.reassignHelpWrapper {
+    padding: 30px 270px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.reassignHelpImage {
+    width: 300px;
+    margin-right: 40px;
+}
+
+.reassignHelpWrapper img {
+    width: 300px;
+}
+
+@media screen and (max-width: 820px) {
+    .reassignWrapper {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 40px 25px;
+    }
+
+    .reassignHelpWrapper {
+        flex-direction: column;
+        padding: 0 25px 25px 25px;
+    }
+
+    .reassignHelpImage {
+        width: 100%;
+        margin: 25px 0 25px 0;
+    }
+
+    .reassignHelpWrapper img {
+        width: 100%;
+    }
+}

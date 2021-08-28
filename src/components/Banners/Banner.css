@@ -27,9 +27,8 @@
 .aboutMatchingPawsBanner {
     padding: 24px 170px;
     background-color: rgb(225, 234, 244);
-    /* color: #222222; */
     color: #ffffff;
-    height: 550px;
+    height: 175px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,6 +38,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    margin: 25px;
 
 }
 
@@ -47,4 +47,9 @@
         padding: 25px;
         margin-bottom: 10px;
     }
+
+    .aboutMatchingPawsBanner .boldParagraph a {
+        color: white;
+        text-decoration: underline;
+    } 
 }

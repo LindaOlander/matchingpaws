@@ -10,30 +10,34 @@ import Om from './components/Views/Om/Om';
 import Omplacera from './components/Views/Omplacera/Omplacera';
 import Hundlivet from './components/Views/Hundlivet/Hundlivet';
 import Adoptionsprocessen from './components/Views/Adoptionsprocessen/Adoptionsprocessen';
-import DogList from './components/DogList/DogList';
-import { PageView, initGA } from '../src/components/Tracking/index';
+import { initGA } from '../src/components/Tracking/index';
+import { createBrowserHistory } from 'history';
+import withTracker from './withTracker';
+import Solskenshistorier from './components/Views/Solskenshistorier/Solskenshistorier';
+import SolskenshistoriaPage from './components/Solskenshistorier/SolskenshistoriaPage';
+import Admin from './components/Views/Admin/Admin';
 import './App.css';
-import AllDogsList from './components/DogList/AllDogsList';
 
 function App() {
 
-  useEffect(() => {
-    initGA('G-SH3XSQV8Z7');
-    PageView();
-  })
+  const history = createBrowserHistory();
+  useEffect(() => { initGA(); }, []);
 
   return (
-    <HashRouter basename={process.env.PUBLIC_URL}>
-      <Route path="/" exact component={Start} />
+    <HashRouter basename={process.env.PUBLIC_URL} history={history}>
+      <Route path="/" exact component={withTracker(Start)} />
       <Route path="/adoptera" exact component={Adoptera} />
-      <Route path="/resultat" exact component={Adoptionsresultat} />
       <Route path="/adoptera/:id" component={DogPage} />
       <Route path="/omplacera" exact component={Omplacera} />
-      <Route path="/laggtill" exact component={AddDogs} />
       <Route path="/adoptionsprocessen" exact component={Adoptionsprocessen} />
-      <Route path="/hund" exact component={Hundlivet} />
+      <Route path="/solskenshistorier" exact component={Solskenshistorier} />
+      <Route exact path="/solskenshistorier/:id" component={SolskenshistoriaPage} />
+      <Route path="/hundlivet" exact component={Hundlivet} />
       <Route path="/om" exact component={Om} />
-      <Route path="/hundar" exact component={AllDogsList} />
+      <Route path="/admin" exact component={Admin} />
+      {/* <Route path="/resultat" exact render={(props) => <Adoptionsresultat {...props} />} /> */}
+      {/* <Route path="/resultat" exact component={Adoptionsresultat} /> */}
+      {/* <Route path="/laggtill" exact component={AddDogs} /> */}
     </HashRouter>
   );
 }

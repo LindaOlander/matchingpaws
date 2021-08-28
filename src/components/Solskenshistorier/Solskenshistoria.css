@@ -1,0 +1,50 @@
+.solskenshistorierWrapper {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}
+
+.solskenshistoriaBox {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
+    padding: 25px;
+    margin: 15px;
+    width: 33%;
+}
+
+.solskenshistoriaPageBox {
+    padding: 15vh 25px 25px 25px;
+    margin: 15px;
+}
+
+.solskenshistoriaHeading {
+    margin-bottom: 15px;
+}
+
+.solskenshistoriaImageWrapper {
+    width: 100%;
+    margin-bottom: 15px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.solskenshistoriaImageWrapper img {
+    width: 100%;
+}
+
+@media screen and (max-width: 820px) {
+
+    .solskenshistoriaBox {
+        /* box-sizing: border-box; */
+        width: auto;
+        /* margin-right: 25px; */
+    }
+
+    .solskenshistorierWrapper {
+        flex-direction: column;
+    }
+
+    .solskenshistoriaImageWrapper {
+        height: auto;
+    }
+}

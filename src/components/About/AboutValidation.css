@@ -1,0 +1,24 @@
+.validationWrapper {
+    align-items: center;
+}
+
+.validationTextWrapper {
+    width: 70%;
+}
+
+.validationIconWrapper {
+    width: 30%;
+}
+
+@media screen and (max-width: 820px) {
+    .validationTextWrapper {
+        width: 100%;
+    }
+    
+    .validationIconWrapper {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 25px;
+    }
+}

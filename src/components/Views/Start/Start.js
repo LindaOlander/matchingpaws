@@ -5,16 +5,20 @@ import AboutStartpage from '../../About/AboutStartpage';
 import AboutOmplacera from '../../About/AboutOmplacera';
 import Navbar from '../../Navbar/Navbar';
 import Footer from '../../Footer/Footer';
-import BannerAgria from '../../Banners/BannerAgria';
 import BannerQuiz from '../../Banners/BannerQuiz';
-import {Event} from '../../Tracking/index';
+import {GApageView} from '../../Tracking/index';
 import AboutCorona from '../../About/AboutCorona';
+import AboutValidation from '../../About/AboutValidation';
+import BannerMatchingPaws from '../../Banners/BannerMatchingPaws';
 
 const Start = () => {
     const { pathname } = useLocation();
+    
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [pathname]);
+
+    useEffect(() => { GApageView("landing"); }, []);
 
     return (
         <>
@@ -23,12 +27,9 @@ const Start = () => {
             <AboutStartpage />
             <AboutCorona />
             <BannerQuiz />
+            <AboutValidation />
+            <BannerMatchingPaws />
             <AboutOmplacera />
-            {/* <BannerAgria /> */}
-            {/* <button
-                onClick={()=> 
-                    Event("PRODUCT", "Product added to cart", "PRODUCT_PAGE")
-                } >Add to Cart</button> */}
             <Footer />
         </>
     )

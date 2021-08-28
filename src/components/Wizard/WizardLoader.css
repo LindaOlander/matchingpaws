@@ -37,6 +37,48 @@
     }
 }
 
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes remove {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.dots {
+  animation: remove 1s forwards;
+  animation-delay: 4.5s;
+
+}
+
+.dots span {
+  animation: blink;
+  animation-duration: 1.4s;
+  animation-iteration-count: 4;
+  animation-fill-mode: both;
+}
+
+.dots span:nth-child(2) {
+  animation-delay: .2s;
+}
+
+.dots span:nth-child(3) {
+  animation-delay: .4s;
+}
+
 /* .loader,
 .loader:before,
 .loader:after {

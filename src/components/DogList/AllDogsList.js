@@ -18,8 +18,8 @@ const AllDogsList = () => {
   console.log('data', data)
   
   return (
-    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '20px 0'}}>
-        <h5>Alla hundar i Matchings Paws databas</h5>
+    <div style={{display: 'flex', flexFlow: 'row wrap', alignItems: 'center', margin: '20px 0'}}>
+        
     {data.length && 
         data.map(dog =>
             <DogBox

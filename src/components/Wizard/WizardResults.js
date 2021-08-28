@@ -1,5 +1,4 @@
 import React from 'react';
-import DogBox from "../DogBox/DogBox";
 import DogBoxExtended from '../DogBoxExtended/DogBoxExtended';
 
 
@@ -25,7 +24,6 @@ const WizardResults = ({ data, state }) => {
                 bild={dog.bild}
                 id={dog._id}
                 beskrivning={dog.beskrivning}
-                lank={dog.lank}
                 kontaktnamn={dog.kontaktnamn}
                 email={dog.email}
                 lank={dog.lank}

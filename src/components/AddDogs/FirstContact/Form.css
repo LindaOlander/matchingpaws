@@ -1,5 +1,5 @@
 .addProductContainer {
-    padding: 20px 370px;
+    /* padding: 20px 370px; */
 }
 
 .contact-form {
@@ -59,6 +59,6 @@
 
 @media screen and (max-width: 820px) {
     .addProductContainer {
-        padding: 20px 25px 0 25px;
+        padding: 20px 25px 25px 25px;
     }
 }

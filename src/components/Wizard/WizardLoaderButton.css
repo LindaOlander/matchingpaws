@@ -1,0 +1,43 @@
+.wizard-loader-wrapper {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.wizard-loader-button {
+    background-color: transparent;
+    position: relative;
+    animation: fill 10s;
+    animation-fill-mode: forwards;
+    /* padding: 0 16px; */
+    height: 56px;
+    border: none;
+    margin-right: 10px;
+    outline: none;
+    background-color: #f0af9f;
+    /* width: 200px; */
+    content: "Hittar matchningar.."
+  }
+  
+  @keyframes fill {
+    from {
+        width: 1px;
+    }
+    to {
+        width: 200px;
+        content: "Visa resultat"
+    }
+  }
+
+  .wizard-text {
+    width: 300px;
+    text-align: left;
+    color: white;
+    font-family: neuzeit-grotesk, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    position: absolute;
+    top: 36px;
+    left: 16px;
+  }

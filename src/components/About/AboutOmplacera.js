@@ -5,17 +5,20 @@ import { Link } from "react-router-dom";
 const AboutOmplacera = () => {
     return (
         <>
-        <div className="contentWrapper centerWrapper paddingWrapper">
-            <div style={{marginRight: '60px', textAlign: 'left', width: '430px'}}>
+        <div className="contentWrapper paddingWrapper">
+            <div className="aboutReassignWrapper">
+                <h5 className="greyFont bottomMargin">
+                    För dig som hundägare
+                </h5>
                 <h3>
                     Livet med hund kanske inte blev som du tänkt dig           
                 </h3>
                 <h6>
-                    Hos oss kan du lägga in din hund för matchning med en ny potentiell ägare.
+                    Hos oss kan du lägga in din hund för matchning med en ny potentiell ägare. Via vårt matchingsverktyg kommer lämpliga adoptörer som passar med din hund och dess behov kunna att matchas med din hund, och kontakta dig för vidare dialog.
                 </h6>
+            <div className="buttonWrapper">
+                <Link to="/omplacera"><button className="button">Hitta ett nytt hem till din hund</button></Link>
             </div>
-            <div className="centerWrapper buttonWrapper">
-                <Link to="/omplacera"><button className="button">Hitta ett nytt hem</button></Link>
             </div>
         </div>
         {/* <div className="contentWrapper rowDesktop">

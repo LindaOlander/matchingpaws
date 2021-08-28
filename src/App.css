@@ -40,8 +40,8 @@ p {
   font-family: neuzeit-grotesk, sans-serif;
   font-size: 30px;
   line-height: 34px;
+  margin-bottom: 0;
 }
-
 
 a {
   color: #ea947e;
@@ -170,6 +170,11 @@ h6 {
   background-color: none;
 }
 
+.buttonDisabled {
+  background-color: lightgrey;
+  pointer-events: none;
+}
+
 .siteWrapper {
   padding: 0 150px;
 }
@@ -197,6 +202,10 @@ h6 {
 
 .background-lightgrey {
   background-color: #f9f9f9;
+}
+
+.divider {
+  height: 50px;
 }
 
 .row {
@@ -233,6 +242,14 @@ h6 {
   padding: 30px 130px;
 }
 
+.greyFont {
+  color: #D3D3D3;
+}
+
+.bottomMargin {
+  margin-bottom: 15px;
+}
+
 .back {
   margin: 5px 10px 0 10px;
 }
@@ -243,6 +260,12 @@ h6 {
 
 .textblockWrapper {
   padding: 0 15px;
+}
+
+.fullWithWrapper {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 55px 170px;
 }
 
 .bannerLogo {
@@ -307,4 +330,8 @@ h6 {
     font-size: 21px;
     line-height: 28px;
   }
+
+  .divider {
+    height: 30px;
+  } 
 }

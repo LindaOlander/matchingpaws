@@ -6,6 +6,7 @@
 .dogpage-container {
     display: flex;
     flex-direction: row;
+    margin-top: 90px;
 }
 
 .dogpage-image-wrapper {

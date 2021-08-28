@@ -1,5 +1,4 @@
 import React, {useState} from "react"
-import { Link } from "react-router-dom"
 import '../DogBox/DogBox.css';
 
 const DogBoxExtended = ({id, bild, hundnamn, ras, alder, beskrivning, lank, kontaktnamn, email}) => {
@@ -11,11 +10,11 @@ const DogBoxExtended = ({id, bild, hundnamn, ras, alder, beskrivning, lank, kont
 
     return (
       <div className="dog-wrapper">
-        <Link to={`/adoptera/${id}`}>
+        {/* <Link to={`/adoptera/${id}`}> */}
           <div className="dog-image-wrapper">
             <img alt="dog" src={bild} className="dog-image"/>
           </div>
-        </Link>
+        {/* </Link> */}
         <div className="dog-info-wrapper">
             <h4>{hundnamn}</h4>
             <p>{ras}, {alder} år</p>

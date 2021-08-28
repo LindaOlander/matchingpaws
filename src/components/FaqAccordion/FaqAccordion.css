@@ -23,7 +23,10 @@
   
   /* Style the accordion content title */
   .accordion__title {
-    font-size: 16px;
+    font-family: neuzeit-grotesk, sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 34px;
     text-align: left;
     margin-bottom: 0;
   }
@@ -43,7 +46,7 @@
   .accordion__content {
     background-color: white;
     overflow: hidden;
-    transition: max-height 0.6s ease;
+    transition: 0.6s ease;
   }
   
   /* Style the accordion content text */
@@ -51,5 +54,17 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 28px;
-    padding: 18px;
+    padding: 18px 0;
   }
+
+
+@media screen and (max-width: 820px) {
+  .accordion__title {
+    font-family: neuzeit-grotesk, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: left;
+    margin-bottom: 0;
+  }
+}

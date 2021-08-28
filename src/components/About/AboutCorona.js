@@ -12,7 +12,7 @@ const AboutCorona = () => {
                     I pandemins spår
                 </h2>
                 <h6>
-                Under pandemin ökade antalet nyregistrerade hundar markant då allt fler familjer i Sverige fick utökade möjligheter att ta hand om en hund.  Matching Paws tycker i grunden att detta är positivt men vi oroar oss för vad som händer när pandemin är över..
+                Under pandemin ökade antalet nyregistrerade hundar markant då allt fler familjer i Sverige fick utökade möjligheter att ta hand om en hund.  Vi tycker i grunden att detta är positivt men vi oroar oss för vad som händer när pandemin är över.
                 </h6>
                 <h6>
                 För många familjer kommer problem att uppstå när möjligheter till distansarbete avtar och hundpassningen behöver lösas. Matching Paws vill finnas som stöd i situationer där hundar behöver omplaceras och säkerställa att alla finner ett nytt tryggt hem.

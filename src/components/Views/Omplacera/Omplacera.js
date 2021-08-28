@@ -4,9 +4,10 @@ import NavbarBlack from '../../Navbar/NavbarBlack';
 import HeaderAdopt from '../../Header/HeaderAdopt';
 import Footer from '../../Footer/Footer';
 import AddDogsFirstContact from '../../AddDogs/FirstContact/AddDogsFirstContact';
+import {GApageView} from '../../Tracking/index';
+import './Omplacera.css';
 
 const Omplacera = () => {
-    const [toggle, setToggle] = useState(false);
     const [showForm, setShowForm] = useState(false);
 
     const { pathname } = useLocation();
@@ -15,28 +16,25 @@ const Omplacera = () => {
         window.scrollTo(0, 0);
     }, [pathname]);
 
-    const handleReadmore = () => {
-        setToggle(!toggle);
-    }
-
     const handleShowForm = () => {
         setShowForm(!showForm);
     }
 
+    useEffect(() => { GApageView("omplacera"); }, []);
+
     return (
         <>
-            <NavbarBlack color={'#222222'}/>
+            <NavbarBlack color="black" />
             <HeaderAdopt />
             <div>
                 <div>
-                    <div style={{backgroundColor: '#f0af9f', marginTop: '20px', color: '#ffffff', textAlign: 'center'}}>
-
-                    <p className="paddedDesktop">
-                    Ibland blir livet som hundägare inte som man tänkt sig och av olika anledningar kan man behöva omplacera sin hund. Vi förstår att det är ett beslut som är mycket svårt att ta och är känslofyllt.                        </p>
+                    <div className="reassignWrapper">
+                    <p className="boldParagraph">
+                        Ibland blir livet som hundägare inte som man tänkt sig och av olika anledningar kan man behöva omplacera sin hund. Vi förstår att det är ett beslut som är mycket svårt att ta och är känslofyllt.                        </p>
                     </div>
-                    <div style={{padding: '30px 270px', display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-                        <div style={{width: '300px', marginRight: '40px'}}>
-                            <img style={{width: '300px'}} src="https://images.unsplash.com/photo-1551730459-92db2a308d6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80" />
+                    <div className="reassignHelpWrapper">
+                        <div className="reassignHelpImage">
+                            <img alt="Bild på hund" src="https://images.unsplash.com/photo-1551730459-92db2a308d6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80" />
                         </div>
                         <div>
                             <h3>Få hjälp med omplacering</h3>

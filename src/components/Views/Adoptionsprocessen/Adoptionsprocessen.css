@@ -1,0 +1,14 @@
+.adoptionsprocessenWrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #000000;
+    padding: 25px 170px;
+}
+
+@media screen and (max-width: 820px) {
+    .adoptionsprocessenWrapper {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 40px 25px 20px 25px;
+    }
+}

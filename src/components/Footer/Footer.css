@@ -7,14 +7,13 @@
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    padding: 50px 50px 30px 50px;
+    padding: 50px 50px 50px 50px;
 }
 
 .footerLogoWrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* margin-bottom: 45px; */
 }
 
 .footerLogoWrapper span {
@@ -30,18 +29,6 @@
     color: #ffffff;
 }
 
-.logoEmail:hover {
-    text-decoration: underline;
-}
-
-.footerInfoWrapper {
-    margin: 30px 0;
-}
-
-.footer-wrapper p {
-    margin: 10px 0 0 0;
-}
-
 .footer-wrapper a {
     color: white;
     margin: 0;
@@ -50,10 +37,15 @@
 .footer-icons {
     display: flex;
     flex-direction: row;
-    margin: 10px 0;
 }
 
 .footer-icons img {
     width: 20px;
     margin-right: 10px;
+}
+
+.footer-icons span {
+    font-size: 18px;
+    color: white;
+    margin-right: 15px;
 }
