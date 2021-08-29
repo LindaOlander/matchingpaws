@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.fca235b8.chunk.css",
-    "main.js": "/static/js/main.53e3f1a6.chunk.js",
-    "main.js.map": "/static/js/main.53e3f1a6.chunk.js.map",
+    "main.css": "/static/css/main.5297a40d.chunk.css",
+    "main.js": "/static/js/main.6470e0df.chunk.js",
+    "main.js.map": "/static/js/main.6470e0df.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.0b6df13d.js",
     "runtime-main.js.map": "/static/js/runtime-main.0b6df13d.js.map",
     "static/js/2.e304fd5d.chunk.js": "/static/js/2.e304fd5d.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.025aae02.chunk.js": "/static/js/3.025aae02.chunk.js",
     "static/js/3.025aae02.chunk.js.map": "/static/js/3.025aae02.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.fca235b8.chunk.css.map": "/static/css/main.fca235b8.chunk.css.map",
+    "static/css/main.5297a40d.chunk.css.map": "/static/css/main.5297a40d.chunk.css.map",
     "static/js/2.e304fd5d.chunk.js.LICENSE.txt": "/static/js/2.e304fd5d.chunk.js.LICENSE.txt",
     "static/media/Alma.png": "/static/media/Alma.c0cd6e95.png",
     "static/media/Icon-MatchingPaws-black.png": "/static/media/Icon-MatchingPaws-black.be6c19b1.png",
@@ -25,7 +25,7 @@
   "entrypoints": [
     "static/js/runtime-main.0b6df13d.js",
     "static/js/2.e304fd5d.chunk.js",
-    "static/css/main.fca235b8.chunk.css",
-    "static/js/main.53e3f1a6.chunk.js"
+    "static/css/main.5297a40d.chunk.css",
+    "static/js/main.6470e0df.chunk.js"
   ]
 }
