@@ -28,7 +28,8 @@ const AllDogsList = () => {
             alder={dog.alder}
             ras={dog.ras}
             bild={dog.bild}
-            id={dog._id} />)
+            id={dog._id}
+            lank={dog.lank} />)
     }
     </div>
   )

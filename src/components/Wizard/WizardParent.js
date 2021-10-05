@@ -1,17 +1,21 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useSelector} from "react";
 import { Step, WizardForm } from "./WizardForm";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import WizardResults from "./WizardResults";
 import { WizardLoader } from "./WizardLoader";
-import {Event} from '../Tracking/index';
+import { Event } from '../Tracking/index';
+// import { useDispatch } from "react-redux";
+// import {getDogs} from '../../store/actions/dogAction';
 import './Wizard.css';
 
 const WizardParent = () => {
+    // const dispatch = useDispatch;
     const [data, setData] = useState({ dogs: [] });
     const [step, setStep] = useState(0);
     const [match, setMatch] = useState(false);
     const [dogsShown, setDogsShown] = useState(false);
+    // const [fetchedDogs, setFetchedDogs] = useSelector(state => state.dogs);
     const [state, setState] = useState({
         hunderfarenhet: '',
         fysik: '',
@@ -55,6 +59,10 @@ const WizardParent = () => {
         ledarskap: '',
         storlek: ''
     })
+
+    // const getTheFetchedDogs = () => {
+    //     dispatch(getDogs())
+    // };
 
     const handleStep = (step) => {
         setStep(step)
@@ -277,14 +285,19 @@ const WizardParent = () => {
         fetchData();
     }, []);
 
-    // Den här funktionen sätter parametern till true
-    // const handleChangeStorlek = (event) => {
-    //     const value = event.target.value;
-    //     setState({
-    //         ...state,
-    //         [event.target.name]: event.target.checked
-    //     });
-    // }
+     // Den här funktionen sätter parametern till true
+    const handleChangeStorlek = (event) => {
+        const value = event.target.value;
+        setState({
+            ...state,
+            [event.target.name]: event.target.checked
+        });
+    }
+
+    // useEffect(() => {
+    //     setFetchedDogs(fetchedDogs)
+    // }, [fetchedDogs, setFetchedDogs]);
+
 
     console.log('state', state)
     console.log('data', data)
@@ -295,6 +308,7 @@ const WizardParent = () => {
         <WizardForm step={step} onChange={handleStep} state={state}>
 
         <Step title="Erfarenhet" description="Erfarenhet">
+            {/* <button onClick={getTheFetchedDogs}>Get fetched dogs</button> */}
             <p className="stepTitle">Vilket alternativ beskriver bäst din tidigare hunderfarenhet?</p>
             <div className="inputContainer">
                     <input className="radio" type='radio' id='mycket' name='hunderfarenhet' value='mycket' checked={state.hunderfarenhet === 'mycket'} onChange={handleChange} />
@@ -513,21 +527,21 @@ const WizardParent = () => {
                         <input type='checkbox' id='sportkompis' name='sportkompis' value='sportkompis' checked={state.aktivitet.sportkompis} onChange={handleChangeAktivitet} />
                         <span className="checkbox-custom"></span>
                     </label>
-                    <label className="checkbox-label-title" htmlFor='sportkompis'>Joggingturer, cykelturer, vandringar mm.</label>
+                    <label className="checkbox-label-title" htmlFor='sportkompis'>Joggingturer, cykelturer och vandringar</label>
                 </div>
                 <div className="inputContainerCheckbox">
                     <label className="checkbox-label">
                         <input type='checkbox' id='hundsport' name='hundsport' value='hundsport' checked={state.aktivitet.hundsport} onChange={handleChangeAktivitet} />
                         <span className="checkbox-custom"></span>
                     </label>
-                    <label className="checkbox-label-title" htmlFor='hundsport'>Hundsporter såsom agility, rallylydnad mm.</label>
+                    <label className="checkbox-label-title" htmlFor='hundsport'>Hundsporter såsom agility, rallylydnad med mera</label>
                 </div>
                 <div className="inputContainerCheckbox">
                     <label className="checkbox-label">
                         <input type='checkbox' id='sök' name='sök' value='sök' checked={state.aktivitet.sök} onChange={handleChangeAktivitet} />
                         <span className="checkbox-custom"></span>
                     </label>
-                    <label className="checkbox-label-title" htmlFor='sök'>Sök/nosework</label>
+                    <label className="checkbox-label-title" htmlFor='sök'>Sök och nosework</label>
                 </div>
                 <div className="inputContainerCheckbox">
                     <label className="checkbox-label">
@@ -555,13 +569,13 @@ const WizardParent = () => {
 
         <Step title="Problematik" description="Problematik">
             <div>
-                <p className="stepTitle">En del av hundarna vi hjälper att omplacera har med sig viss problematik från sitt förflutna. Vilka av nedanstående utmaningar är du villig och kompentent nog att arbeta med?</p>  
+                <p className="stepTitle">Vilka av nedanstående utmaningar hos en hund är du villig och kompentent nog att arbeta med?</p>  
                 <div className="inputContainerCheckbox">
                     <label className="checkbox-label">
                         <input type='checkbox' id='hundaggressivitet' name="hundaggressivitet" value='hundaggressivitet' checked={state.problematik.hundaggressivitet} onChange={handleChangeProblematik} />
                         <span className="checkbox-custom"></span>
                     </label>  
-                    <label className="checkbox-label-title" htmlFor='hundaggressivitet'>Gör utfall mot andra hundar</label>
+                    <label className="checkbox-label-title" htmlFor='hundaggressivitet'>Utfall mot andra hundar</label>
                 </div>
                 <div className="inputContainerCheckbox">
                     <label className="checkbox-label">

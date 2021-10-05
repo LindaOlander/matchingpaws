@@ -67,6 +67,9 @@ const Om = () => {
                     </div> 
                     <p className="boldParagraph">Oss når du på <i style={{textDecoration: "underline"}}>hello@matchingpaws.se</i></p>
                 </div>
+                <div style={{marginTop: '45px'}}>
+                    <h6 style={{ fontSize: '12px'}}>Ps! De fina stockbilderna på hemsidan är från <a href="https://unsplash.com/" target="_blank" rel="noreferrer">Unsplash</a></h6>
+                </div>
             </div>
             <Footer />
         </>

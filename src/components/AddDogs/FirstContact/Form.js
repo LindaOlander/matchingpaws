@@ -676,7 +676,6 @@ export default function ContactUs() {
 					<input value={state.lank} type="text" name="lank" onChange={handleChange}/>
 				</label>
 			</div>
-			Du kommer att få möjlighet att komplettera med bilder på din hund när din omplaceringsannons är godkänd.
 			{/* GDPR */}
 			<div className="questionContainer">
 				<div className="inputRadioWrapper">
@@ -688,10 +687,13 @@ export default function ContactUs() {
 							id="GDPR"
 							checked={state.GDPR === true}
 							onChange={handleChangeGDPR}
-						/>
+							/>
 						<span>Jag godkänner att mina personuppgifter sparas av Matching Paws och att min mailadress delas med potentiella adoptörer på matchingpaws.se</span>
 					</label>
 				</div>
+			</div>
+			<div style={{textAlign: 'center', marginTop: '50px'}}>
+				Vi kommer att kontakta dig på mail för att komplettera med bilder och ägarintyg.
 			</div>
 			<div className="buttonWrapper center">
 				<input className={disabled ? "button" : "button buttonDisabled"} type="submit" value="Skicka in förfrågan" onClick={handleSubmit} />

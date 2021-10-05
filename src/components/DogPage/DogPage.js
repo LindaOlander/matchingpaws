@@ -3,11 +3,17 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import './DogPage.css';
 import NavbarBlack from '../Navbar/NavbarBlack';
+import { CircleProgress } from 'react-gradient-progress';
+import {SkeletonImage, SkeletonText, SkeletonHeading} from '../Skeleton/SkeletonImage';
 
 const DogPage = ({ match }) => {
   const [data, setData] = useState([{}]);
+  const [percentageFysik, setPercentageFysik] = useState(0);
+  const [percentageAllergi, setPercentageAllergi] = useState(0);
+  const [percentageStorlek, setPercentageStorlek] = useState(0);
+  const [percentageErfarenhet, setPercentageErfarenhet] = useState(0);
   const [seeEmail, setSeeEmail] = useState(false);
-  // let history = useHistory();
+  const progressColor = ['#000000', '#000000'];
 
   let params = match.params;
   const id = params.id
@@ -24,14 +30,78 @@ const DogPage = ({ match }) => {
       fetchDogs();
     }, [id]);
 
-    console.log(data);
-  
+    const handlePercentageFysik = () => {
+      let percentageFysik = 0;
+
+      if (data?.fysik === 'låg') {
+        percentageFysik = 10;
+      }
+      if (data?.fysik === 'normal') {
+        percentageFysik = 50;
+      }
+      if (data?.fysik === 'hög') {
+        percentageFysik = 100;
+      }
+      setPercentageFysik(percentageFysik)
+    };
+
+    const handlePercentageAllergi = () => {
+      let percentageAllergi = 0;
+
+      if (data?.allergi === 'ja') {
+        percentageAllergi = 0;
+      }
+      if (data?.allergi === 'nej') {
+        percentageAllergi = 100;
+      }
+      setPercentageAllergi(percentageAllergi)
+    }
+
+    const handlePercentageStorlek = () => {
+      let percentageStorlek = 0;
+
+      if (data?.storlek === 'liten') {
+        percentageStorlek = 10;
+      }
+      if (data?.storlek === 'mellan') {
+        percentageStorlek = 50;
+      }
+      if (data?.storlek === 'stor') {
+        percentageStorlek = 100;
+      }
+      setPercentageStorlek(percentageStorlek)
+    }
+
+    const handlePercentageErfarenhet = () => {
+      let percentageErfarenhet = 0;
+
+      if (data?.hunderfarenhet === 'lite') {
+        percentageErfarenhet = 10;
+      }
+      if (data?.hunderfarenhet === 'ganska') {
+        percentageErfarenhet = 50;
+      }
+      if (data?.hunderfarenhet === 'mycket') {
+        percentageErfarenhet = 100;
+      }
+      setPercentageErfarenhet(percentageErfarenhet)
+    }
+
     useEffect(() => {
       if (!seeEmail) {
         window.scrollTo(0, 0);
       }
     })
-    
+    useEffect(() => {
+      handlePercentageFysik()
+      handlePercentageAllergi()
+      handlePercentageStorlek()
+      handlePercentageErfarenhet()
+    }, [data])
+
+    console.log('data', data)
+
+
     return (
       <>
       <NavbarBlack color="black" />
@@ -40,89 +110,61 @@ const DogPage = ({ match }) => {
       {/* <button onClick={history.goBack}>Go back</button> */}
         <div className="dogpage-container">
           <div className="dogpage-image-wrapper">
-            <img alt="dog" src={data.bild} className="dogpage-image"/>
+            {data?.bild ? <img src={data.bild} className="dogpage-image"/> : <SkeletonImage />}
           </div>
           <div className="dogpage-info-wrapper">
-            <h2>{data.hundnamn}</h2>
+            {data?.hundnamn ? <h2>{data.hundnamn}</h2> : <SkeletonHeading />}
             <div>
-              <p>Ras: {data.ras}</p>
-              <p>Ålder: {data.alder} år</p>
-              <p>Storlek: {data.storlek}</p>
-              <p>Kastrerad: {data.kastrerad}</p>
+              {data?.ras ? <p>Ras: {data.ras}</p> : <SkeletonText />}
+              {data?.alder ? <p>Ålder: {data.alder} år</p> : <SkeletonText />}
             </div>
             <div className="descriptionWrapper">
               <p><i>{data.beskrivning}</i></p>
             </div>
           </div>
         </div>
-          {/* <div className="kravContainer">
-            <h5>Krav</h5>
-            <div className="kravWrapper">
-              <p>Tidigare hunderfarenhetskrav:</p>
-              {data.hunderfarenhet === 'mycket' && <span className="kravText">Mycket</span>}
-              {data.hunderfarenhet === 'ganska' && <span className="kravText">Lite</span>}
-              {data.hunderfarenhet === 'lite' && <span className="kravText">Ingen</span>}
-            </div>
-            <div className="kravWrapper">
-              <p>Fysisk förmåga:</p>
-              {data.fysik === 'hög' && <span className="kravText">Hög</span>}
-              {data.fysik === 'normal' && <span className="kravText">Normal</span>}
-              {data.fysik === 'låg' && <span className="kravText">Låg</span>}
-            </div>
-            <div className="kravWrapper">
-              <p>Fäller päls</p>
-              {data.allergi === 'ja' && <span className="successIcon"><i class="fas fa-check"></i></span>}
-              {data.allergi === 'nej' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
-            </div>
-            <div className="kravWrapper">
-              <p>Kan bo med barn:</p>
-              {data.barn === 'ja' && <span className="successIcon"><i class="fas fa-check"></i></span>}
-              {data.barn === 'nej' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
-            </div>
-            <div className="kravWrapper">
-              <p>Kan bo med katt:</p>
-              {data.katt === 'ja' && <span className="successIcon"><i class="fas fa-check"></i></span>}
-              {data.katt === 'nej' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
-            </div>
-            <div className="kravWrapper">
-              <p>Kan bo med hund:</p>
-              {data.hund === 'båda' && <span className="successIcon"><i class="fas fa-check"></i></span>}
-              {data.hund === 'tikar' && <span className="kravText">Tikar</span>}
-              {data.hund === 'hanar' && <span className="kravText">Hanar</span>}
-              {data.hund === 'nej' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
-            </div>
-            <div className="kravWrapper">
-              <p>Kan bo i stadsmiljö:</p>
-              {data.boende === 'landet' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
-              {data.boende === 'villaområde' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
-              {data.boende === 'lägenhet' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
-              {data.boende === 'centralt' && <span className="successIcon"><i class="fas fa-check"></i></span>}
-            </div>
-            <div className="kravWrapper">
-              <p>Kan gå på hunddagis:</p>
-              {data.hundpassning !== 'hemma' && <span className="successIcon"><i class="fas fa-check"></i></span>}
-              {data.hundpassning === 'hemma' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
-            </div>
-            <div className="kravWrapper">
-              <p>Föredrar ett lugnt hem:</p>
-              {data.energi === 'lugnt' && <span className="successIcon"><i class="fas fa-check"></i></span>}
-              {data.energi === 'båda' && <span className="successIcon"><i class="fas fa-check"></i></span>}
-              {data.energi === 'fartfyllt' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
-            </div>
-            <div className="kravWrapper">
-              <p>Föredrar ett fartfyllt hem:</p>
-              {data.energi === 'lugnt' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
-              {data.energi === 'båda' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
-              {data.energi === 'fartfyllt' && <span className="successIcon"><i class="fas fa-check"></i></span>}
-            </div>
-            <div className="kravWrapper">
-              <p>Är van vid ett tydligt ledarskap:</p>
-              {data.ledarskap === 'tydligt' && <span className="successIcon"><i class="fas fa-check"></i></span>}
-              {data.ledarskap === 'mjukt' && <span className="declineIcon"><i class="fas fa-times"></i></span>}
-            </div>
-          </div> */}
-          <div className="descriptionWrapper">
-          <h5>Kontakt</h5>
+        <div className="circleProgressWrapper">
+          <div className="circleWrapper">
+            <CircleProgress percentage={percentageFysik} width={100} strokeWidth={5} primaryColor={progressColor} secondaryColor="#f0f0f0" />
+            <h5>Fysisk förmåga</h5>
+          </div>
+          <div className="circleWrapper">
+            <CircleProgress percentage={percentageErfarenhet} width={100} strokeWidth={5} primaryColor={progressColor} secondaryColor="#f0f0f0" />
+            <h5>Hunderfarenhet</h5>
+          </div>
+          <div className="circleWrapper">
+            <CircleProgress percentage={percentageAllergi} width={100} strokeWidth={5} primaryColor={progressColor} secondaryColor="#f0f0f0" />
+            <h5>Fäller päls</h5>
+          </div>
+          <div className="circleWrapper">
+            <CircleProgress percentage={percentageStorlek} width={100} strokeWidth={5} primaryColor={progressColor} secondaryColor="#f0f0f0" />
+            <h5>Mankstorlek</h5>
+          </div>
+        </div>
+        <div>
+          <div className="checkboxWrapper">
+            {data?.katt === 'ja' ? 
+            <span className="successIcon"><i className="fas fa-check"></i></span> 
+            : <span className="declineIcon"><i className="fas fa-times"></i></span>
+            }
+            <h5>Kan bo med katt</h5>
+          </div>
+          <div className="checkboxWrapper">
+            {data?.barn === 'ja' ?
+            <span className="successIcon"><i className="fas fa-check"></i></span>
+            : <span className="declineIcon"><i className="fas fa-times"></i></span>
+            }
+            <h5>Kan bo med småbarn</h5>
+          </div>
+          <div className="checkboxWrapper">
+          {(data?.hund === 'tikar' || data?.hund === 'hanar' || data?.hund === 'båda') ?
+            <span className="successIcon"><i className="fas fa-check"></i></span> :
+          <span className="declineIcon"><i className="fas fa-times"></i></span>}
+            <h5>Kan bo med andra hundar</h5>
+          </div>
+        </div>
+          <div className="contactWrapper">
+          <h3>Kontakt</h3>
           <p>För att påbörja en kontakt med ägaren till {data.hundnamn}, kontakta <i>{data.kontaktnamn}</i>.</p>
           {!seeEmail && <button className="buttonLinkSecret" onClick={showEmail}>Klicka här för mailadress</button>}
           <div className="kravButtons">

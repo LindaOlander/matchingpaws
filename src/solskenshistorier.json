@@ -1,5 +1,19 @@
 {
-	"historier": [{
+	"historier": [
+		{
+			"id": "chico",
+			"namn": "Chico",
+			"adoptör": "Christels familj adopterade Chico",
+			"titel": "'Chico, vår prins från Obninsk'",
+			"bild": "/chicoHistory.jpeg",
+			"ingress": "Idag den 2 okt fyller vår älskade Chico två år. Vi har nu haft honom i lite en drygt ett år, och han har blivit en självklar familjemedlem. Vi hittade en bild på honom som valp och visste genast att det var honom vi ville ha.",
+			"innehåll": [
+                "Sen tog det 4 månader innan vi fick hem honom pga Corona. Vi väntade o väntade och den 1 aug 2020 kunde vi äntligen hämta honom i Nynäshamn. Han var mager, lite rädd och mycket hungrig.",
+				"Chico har sen dess utvecklats väldigt positivt. Han är cool i de flesta situationer och har inte många rädslor kvar. Åker bil o båt utan problem och vill vara med på allt.",
+				"Går för det mesta lös och är vänlig mot människor o andra hundar. Lite reserverad men håller koll på allt o alla och det är roligt att se hur han successivt  öppnar sig, i takt med att självförtroendet växer. Chico, du är älskvärd, känslig o intelligent. Du har fått ett rikt liv och du har berikat vårt ❤️"
+            ]
+		},
+		{
 			"id": "bolt",
 			"namn": "Bolt",
 			"adoptör": "Therese adopterade Bolt",
@@ -28,5 +42,6 @@
                 "Nu bor Rupert med oss i Stockholm men har även bott med oss under ett år i St Petersburg. Folk brukar skämta om att denna hund reser mer än gemene man. Han är med mig i princip överallt. Jag har turen att kunna ha med mig Rupert till jobbet de flesta dagarna och vi har ett otroligt nätverk av familj & vänner som är lika fästa vid honom som vi är. Han är den snällaste, lugnaste, klokaste hunden jag har träffat och det är ett under att det var en slump att vi fick just honom. Vår perfekta match, helt klart."
             ]
 		}
+		
 	]
 }

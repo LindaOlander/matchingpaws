@@ -2,6 +2,22 @@
     box-sizing: border-box;
 }
 
+.dogsListWrapper-extended {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 0 50px;
+}
+
+@media screen and (max-width: 720px) {
+    .dogsListWrapper-extended {
+        padding: 0;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+}
+
 /* QUIZ */
 .quizStartWrapper {
     height: 90vh;

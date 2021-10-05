@@ -213,7 +213,10 @@ const AddDogs = () => {
             <div className="questionContainer">
                 <label className="labelText">
                     Hur gammal är din hund?
-                    <input value={state.alder} type="text" name="alder" onChange={handleChange}/>  
+                    <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                        <input value={state.alder} className="shortInput" type="text" name="alder" onChange={handleChange}/> 
+                        <span style={{marginLeft: '10px'}}>år</span> 
+                    </div>
                 </label>    
             </div> 
 
@@ -395,8 +398,8 @@ const AddDogs = () => {
                         <input
                             type="radio"
                             name="allergi"
-                            value="ja"
-                            checked={state.allergi === "ja"}
+                            value="nej"
+                            checked={state.allergi === "nej"}
                             onChange={handleChange}
                         />
                         <span>Min hund fäller päls</span>
@@ -405,8 +408,8 @@ const AddDogs = () => {
                         <input
                             type="radio"
                             name="allergi"
-                            value="nej"
-                            checked={state.allergi === "nej"}
+                            value="ja"
+                            checked={state.allergi === "ja"}
                             onChange={handleChange}
                         />
                         <span>Min hund fäller inte päls</span>
@@ -426,7 +429,7 @@ const AddDogs = () => {
                             checked={state.barn === "ja"} 
                             onChange={handleChange}
                         />
-                        <span>Min hund kan bo och umgås med barn</span>
+                        <span>Min hund kan bo och umgås med barn över 9 år</span>
                     </label>
                     <label>
                         <input
@@ -436,7 +439,7 @@ const AddDogs = () => {
                             checked={state.barn === "nej"}
                             onChange={handleChange}
                         />
-                        <span>Min hund bör inte vara runt barn</span>
+                        <span>Min hund bör inte vara runt barn 0-9 år</span>
                     </label>
                 </div>
             </div>
@@ -466,7 +469,7 @@ const AddDogs = () => {
 
             {/* Hundpassning */}
             <div className="questionContainer">
-                <p className="questionHeading">Vilka lösningar är för att få ihop hundpassningen och vardagen är lämplig för din hund?</p>
+                <p className="questionHeading">Vilka lösningar för att få ihop hundpassningen och vardagen är lämplig för din hund?</p>
                 <div className="inputRadioWrapper">
                     <label>
                         <input type="checkbox" onClick={handleChangeHundpassning} value={state.hundpassning.hunddagis} name="hunddagis"/>

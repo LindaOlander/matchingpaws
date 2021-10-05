@@ -1,0 +1,45 @@
+  .skeletonImage {
+    width: 100%;
+    height: 388px;
+    border-radius: 2px;
+    background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px);
+    background-size: 600px;
+    animation: shine-image 1.6s infinite linear;
+  }
+
+  .skeletonHeading {
+    width: 180px;
+    height: 16px;
+    border-radius: 2px;
+    background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px);
+    background-size: 600px;
+    animation: shine-lines 1.6s infinite linear;
+  }
+
+  .skeletonText {
+    width: 140px;
+    height: 16px;
+    margin-top: 12px;
+    border-radius: 2px;
+    background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px);
+    background-size: 600px;
+    animation: shine-lines 1.6s infinite linear;
+  }
+
+  @keyframes shine-lines {
+      0% {
+          background-position: -100px;
+      }
+      40%, 100% {
+          background-position: 140px
+      }
+  }
+
+  @keyframes shine-image {
+      0% {
+          background-position: -100px;
+      }
+      40%, 100% {
+          background-position: 440px;
+      }
+  }

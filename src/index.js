@@ -9,7 +9,6 @@ import {Provider} from 'react-redux';
 import {rootReducer} from './store/reducers/rootReducer';
 import thunk from 'redux-thunk';
 
-
 export const initGA = () => {       
     ReactGA.initialize('UA-199808031-1'); // put your tracking id here
 } 
@@ -31,7 +30,7 @@ const store = createStore(rootReducer, enhancers);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+      <App />
   </Provider>,
   document.getElementById('root')
 );

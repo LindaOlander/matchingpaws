@@ -1,11 +1,8 @@
 import React, { useEffect } from 'react';
 import Start from './components/Views/Start/Start';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route, HashRouter } from 'react-router-dom';
 import DogPage from './components/DogPage/DogPage';
-import AddDogs from './components/AddDogs/AddDogs';
 import Adoptera from './components/Views/Adoptera/Adoptera';
-import Adoptionsresultat from './components/Views/Adoptionsresultat/Adoptionsresultat';
 import Om from './components/Views/Om/Om';
 import Omplacera from './components/Views/Omplacera/Omplacera';
 import Hundlivet from './components/Views/Hundlivet/Hundlivet';
@@ -17,6 +14,7 @@ import Solskenshistorier from './components/Views/Solskenshistorier/Solskenshist
 import SolskenshistoriaPage from './components/Solskenshistorier/SolskenshistoriaPage';
 import Admin from './components/Views/Admin/Admin';
 import './App.css';
+import AllDogsListExtended from './components/DogList/AllDogsListExtended';
 
 function App() {
 
@@ -35,6 +33,7 @@ function App() {
       <Route path="/hundlivet" exact component={Hundlivet} />
       <Route path="/om" exact component={Om} />
       <Route path="/admin" exact component={Admin} />
+      <Route path="/allahundar" exact component={AllDogsListExtended} />
       {/* <Route path="/resultat" exact render={(props) => <Adoptionsresultat {...props} />} /> */}
       {/* <Route path="/resultat" exact component={Adoptionsresultat} /> */}
       {/* <Route path="/laggtill" exact component={AddDogs} /> */}

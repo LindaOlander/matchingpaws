@@ -56,6 +56,10 @@
     font-size: 20px;
 }
 
+.labelText .shortInput {
+    width: 50px;
+}
+
 .inputRadioWrapper input[type="radio"]:checked ~ * { 
     text-decoration: underline;
 }
