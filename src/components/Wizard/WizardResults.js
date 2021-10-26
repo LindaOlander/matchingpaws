@@ -1,36 +1,37 @@
-import React from 'react';
-import DogBoxExtended from '../DogBoxExtended/DogBoxExtended';
+import React from "react";
+import DogBoxExtended from "../DogBoxExtended/DogBoxExtended";
+import DogBox from "../DogBox/DogBox";
 
+const WizardResults = ({ data, state, dogs, fetchedDogs }) => {
+  //   console.log("state", state);
+  //   console.log("data", data);
 
-const WizardResults = ({ data, state }) => {
-    console.log('state', state);
-    console.log('data', data)
-    
-    return (
-        <>
-        {data?.map(dog =>
-            // <DogBox
-            // key={dog._id}
-            // hundnamn={dog.hundnamn}
-            // alder={dog.alder}
-            // ras={dog.ras}
-            // bild={dog.bild}
-            // id={dog._id} />
-            <DogBoxExtended 
-                key={dog._id}
-                hundnamn={dog.hundnamn}
-                alder={dog.alder}
-                ras={dog.ras}
-                bild={dog.bild}
-                id={dog._id}
-                beskrivning={dog.beskrivning}
-                kontaktnamn={dog.kontaktnamn}
-                email={dog.email}
-                lank={dog.lank}
-            />
-        )}
-        </>
-    )
-}
+  return (
+    <>
+      {fetchedDogs?.map((dog) => (
+        <DogBox
+          key={dog._id}
+          hundnamn={dog.hundnamn}
+          alder={dog.alder}
+          ras={dog.ras}
+          bild={dog.bild}
+          id={dog._id}
+        />
+        // <DogBoxExtended
+        //   key={dog._id}
+        //   hundnamn={dog.hundnamn}
+        //   alder={dog.alder}
+        //   ras={dog.ras}
+        //   bild={dog.bild}
+        //   id={dog._id}
+        //   beskrivning={dog.beskrivning}
+        //   kontaktnamn={dog.kontaktnamn}
+        //   email={dog.email}
+        //   lank={dog.lank}
+        // />
+      ))}
+    </>
+  );
+};
 
 export default WizardResults;

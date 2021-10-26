@@ -1,14 +1,26 @@
-import { GET_DOGS } from "../constants/constants";
+import { GET_DOGS, SET_DOGS, FILTER_DOGS } from "../constants/constants";
 
-export const getDogs = () => async dispatch => {
-    const response = await fetch('https://matchingpaws-api.herokuapp.com/dogs');
-    const dog = await response.json();
+export const getDogs = () => async (dispatch) => {
+  //   const response = await fetch("https://dog.ceo/api/breeds/list/all");
+  const response = await fetch("https://matchingpaws-api.herokuapp.com/dogs");
+  const results = await response.json();
 
-    console.log('get dogs')
-    console.log('dog', dog)
+  dispatch({
+    type: GET_DOGS,
+    data: results,
+  });
+};
 
-    dispatch({
-        type: GET_DOGS,
-        data: dog
-    })
+export const setDogs = (filteredDogs) => (dispatch) => {
+  dispatch({
+    type: SET_DOGS,
+    data: filteredDogs,
+  });
+};
+
+export const getFilterDogs = (filteredDogs) => async (dispatch) => {
+  dispatch({
+    type: FILTER_DOGS,
+    filteredDogs,
+  });
 };
