@@ -1,144 +1,144 @@
 .dogpage-wrapper {
-    box-sizing: border-box;
-    width: 100%;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .dogpage-container {
-    display: flex;
-    flex-direction: row;
-    margin-top: 70px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 70px;
 }
 
 .dogpage-info-wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 0 50px 0 50px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 50px 0 50px;
 }
 
 .dogpage-info-wrapper h2 {
-    margin-bottom: 24px;
+  margin-bottom: 24px;
 }
 
 .descriptionWrapper {
-    margin: 15px 0 15px 0;
+  margin: 15px 0 15px 0;
 }
 
 .contactWrapper {
-    margin: 40px 0 15px 0;
+  margin: 40px 0 15px 0;
 }
 
 .kravWrapper {
-    width: 40%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .kravContainer {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .kravText {
-    text-align: center;
+  text-align: center;
 }
 
 .kravButtons {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .successIcon {
-    color: green;
+  color: green;
 }
 
 .declineIcon {
-    color: red;
+  color: red;
 }
 
 /* Progress bar */
 
 .circleProgressWrapper {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .circleWrapper {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .dogpage-image-wrapper {
-    width: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    overflow: hidden;
+  width: 600px;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
 }
 
 .dogpage-image {
-    min-width: 100%;
-    min-height: 100%;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .checkboxWrapper {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .checkboxWrapper .successIcon {
-    margin-right: 15px;
+  margin-right: 15px;
 }
 
 .checkboxWrapper .declineIcon {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 @media screen and (max-width: 720px) {
-    .dogpage-wrapper {
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-    }
+  .dogpage-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
 
-    .dogpage-container {
-        display: flex;
-        flex-direction: column;
-    }
+  .dogpage-container {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .dogpage-image-wrapper {
-        width: 100%;
-        align-items: center;
-    }
+  .dogpage-image-wrapper {
+    width: 100%;
+    align-items: center;
+  }
 
-    .dogpage-info-wrapper {
-        flex-direction: column;
-        margin: 0;
-        margin: 20px 0 0 0;
-    }
+  .dogpage-info-wrapper {
+    flex-direction: column;
+    margin: 0;
+    margin: 20px 0 0 0;
+  }
 
-    .dogpage-info-wrapper h2 {
-        margin-bottom: 0;
-    }
+  .dogpage-info-wrapper h2 {
+    margin-bottom: 0;
+  }
 
-    .dogpage-info-wrapper p {
-        margin: 5px 0;
-    }
+  .dogpage-info-wrapper p {
+    margin: 5px 0;
+  }
 
-    .dogpage-stickers {
-        width: fit-content !important;
-    }
+  .dogpage-stickers {
+    width: fit-content !important;
+  }
 
-    .kravWrapper {
-        width: 100%;
-    }
+  .kravWrapper {
+    width: 100%;
+  }
 
-    .kravContainer {
-        margin-top: 0;
-    }
-
+  .kravContainer {
+    margin-top: 0;
+  }
 }

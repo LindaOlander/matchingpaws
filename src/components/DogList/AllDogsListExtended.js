@@ -1,34 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import DogBox from '../DogBox/DogBox';
-import axios from 'axios';
-import './DogList.css';
-import DogBoxExtended from '../DogBoxExtended/DogBoxExtended';
-import Navbar from '../Navbar/Navbar';
+import React, { useState, useEffect } from "react";
+import DogBox from "../DogBox/DogBox";
+import axios from "axios";
+import "./DogList.css";
+import DogBoxExtended from "../DogBoxExtended/DogBoxExtended";
+import Navbar from "../Navbar/Navbar";
 
 const AllDogsList = () => {
-    const [data, setData] = useState({  dogs: [] });
+  const [data, setData] = useState({ dogs: [] });
 
   useEffect(() => {
     const fetchDogs = async () => {
-      const result = await axios('https://matchingpaws-api.herokuapp.com/dogs');
+      const result = await axios("https://matchingpaws-api.herokuapp.com/dogs");
       setData(result.data);
     };
- 
+
     fetchDogs();
   }, []);
 
-  console.log('data', data)
-  const hundarutanhem = require('../../images/hundarutanhem/hundarutanhem-circle.png');
-  
+  console.log("data", data);
+
   return (
     <>
-      <Navbar color="#ffffff"/>
+      <Navbar color="#ffffff" />
       <div className="heroPink">
-        <h2 style={{margin: '0'}}>Alla hundar</h2>
+        <h2 style={{ margin: "0" }}>Alla hundar</h2>
       </div>
       <div className="dogsListWrapper-extended">
-        {data.length && 
-          data.map(dog =>
+        {data.length &&
+          data.map((dog) => (
             <DogBoxExtended
               key={dog._id}
               hundnamn={dog.hundnamn}
@@ -40,13 +39,11 @@ const AllDogsList = () => {
               kontaktnamn={dog.kontaktnamn}
               email={dog.email}
               lank={dog.lank}
-              hundarutanhem={hundarutanhem}
             />
-          )
-        }
+          ))}
       </div>
     </>
-  )
+  );
 };
 
 export default AllDogsList;

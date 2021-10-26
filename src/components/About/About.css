@@ -1,48 +1,48 @@
 .about-image {
-    width: 50%;
-    height: 350px;
+  width: 50%;
+  height: 350px;
 }
 
 .about-content {
-    padding: 25px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  padding: 25px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .aboutCoronaWrapper {
-    margin-left: 35px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  margin-left: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .aboutReassignWrapper {
-    width: 500px;
-    /* margin-right: 60px; */
-    text-align: left;
+  width: 500px;
+  /* margin-right: 60px; */
+  text-align: left;
 }
 
 @media screen and (max-width: 820px) {
-   .about-image {
-       width: 100%;
-       margin-bottom: 16px;
-   }
-
-   .about-content {
-       padding: 0;
-       display: block;
-   }
-
-   .aboutCoronaWrapper {
-        margin-left: 0;
-        margin-top: 20px;
-    }
-
-    .aboutReassignWrapper {
-        width: 100%;
-        margin-right: 0;
-        /* text-align: center; */
-    }
-
+  .about-image {
+    width: 100%;
+    margin-bottom: 16px;
+    height: auto;
   }
+
+  .about-content {
+    padding: 0;
+    display: block;
+  }
+
+  .aboutCoronaWrapper {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .aboutReassignWrapper {
+    width: 100%;
+    margin-right: 0;
+    /* text-align: center; */
+  }
+}
