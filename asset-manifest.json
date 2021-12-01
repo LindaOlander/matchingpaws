@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.9818e517.chunk.css",
-    "main.js": "/static/js/main.d83dd4c6.chunk.js",
-    "main.js.map": "/static/js/main.d83dd4c6.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.7d0ddf49.js",
-    "runtime-main.js.map": "/static/js/runtime-main.7d0ddf49.js.map",
-    "static/js/2.3e1c6bfd.chunk.js": "/static/js/2.3e1c6bfd.chunk.js",
-    "static/js/2.3e1c6bfd.chunk.js.map": "/static/js/2.3e1c6bfd.chunk.js.map",
-    "static/js/3.954db133.chunk.js": "/static/js/3.954db133.chunk.js",
-    "static/js/3.954db133.chunk.js.map": "/static/js/3.954db133.chunk.js.map",
+    "main.js": "/static/js/main.11696a63.chunk.js",
+    "main.js.map": "/static/js/main.11696a63.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.2f325cfe.js",
+    "runtime-main.js.map": "/static/js/runtime-main.2f325cfe.js.map",
+    "static/js/2.446b1214.chunk.js": "/static/js/2.446b1214.chunk.js",
+    "static/js/2.446b1214.chunk.js.map": "/static/js/2.446b1214.chunk.js.map",
+    "static/js/3.ce7f7a18.chunk.js": "/static/js/3.ce7f7a18.chunk.js",
+    "static/js/3.ce7f7a18.chunk.js.map": "/static/js/3.ce7f7a18.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.9818e517.chunk.css.map": "/static/css/main.9818e517.chunk.css.map",
-    "static/js/2.3e1c6bfd.chunk.js.LICENSE.txt": "/static/js/2.3e1c6bfd.chunk.js.LICENSE.txt",
+    "static/js/2.446b1214.chunk.js.LICENSE.txt": "/static/js/2.446b1214.chunk.js.LICENSE.txt",
     "static/media/Alma.png": "/static/media/Alma.c0cd6e95.png",
     "static/media/Boston.png": "/static/media/Boston.ab5f1d8f.png",
     "static/media/Frodo.png": "/static/media/Frodo.4341f9a6.png",
@@ -37,6 +37,7 @@
     "static/media/Header.css": "/static/media/poodle.27956449.jpg",
     "static/media/bruce.jpeg": "/static/media/bruce.6c1fdbbb.jpeg",
     "static/media/buddy.jpeg": "/static/media/buddy.5cf9e367.jpeg",
+    "static/media/buddybella.jpeg": "/static/media/buddybella.4c28d59c.jpeg",
     "static/media/budgie.jpeg": "/static/media/budgie.8bef6780.jpeg",
     "static/media/bumblebee.jpeg": "/static/media/bumblebee.e3f2d3bf.jpeg",
     "static/media/byczek.jpeg": "/static/media/byczek.4edb968f.jpeg",
@@ -168,9 +169,9 @@
     "static/media/zoya.jpeg": "/static/media/zoya.e794ef26.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.7d0ddf49.js",
-    "static/js/2.3e1c6bfd.chunk.js",
+    "static/js/runtime-main.2f325cfe.js",
+    "static/js/2.446b1214.chunk.js",
     "static/css/main.9818e517.chunk.css",
-    "static/js/main.d83dd4c6.chunk.js"
+    "static/js/main.11696a63.chunk.js"
   ]
 }
