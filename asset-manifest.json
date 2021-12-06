@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.9818e517.chunk.css",
-    "main.js": "/static/js/main.82ca0b41.chunk.js",
-    "main.js.map": "/static/js/main.82ca0b41.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.2f325cfe.js",
-    "runtime-main.js.map": "/static/js/runtime-main.2f325cfe.js.map",
-    "static/js/2.446b1214.chunk.js": "/static/js/2.446b1214.chunk.js",
-    "static/js/2.446b1214.chunk.js.map": "/static/js/2.446b1214.chunk.js.map",
-    "static/js/3.ce7f7a18.chunk.js": "/static/js/3.ce7f7a18.chunk.js",
-    "static/js/3.ce7f7a18.chunk.js.map": "/static/js/3.ce7f7a18.chunk.js.map",
+    "main.js": "/static/js/main.94a48658.chunk.js",
+    "main.js.map": "/static/js/main.94a48658.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.544fda1c.js",
+    "runtime-main.js.map": "/static/js/runtime-main.544fda1c.js.map",
+    "static/js/2.3553acae.chunk.js": "/static/js/2.3553acae.chunk.js",
+    "static/js/2.3553acae.chunk.js.map": "/static/js/2.3553acae.chunk.js.map",
+    "static/js/3.adc1976b.chunk.js": "/static/js/3.adc1976b.chunk.js",
+    "static/js/3.adc1976b.chunk.js.map": "/static/js/3.adc1976b.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.9818e517.chunk.css.map": "/static/css/main.9818e517.chunk.css.map",
-    "static/js/2.446b1214.chunk.js.LICENSE.txt": "/static/js/2.446b1214.chunk.js.LICENSE.txt",
+    "static/js/2.3553acae.chunk.js.LICENSE.txt": "/static/js/2.3553acae.chunk.js.LICENSE.txt",
     "static/media/Alma.png": "/static/media/Alma.c0cd6e95.png",
     "static/media/Boston.png": "/static/media/Boston.ab5f1d8f.png",
     "static/media/Frodo.png": "/static/media/Frodo.4341f9a6.png",
@@ -90,6 +90,7 @@
     "static/media/ladygrey.jpeg": "/static/media/ladygrey.dfac1204.jpeg",
     "static/media/lass.jpeg": "/static/media/lass.e7d31e73.jpeg",
     "static/media/lassie.jpeg": "/static/media/lassie.d5d900a9.jpeg",
+    "static/media/leggy.png": "/static/media/leggy.86bfaec0.png",
     "static/media/lejk.jpeg": "/static/media/lejk.e29bb0df.jpeg",
     "static/media/leo.jpeg": "/static/media/leo.db3d8de6.jpeg",
     "static/media/listek.jpeg": "/static/media/listek.09decdf7.jpeg",
@@ -169,9 +170,9 @@
     "static/media/zoya.jpeg": "/static/media/zoya.e794ef26.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.2f325cfe.js",
-    "static/js/2.446b1214.chunk.js",
+    "static/js/runtime-main.544fda1c.js",
+    "static/js/2.3553acae.chunk.js",
     "static/css/main.9818e517.chunk.css",
-    "static/js/main.82ca0b41.chunk.js"
+    "static/js/main.94a48658.chunk.js"
   ]
 }
