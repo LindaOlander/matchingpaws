@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.2d25089b.chunk.css",
-    "main.js": "/static/js/main.a220576d.chunk.js",
-    "main.js.map": "/static/js/main.a220576d.chunk.js.map",
+    "main.css": "/static/css/main.64db5672.chunk.css",
+    "main.js": "/static/js/main.b55411b8.chunk.js",
+    "main.js.map": "/static/js/main.b55411b8.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d781bd1a.js",
     "runtime-main.js.map": "/static/js/runtime-main.d781bd1a.js.map",
-    "static/js/2.34337b54.chunk.js": "/static/js/2.34337b54.chunk.js",
-    "static/js/2.34337b54.chunk.js.map": "/static/js/2.34337b54.chunk.js.map",
+    "static/js/2.957a2496.chunk.js": "/static/js/2.957a2496.chunk.js",
+    "static/js/2.957a2496.chunk.js.map": "/static/js/2.957a2496.chunk.js.map",
     "static/js/3.1bd5fdcf.chunk.js": "/static/js/3.1bd5fdcf.chunk.js",
     "static/js/3.1bd5fdcf.chunk.js.map": "/static/js/3.1bd5fdcf.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.2d25089b.chunk.css.map": "/static/css/main.2d25089b.chunk.css.map",
-    "static/js/2.34337b54.chunk.js.LICENSE.txt": "/static/js/2.34337b54.chunk.js.LICENSE.txt",
+    "static/css/main.64db5672.chunk.css.map": "/static/css/main.64db5672.chunk.css.map",
+    "static/js/2.957a2496.chunk.js.LICENSE.txt": "/static/js/2.957a2496.chunk.js.LICENSE.txt",
     "static/media/Alma.png": "/static/media/Alma.c0cd6e95.png",
     "static/media/Boston.png": "/static/media/Boston.ab5f1d8f.png",
     "static/media/Frodo.png": "/static/media/Frodo.4341f9a6.png",
@@ -29,6 +29,7 @@
     "static/media/archie2.jpeg": "/static/media/archie2.4d96e5d6.jpeg",
     "static/media/aries.jpeg": "/static/media/aries.6148c7c0.jpeg",
     "static/media/astro.jpeg": "/static/media/astro.bd5f79a5.jpeg",
+    "static/media/Adoptionsresultat.css": "/static/media/background-form.b538c89c.png",
     "static/media/banko.jpeg": "/static/media/banko.00ebd2d4.jpeg",
     "static/media/barry.jpeg": "/static/media/barry.c3232467.jpeg",
     "static/media/bella.jpeg": "/static/media/bella.7987fcba.jpeg",
@@ -171,8 +172,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d781bd1a.js",
-    "static/js/2.34337b54.chunk.js",
-    "static/css/main.2d25089b.chunk.css",
-    "static/js/main.a220576d.chunk.js"
+    "static/js/2.957a2496.chunk.js",
+    "static/css/main.64db5672.chunk.css",
+    "static/js/main.b55411b8.chunk.js"
   ]
 }
