@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.833867ab.chunk.css",
-    "main.js": "/static/js/main.31ad1158.chunk.js",
-    "main.js.map": "/static/js/main.31ad1158.chunk.js.map",
+    "main.css": "/static/css/main.160f3ea3.chunk.css",
+    "main.js": "/static/js/main.04d3b47e.chunk.js",
+    "main.js.map": "/static/js/main.04d3b47e.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d8824120.js",
     "runtime-main.js.map": "/static/js/runtime-main.d8824120.js.map",
-    "static/js/2.bb63537f.chunk.js": "/static/js/2.bb63537f.chunk.js",
-    "static/js/2.bb63537f.chunk.js.map": "/static/js/2.bb63537f.chunk.js.map",
+    "static/js/2.28b63592.chunk.js": "/static/js/2.28b63592.chunk.js",
+    "static/js/2.28b63592.chunk.js.map": "/static/js/2.28b63592.chunk.js.map",
     "static/js/3.a8069a41.chunk.js": "/static/js/3.a8069a41.chunk.js",
     "static/js/3.a8069a41.chunk.js.map": "/static/js/3.a8069a41.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.833867ab.chunk.css.map": "/static/css/main.833867ab.chunk.css.map",
-    "static/js/2.bb63537f.chunk.js.LICENSE.txt": "/static/js/2.bb63537f.chunk.js.LICENSE.txt",
+    "static/css/main.160f3ea3.chunk.css.map": "/static/css/main.160f3ea3.chunk.css.map",
+    "static/js/2.28b63592.chunk.js.LICENSE.txt": "/static/js/2.28b63592.chunk.js.LICENSE.txt",
     "static/media/Alma.png": "/static/media/Alma.c0cd6e95.png",
     "static/media/Boston.png": "/static/media/Boston.ab5f1d8f.png",
     "static/media/Frodo.png": "/static/media/Frodo.4341f9a6.png",
@@ -131,6 +131,7 @@
     "static/media/ruairi.jpeg": "/static/media/ruairi.01af18b9.jpeg",
     "static/media/rudi.jpeg": "/static/media/rudi.ceeb5d01.jpeg",
     "static/media/rupert.jpeg": "/static/media/rupert.71b37578.jpeg",
+    "static/media/Banner.css": "/static/media/rupertHistory.6ea7b33c.png",
     "static/media/rysio.jpeg": "/static/media/rysio.d5f0129d.jpeg",
     "static/media/sally.png": "/static/media/sally.6da91015.png",
     "static/media/salvan.jpeg": "/static/media/salvan.69aa816c.jpeg",
@@ -171,8 +172,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d8824120.js",
-    "static/js/2.bb63537f.chunk.js",
-    "static/css/main.833867ab.chunk.css",
-    "static/js/main.31ad1158.chunk.js"
+    "static/js/2.28b63592.chunk.js",
+    "static/css/main.160f3ea3.chunk.css",
+    "static/js/main.04d3b47e.chunk.js"
   ]
 }
